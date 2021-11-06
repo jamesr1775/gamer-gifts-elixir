@@ -1,0 +1,16 @@
+html {
+    height: 100%;
+}
+
+.bg-navbar{
+    background-color: #2D2D3C ;
+}
+.company-logo{
+    min-height: 75px;
+    margin: 5px 0;
+    padding: 0 10px;
+    width: 140px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:contain;
+}
