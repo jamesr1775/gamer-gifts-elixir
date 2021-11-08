@@ -1,0 +1,77 @@
+html {
+    height: 100%;
+}
+
+/************************* NavBar *************************/
+.bg-navbar{
+    background-color: #2D2D3C ;
+}
+.company-logo{
+    min-height: 75px;
+    width: 140px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:contain;
+}
+.nav-link {
+    color: #863AFF !important;
+}
+
+/************************* Footer *************************/
+
+.bg-footer{
+    background-color: #2D2D3C;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: #863AFF;   
+}
+.social-media-links{
+    margin: 0;
+    text-align: center;
+}
+.social-media-links li a i{
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    color: snow;
+    padding: 8px 0 8px;
+    border-radius: 50%;
+    background-color: rgba(134, 58, 255, 0.7);
+}
+.list-inline {
+    padding-left: 0;
+    margin-left: -5px;
+    list-style: none;
+}
+.list-inline > li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.copyright-info-block{
+    min-height: 25px !important;
+    margin-left: 10px;
+}
+
+@media (min-width: 992px) {
+    #site-nav-bar {
+        flex-flow: wrap !important;    
+    }
+}
+
+@media (max-width: 991px) {
+
+}
+
+@media (max-width: 400px) {
+    #logo {
+        width: 100px;
+    }
+    .nav-link {
+        font-size: 13px;
+    }
+}

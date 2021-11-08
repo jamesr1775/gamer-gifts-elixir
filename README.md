@@ -1,4 +1,4 @@
-# <div align="center"><img src="media/images/company-logo.png" alt="Site Logo"></div>
+# <div align="center"><img src="static/images/company-logo.png" alt="Site Logo"></div>
 [Gamer Gifts Elixir]() is a website for people trying to find the perfect gift for a loved one who enjoys video games. Finding the right gift can be difficult and this store aims to make that easier. It will have gifts of all kinds related to video games from clothing, office supplies and figurines.
 
 ## Table of Contents
