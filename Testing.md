@@ -31,6 +31,7 @@ The source code for the project can be viewed at [github](https://github.com/jam
 - The Header responsiveness was tested by varying the screen size to see that the logo and navbar links were responsive and also that the navbar becomes an expandable burger icon on smartphones and tablets.
 - The logo stays to the left of the header on all screens with the my account and basket links to the right of the page.
 - The website navigation links should be under the logo, the account and the basket links on large screens. When the burger icon is clicked the links should be on the left side of the screen.
+- The search bar should be next to the product / offers links on large screen sizes and should be on its own row for smaller screen sizes.
 
 ##### Site Header Tests
 - The logo was tested that when it is pressed it returns / refreshes to the home page.
@@ -39,6 +40,11 @@ The source code for the project can be viewed at [github](https://github.com/jam
     <div align="center">
     <img style="width:70%;"  src="static/images/readme-images/test-header.gif" alt="Test Header">
     </div>
+
+##### Site Footer Tests
+- The social media icons opens up the relevant social media platforms in a new tab.
+- The icons remain centered on all screen sizes.
+- The Copyright Info text stays under the icons to the left side of the screen.
 
 #### Further Testing
 
