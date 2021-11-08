@@ -83,15 +83,30 @@
                     <a href="{% url 'home' %}" class="d-lg-none"><img class="responsive-img company-logo" id="logo" src="{% static 'images/company-logo.png' %}" alt="Gamer Gifts Elixir Logo"></a>
                     {% include 'includes/mobile-nav.html' %}
                     {% include 'includes/main-nav.html' %}
+                    
                     <div class="col-12">
                         <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                     </div>
+                    <div class="col-12 d-lg-none mt-3">
+                        <form method="GET" action="">
+                            <div class="input-group w-100">
+                                <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
+                                <div class="input-group-append">
+                                    <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                                        <span class="icon">
+                                            <i class="fas fa-search"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </nav>
             </div>
         </header>
-
+            
         {% block page_header %}
         {% endblock %}
     
@@ -100,5 +115,38 @@
     
         {% block postloadjs %}
         {% endblock %}
+
+        <!-- Footer Social Links & Copyright -->
+        <footer class="footer bg-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h6 class="text-center">Follow us on Social Media<br>for all your Esports highlights!</h6>
+                        <ul class="social-media-links list-inline">
+                            <li class="list-inline-item">
+                                <a href="https://www.facebook.com/" class="" target="_blank"><i class="fab fa-facebook-f" aria-hidden="true"></i><span class="sr-only">FaceBook</span></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://www.twitter.com/" class="" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i><span class="sr-only">Twitter</span></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://www.instagram.com/" class="" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i><span class="sr-only">Instagram</span></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://www.youtube.com/" class="" target="_blank"><i class="fab fa-youtube" aria-hidden="true"></i><span class="sr-only">Youtube</span></a>
+                            </li>    
+                        </ul>
+                    </div>
+                </div>
+                <div class="row copyright-info-block">
+                    <div class="col-12">
+                        © 2021 Copyright
+                    </div>
+                </div>
+            </div>
+        </footer>
     </body>
+
+
+
 </html>
