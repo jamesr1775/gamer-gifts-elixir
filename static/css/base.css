@@ -13,10 +13,12 @@ html {
     background-repeat: no-repeat;
     background-size:contain;
 }
-.nav-link {
+.nav-link{
     color: #863AFF !important;
 }
-
+.search-icon{
+    background-color: #863AFF !important;
+}
 /************************* Footer *************************/
 
 .bg-footer{
