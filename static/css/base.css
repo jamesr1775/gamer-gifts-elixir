@@ -14,7 +14,8 @@ html {
     background-size:contain;
 }
 .nav-link{
-    color: #863AFF !important;
+    color: snow !important;
+    font-size: 18px;
 }
 .search-icon{
     background-color: #863AFF !important;
