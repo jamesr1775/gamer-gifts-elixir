@@ -34,11 +34,11 @@
     </head>
     <body>
         <header class="container-fluid">
-            <div id="topnav" class="row bg-navbar pt-lg-2 d-none d-lg-flex">
-                <div class="col-12 col-lg-6 my-auto py-1 py-lg-0">
+            <div id="topnav" class="row bg-navbar pt-lg-2 d-none d-md-flex">
+                <div class="col-12 col-md-6 my-auto py-1 py-lg-0">
                     <a href="{% url 'home' %}" class=""><img class="responsive-img company-logo" id="logo" src="{% static 'images/company-logo.png' %}" alt="Gamer Gifts Elixir Logo"></a>
                 </div>
-                <div class="col-12 col-lg-6 my-auto py-1 py-lg-0">
+                <div class="col-12 col-md-6 my-auto py-1 py-lg-0">
                     <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                         <li class="list-inline-item dropdown">
                             <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -79,8 +79,8 @@
                 </div>
             </div>
             <div class="row bg-navbar">
-                <nav id="site-nav-bar" class="navbar navbar-expand-lg navbar-light w-100">
-                    <a href="{% url 'home' %}" class="d-lg-none"><img class="responsive-img company-logo" id="logo" src="{% static 'images/company-logo.png' %}" alt="Gamer Gifts Elixir Logo"></a>
+                <nav id="site-nav-bar" class="navbar navbar-expand-md navbar-light w-100">
+                    <a href="{% url 'home' %}" class="d-md-none"><img class="responsive-img company-logo" id="logo" src="{% static 'images/company-logo.png' %}" alt="Gamer Gifts Elixir Logo"></a>
                     {% include 'includes/mobile-nav.html' %}
                     {% include 'includes/main-nav.html' %}
                     
@@ -89,7 +89,7 @@
                             <span class="navbar-toggler-icon"></span>
                         </button>
                     </div>
-                    <div class="col-12 d-lg-none mt-3">
+                    <div class="col-12 d-md-none mt-3">
                         <form method="GET" action="">
                             <div class="input-group w-100">
                                 <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">

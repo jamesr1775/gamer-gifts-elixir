@@ -28,7 +28,7 @@ The source code for the project can be viewed at [github](https://github.com/jam
 
 #### Site Header & Hero Image
 ##### Device Specific Layout Checks
-- The Header responsiveness was tested by varying the screen size to see that the logo and navbar links were responsive and also that the navbar becomes an expandable burger icon on smartphones and tablets.
+- The Header responsiveness was tested by varying the screen size to see that the logo and navbar links were responsive and also that the navbar becomes an expandable burger icon on smartphones.
 - The logo stays to the left of the header on all screens with the my account and basket links to the right of the page.
 - The website navigation links should be under the logo, the account and the basket links on large screens. When the burger icon is clicked the links should be on the left side of the screen.
 - The search bar should be next to the product / offers links on large screen sizes and should be on its own row for smaller screen sizes.
@@ -48,7 +48,13 @@ The source code for the project can be viewed at [github](https://github.com/jam
 
 
 #### Home Page Tests
-
+##### Home Carousel
+- The Carousel should be responsive and show 3 columns / items for large screens and then 1 column / item for smaller screen sizes (less than 768px).
+- The images should remain undistorted when adjusting the screen size.
+- The Navigation buttons to cycle through the items in the carousel should increment / decrement the slide index by 1 shifting the cards to the right or left.
+- The slider should show which card is in the left most position using carousel dots displayed at the bottom. They should remain centered on all screens at the bottom of the carousel.
+- The navigation buttons should remain within the carousel card.
+<!-- # TODO Test links when items hooked up to display the correct pages -->
 
 
 #### Further Testing
