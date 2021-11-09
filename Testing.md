@@ -38,7 +38,7 @@ The source code for the project can be viewed at [github](https://github.com/jam
 
     <div><br/></div>
     <div align="center">
-    <img style="width:70%;"  src="static/images/readme-images/test-header.gif" alt="Test Header">
+    <img style="width:70%;"  src="static/readme-images/test-gifs/test-header.gif" alt="Test Header">
     </div>
 
 ##### Site Footer Tests
@@ -48,12 +48,27 @@ The source code for the project can be viewed at [github](https://github.com/jam
 
 
 #### Home Page Tests
+
 ##### Home Carousel
 - The Carousel should be responsive and show 3 columns / items for large screens and then 1 column / item for smaller screen sizes (less than 768px).
 - The images should remain undistorted when adjusting the screen size.
 - The Navigation buttons to cycle through the items in the carousel should increment / decrement the slide index by 1 shifting the cards to the right or left.
 - The slider should show which card is in the left most position using carousel dots displayed at the bottom. They should remain centered on all screens at the bottom of the carousel.
 - The navigation buttons should remain within the carousel card.
+<!-- # TODO Test links when items hooked up to display the correct pages -->
+
+##### Tips / Print Info Cards
+- The gift tips and information callout cards should be side by side on tablets and larger screen sizes. 
+- On smart phones they should be both on separate rows.
+- The cards should be above the footer and under the carousel.
+- The images are to remain undistorted for all supported screen resolutions.
+
+    <div><br/></div>
+    <div align="center">
+    <img style="width:90%;"  src="static/read-me/test-gifs/test_home_page.gif" alt="Testing Bar Chart">
+    </div>
+
+
 <!-- # TODO Test links when items hooked up to display the correct pages -->
 
 

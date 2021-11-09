@@ -64,14 +64,14 @@
 22. Delete a product from the store so that I can remove items no longer sold on the website.
 
 ### Wireframe mock-ups
-- [Home Page](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/media/wireframes/home.png)
-- [My Account](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/media/wireframes/my-account.png)
-- [Browse Products](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/media/wireframes/browse-products.png)
-- [Manage Site](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/media/wireframes/site-owner-management.png)
-- [Checkout](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/media/wireframes/checkout.png)
-- [Basket](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/media/wireframes/basket.png)
-- [Product Info](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/media/wireframes/product-info.png)
-- [Order Info](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/media/wireframes/order-info.png)
+- [Home Page](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/static/read-me/wireframes/home.png)
+- [My Account](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/static/read-me/wireframes/my-account.png)
+- [Browse Products](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/static/read-me/wireframes/browse-products.png)
+- [Manage Site](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/static/read-me/wireframes/site-owner-management.png)
+- [Checkout](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/static/read-me/wireframes/checkout.png)
+- [Basket](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/static/read-me/wireframes/basket.png)
+- [Product Info](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/static/read-me/wireframes/product-info.png)
+- [Order Info](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/static/read-me/wireframes/order-info.png)
 
 ## Features
 
