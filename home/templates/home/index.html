@@ -1,18 +1,117 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
+    <!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 {% endblock %}
 
+
 {% block content %}
-    <div class="container h-100">
-        <div class="row h-100">
-            
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div id="homeCarousel" class="card carousel-container mt-3">
+                <div class="slider slider-nav">
+                    <div class="home-carousel-item">
+                        <div class="cards-wrapper">
+                            <div class="card">
+                                <a href="#" class="card-body">
+                                    <h5 class="card-title text-center">Latest Products</h5>
+                                    <img src="{{ MEDIA_URL }}images/latest_products.jpg" class="card-img-top" alt="...">                                            
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="home-carousel-item">
+                        <div class="cards-wrapper">
+                            <div class="card">
+                                <a href="#" class="card-body">
+                                    <h5 class="card-title text-center">Popular Products</h5>
+                                    <img src="{{ MEDIA_URL }}images/popular_products.jpg" class="card-img-top" alt="...">                                            
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="home-carousel-item">
+                        <div class="cards-wrapper">
+                            <div class="card">
+                                <a href="#" class="card-body">
+                                    <h5 class="card-title text-center">Fantastic Offers</h5>
+                                    <img src="{{ MEDIA_URL }}images/offers.jpg" class="card-img-top" alt="...">   
+                                </a>                            
+                            </div>
+                        </div>
+                    </div>
+                    <div class="home-carousel-item">
+                        <div class="cards-wrapper">
+                            <div class="card">
+                                <a href="#" class="card-body">
+                                    <h5 class="card-title text-center">3d Printed Gifts</h5>
+                                    <img src="{{ MEDIA_URL }}images/ddd_printing.jpg" class="card-img-top" alt="...">
+                                </a>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div id="newsTipsBlock" class="card mt-3">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="cards-wrapper">
+                            <div class="card">
+                                <a href="#" class="card-body">
+                                    <div class="text-over-images text-center">Not sure what's the right gift?<br>Click Here for some tips<br> to find that perfect gift!</div>
+                                    <img src="{{ MEDIA_URL }}images/buyers_tips.jpg" class="card-img-top" alt="...">
+                                </a>  
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="cards-wrapper">
+                            <div class="card">
+                                <a href="#" class="card-body">
+                                    <div class="text-over-images text-center">Want to learn about 3D<br> printing your own gifts?<br> Click here for more info!</div>
+                                    <img src="{{ MEDIA_URL }}images/print_info.jpg" class="card-img-top" alt="...">
+                                </a>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+
+    {{ block.super }}
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript">
+    $('.slider-nav').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: true,
+        focusOnSelect: false,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+            }
+        }]
+    });
+    </script>
 {% endblock %}

@@ -64,14 +64,14 @@
 22. Delete a product from the store so that I can remove items no longer sold on the website.
 
 ### Wireframe mock-ups
-- [Home Page](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/media/wireframes/home.png)
-- [My Account](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/media/wireframes/my-account.png)
-- [Browse Products](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/media/wireframes/browse-products.png)
-- [Manage Site](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/media/wireframes/site-owner-management.png)
-- [Checkout](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/media/wireframes/checkout.png)
-- [Basket](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/media/wireframes/basket.png)
-- [Product Info](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/media/wireframes/product-info.png)
-- [Order Info](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/media/wireframes/order-info.png)
+- [Home Page](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/static/read-me/wireframes/home.png)
+- [My Account](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/static/read-me/wireframes/my-account.png)
+- [Browse Products](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/static/read-me/wireframes/browse-products.png)
+- [Manage Site](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/static/read-me/wireframes/site-owner-management.png)
+- [Checkout](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/static/read-me/wireframes/checkout.png)
+- [Basket](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/static/read-me/wireframes/basket.png)
+- [Product Info](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/static/read-me/wireframes/product-info.png)
+- [Order Info](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/static/read-me/wireframes/order-info.png)
 
 ## Features
 
@@ -91,6 +91,10 @@
     - GitPod was used as my Editor/ Development Environment.
 * [GitHub:](https://github.com/)
     - GitHub is used to store the projects code with version control.
+* [Font Awesome:](https://fontawesome.com/)
+    - Font Awesome was used throughout to add icons for a more pleasing UX.
+* [Slick Carousel:](https://kenwheeler.github.io/slick/)
+    - Used for the home page carousel to make it responsive (3 items for large screens, 1 for smaller screens).
 
 ## Testing
 
@@ -99,5 +103,13 @@
 ## Credits
 ### Media
 - [Free Logo Design](https://www.freelogodesign.org/)   -   Created the Company logo.
-
+- [Photo by Karolina Grabowska from Pexels](https://www.pexels.com/photo/a-red-sale-tags-on-red-and-black-background-5625008/)
+- [Photo by Anthony from Pexels](https://www.pexels.com/photo/xbox-one-controller-beside-three-xbox-one-cases-139038/)
+- [Photo by Andrea Piacquadio from Pexels](https://www.pexels.com/photo/man-wearing-white-virtual-reality-goggles-834949/)
+- [Image by ZMorph3D from Pixabay](https://pixabay.com/photos/3d-printing-3d-technology-tech-3758154/)
+- [Photo by Ross Sneddon on Unsplash](https://unsplash.com/photos/sWlDOWk0Jp8)
+- [Photo by AbsolutVision on Unsplash](https://unsplash.com/photos/82TpEld0_e4)
 ### Acknowledgements
+
+
+

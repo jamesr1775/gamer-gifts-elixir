@@ -1,7 +1,9 @@
 html {
     height: 100%;
 }
-
+main{
+    min-height: 70vh;
+}
 /************************* NavBar *************************/
 .bg-navbar{
     background-color: #2D2D3C ;
@@ -13,19 +15,21 @@ html {
     background-repeat: no-repeat;
     background-size:contain;
 }
-.nav-link {
-    color: #863AFF !important;
+.nav-link{
+    color: snow !important;
+    font-size: 18px;
 }
-
+.search-icon{
+    background-color: #863AFF !important;
+}
 /************************* Footer *************************/
 
 .bg-footer{
     background-color: #2D2D3C;
 }
-
-.footer {
-    position: absolute;
-    bottom: 0;
+footer {
+    margin-top: 20px;
+    height: 120px;
     width: 100%;
     color: #863AFF;   
 }
@@ -57,14 +61,20 @@ html {
     margin-left: 10px;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
     #site-nav-bar {
         flex-flow: wrap !important;    
     }
 }
 
 @media (max-width: 991px) {
-
+    .nav-link {
+        font-size: 14px;
+    }
+    .navbar-expand-md .navbar-nav .nav-link {
+        padding-right: 0; 
+        padding-left: 0;
+    }
 }
 
 @media (max-width: 400px) {
