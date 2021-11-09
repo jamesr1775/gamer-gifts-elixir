@@ -1,0 +1,1 @@
+web: gunicorn gaming_gift_elixir.wsgi:application
