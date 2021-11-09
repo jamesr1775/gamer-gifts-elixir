@@ -107,6 +107,8 @@
 - [Photo by Anthony from Pexels](https://www.pexels.com/photo/xbox-one-controller-beside-three-xbox-one-cases-139038/)
 - [Photo by Andrea Piacquadio from Pexels](https://www.pexels.com/photo/man-wearing-white-virtual-reality-goggles-834949/)
 - [Image by ZMorph3D from Pixabay](https://pixabay.com/photos/3d-printing-3d-technology-tech-3758154/)
+- [Photo by Ross Sneddon on Unsplash](https://unsplash.com/photos/sWlDOWk0Jp8)
+- [Photo by AbsolutVision on Unsplash](https://unsplash.com/photos/82TpEld0_e4)
 ### Acknowledgements
 
 

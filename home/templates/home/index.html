@@ -22,7 +22,7 @@
                             <div class="card">
                                 <a href="#" class="card-body">
                                     <h5 class="card-title text-center">Latest Products</h5>
-                                    <img src="{{ MEDIA_URL }}/images/latest_products.jpg" class="card-img-top" alt="...">                                            
+                                    <img src="{{ MEDIA_URL }}images/latest_products.jpg" class="card-img-top" alt="...">                                            
                                 </a>
                             </div>
                         </div>
@@ -32,7 +32,7 @@
                             <div class="card">
                                 <a href="#" class="card-body">
                                     <h5 class="card-title text-center">Popular Products</h5>
-                                    <img src="{{ MEDIA_URL }}/images/popular_products.jpg" class="card-img-top" alt="...">                                            
+                                    <img src="{{ MEDIA_URL }}images/popular_products.jpg" class="card-img-top" alt="...">                                            
                                 </a>
                             </div>
                         </div>
@@ -42,7 +42,7 @@
                             <div class="card">
                                 <a href="#" class="card-body">
                                     <h5 class="card-title text-center">Fantastic Offers</h5>
-                                    <img src="{{ MEDIA_URL }}/images/offers.jpg" class="card-img-top" alt="...">   
+                                    <img src="{{ MEDIA_URL }}images/offers.jpg" class="card-img-top" alt="...">   
                                 </a>                            
                             </div>
                         </div>
@@ -51,8 +51,8 @@
                         <div class="cards-wrapper">
                             <div class="card">
                                 <a href="#" class="card-body">
-                                    <h5 class="card-title text-center">3d Printing</h5>
-                                    <img src="{{ MEDIA_URL }}/images/ddd_printing.jpg" class="card-img-top" alt="...">
+                                    <h5 class="card-title text-center">3d Printed Gifts</h5>
+                                    <img src="{{ MEDIA_URL }}images/ddd_printing.jpg" class="card-img-top" alt="...">
                                 </a>    
                             </div>
                         </div>
@@ -62,7 +62,36 @@
         </div>
     </div>
 </div>
-
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div id="newsTipsBlock" class="card mt-3">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="cards-wrapper">
+                            <div class="card">
+                                <a href="#" class="card-body">
+                                    <div class="text-over-images text-center">Not sure what's the right gift?<br>Click Here for some tips<br> to find that perfect gift!</div>
+                                    <img src="{{ MEDIA_URL }}images/buyers_tips.jpg" class="card-img-top" alt="...">
+                                </a>  
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="cards-wrapper">
+                            <div class="card">
+                                <a href="#" class="card-body">
+                                    <div class="text-over-images text-center">Want to learn about 3D<br> printing your own gifts?<br> Click here for more info!</div>
+                                    <img src="{{ MEDIA_URL }}images/print_info.jpg" class="card-img-top" alt="...">
+                                </a>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 {% block postloadjs %}
