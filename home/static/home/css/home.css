@@ -1,14 +1,68 @@
-.carousel-inner .carousel-item-right.active,
-.carousel-inner .carousel-item-next {
-  transform: translateX(33.33%);
+/*************** Carousel Cards ***************/
+.cards-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.card img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 5%;
+}
+.card {
+  height: auto;
+  /* width: 100%; */
+  margin: 0 0.5em;
+  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+  border: 1px;
+  border-radius: 5%;
+}
+.card-body{
+  padding: 0;
 }
 
-.carousel-inner .carousel-item-left.active, 
-.carousel-inner .carousel-item-prev {
-  transform: translateX(-33.33%)
+/*************** Slick Carousel ***************/
+#homeCarousel{
+  border-radius: 15px !important;
+  background: linear-gradient(to bottom right, #853aff 10%, #853aff7c 50%, #2D2D3C 70%);
 }
-  
-.carousel-inner .carousel-item-right,
-.carousel-inner .carousel-item-left{ 
-  transform: translateX(0);
+#homeCarousel .card{
+  background-color: #2D2D3C;
+}
+.card-title{
+  color: snow;
+  font-weight: 700;
+
+}
+.home-carousel-item{
+  margin-top: 10px;
+}
+.slick-prev, .slick-next {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.253)!important;
+  outline: none;
+  background: rgba(255, 255, 255, 0.253) !important;
+  height: 30px !important;
+  width: 30px !important;
+}
+.slick-prev{
+  left: 5px !important;
+  z-index: 9999;
+} 
+.slick-next{
+  right: 5px !important;
+}
+.slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus {
+  color: rgba(255, 255, 255, 0.250)!important;
+  outline: none;
+  background: rgba(255, 255, 255, 0.250) !important;
+}
+.slick-dots li button:before {
+  color: rgba(255, 255, 255, 0.7)!important;
+  outline: none;
+}
+
+@media (min-width: 992px) {
+  .card img {
+    height: 200px;
+  }
 }

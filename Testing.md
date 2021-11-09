@@ -46,6 +46,11 @@ The source code for the project can be viewed at [github](https://github.com/jam
 - The icons remain centered on all screen sizes.
 - The Copyright Info text stays under the icons to the left side of the screen.
 
+
+#### Home Page Tests
+
+
+
 #### Further Testing
 
 

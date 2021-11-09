@@ -91,6 +91,10 @@
     - GitPod was used as my Editor/ Development Environment.
 * [GitHub:](https://github.com/)
     - GitHub is used to store the projects code with version control.
+* [Font Awesome:](https://fontawesome.com/)
+    - Font Awesome was used throughout to add icons for a more pleasing UX.
+* [Slick Carousel:](https://kenwheeler.github.io/slick/)
+    - Used for the home page carousel to make it responsive (3 items for large screens, 1 for smaller screens).
 
 ## Testing
 
@@ -99,5 +103,11 @@
 ## Credits
 ### Media
 - [Free Logo Design](https://www.freelogodesign.org/)   -   Created the Company logo.
-
+- [Photo by Karolina Grabowska from Pexels](https://www.pexels.com/photo/a-red-sale-tags-on-red-and-black-background-5625008/)
+- [Photo by Anthony from Pexels](https://www.pexels.com/photo/xbox-one-controller-beside-three-xbox-one-cases-139038/)
+- [Photo by Andrea Piacquadio from Pexels](https://www.pexels.com/photo/man-wearing-white-virtual-reality-goggles-834949/)
+- [Image by ZMorph3D from Pixabay](https://pixabay.com/photos/3d-printing-3d-technology-tech-3758154/)
 ### Acknowledgements
+
+
+
