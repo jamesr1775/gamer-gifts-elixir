@@ -1,7 +1,9 @@
 html {
     height: 100%;
 }
-
+main{
+    min-height: 70vh;
+}
 /************************* NavBar *************************/
 .bg-navbar{
     background-color: #2D2D3C ;
@@ -25,10 +27,9 @@ html {
 .bg-footer{
     background-color: #2D2D3C;
 }
-
-.footer {
-    position: absolute;
-    bottom: 0;
+footer {
+    margin-top: 20px;
+    height: 120px;
     width: 100%;
     color: #863AFF;   
 }

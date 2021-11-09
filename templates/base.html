@@ -109,13 +109,11 @@
             
         {% block page_header %}
         {% endblock %}
-    
-        {% block content %}
-        {% endblock %}
-    
-        {% block postloadjs %}
-        {% endblock %}
-
+        
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
         <!-- Footer Social Links & Copyright -->
         <footer class="footer bg-footer">
             <div class="container">
@@ -145,6 +143,8 @@
                 </div>
             </div>
         </footer>
+        {% block postloadjs %}
+        {% endblock %}
     </body>
 
 

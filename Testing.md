@@ -62,6 +62,7 @@ The source code for the project can be viewed at [github](https://github.com/jam
 
 
 ### Bugs and Issues Resolved
+- Having trouble with content appearing over/under the footer, found some information that helped from [stackoverflow](https://stackoverflow.com/questions/19330611/fixed-footer-in-bootstrap) where I was suggested to use 70 or 100vh for the content block.
 
 ### Unsolved Bugs
 Currently there are no known bugs.
