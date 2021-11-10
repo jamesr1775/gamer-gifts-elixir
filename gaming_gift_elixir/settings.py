@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-1#d7==!$w=41)nkw7tocb#4o1i8ey83#zcso6q8ey8x_ap-2j2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['gaming-gifts-elixir.herokuapp.com', 'localhost']
 
 
 # Application definition
