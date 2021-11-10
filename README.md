@@ -95,10 +95,122 @@
     - Font Awesome was used throughout to add icons for a more pleasing UX.
 * [Slick Carousel:](https://kenwheeler.github.io/slick/)
     - Used for the home page carousel to make it responsive (3 items for large screens, 1 for smaller screens).
+* [Amazon Web Services](https://aws.amazon.com/)
+    - Used to store static files and images when deployed to heroku.
+* [ezgif](https://ezgif.com/video-to-gif)
+    - Used to generate gifs used throughout testing, readme and tutorial.
 
 ## Testing
 
 ## Deployment
+
+### Creating your own local copy of the source code
+- To get a copy of this repo, go to [Gaming Gifts Elixir](https://github.com/jamesr1775/gamer-gifts-elixir), make sure your logged in. You can either 
+    - Click the fork button which will create a copy of the repo into your account which is located in the top right hand corner of the link above.
+    - If you have git installed on your machine, you can clone the repo with the command
+        - git clone https://github.com/jamesr1775/gamer-gifts-elixir
+    - Download the zip file of the source code by clicking on the "Code" drop down button located in the top right and clicking "Download Zip"
+### Running locally
+- In order to run this application locally you must have the following installed on your machine.
+    - An Integrated Development Environment such as [Pycharm](https://www.jetbrains.com/pycharm/) or [Visual Studio Code](https://code.visualstudio.com/)
+    - [Python3](https://www.python.org/downloads/)
+    - [Git](https://github.com/git-guides/install-git)
+    - [PIP](https://pip.pypa.io/en/stable/installation/)
+- The next step is to install everything listed in the requirements.txt document of the repo. To do that run the command in terminal of the IDE with the project opened:
+    - pip -r requirements.txt.
+
+### Using Heroku to deploy an application
+1. A requirements.txt file should be created and kept updated, you can use the terminal command 
+    - pip3 freeze > requirements.txt.
+    - This project already has one.
+2. A Procfile is also required and can be create with the terminal command 
+    - echo web: gunicorn your_heroku_app_name.wsgi:application > Procfile.
+    - replace the your_heroku_app_name with your correct app name.
+
+3. Commit these files to your repo if they are not already committed.
+4. Log in to your [Heroku](https://www.heroku.com/) account
+5. Select New button and then select to create a new app.
+6. Give your application a name and choose a region located nearest to you.
+7. Make sure the correct repo is linked and is selecting the correct branch on your git repository.
+8. A database for the static files is required to smoother deployment to heroku. Setup/ Create a new AWS account here [Amazon Web Services](https://aws.amazon.com/).
+    - In the search bar once logged in search for S3 and click S3 services. 
+    - Create a new bucket to be used for your heroku app choosing a region close to you.
+    - Allow public access to this bucket before clicking create and then click create.
+    - Navigate to the permissions tab of your new bucket and add the following CORS(Cross-origin resource sharing) config:
+        ```
+            [
+                {
+                    "AllowedHeaders": [
+                        "Authorization"
+                    ],
+                    "AllowedMethods": [
+                        "GET"
+                    ],
+                    "AllowedOrigins": [
+                        "*"
+                    ],
+                    "ExposeHeaders": []
+                }
+            ]       
+        ```
+    - Now your bucket needs a policy so click on the create / edit policy button and then on the page that follows click the policy generator button.
+    - Select the S3 bucket policy from the drop down tab, then select the get Object from the actions drop down menu
+    - Copy the generated ARN (Amazon Resource Name) text from the previous screen with the policy generator button and paste it into the ARN field on the policy generator page. Then click create policy. 
+    - Copy the generated policy text into the prior screens bucket policy field.
+    - Add a "/*" to the ARN name in the resource field and then click save. 
+    - The policy should look like the following:
+    ```
+    {
+        "Version": "2012-10-17",
+        "Id": "Policy Number ... ",
+        "Statement": [
+            {
+                "Sid": "sid ...",
+                "Effect": "Allow",
+                "Principal": "*",
+                "Action": "s3:GetObject",
+                "Resource": "arn:aws:s3:::gaming-gifts-elixir/*"
+            }
+        ]
+    }
+    ```
+    - The last step is now to create a user and a group that has access to the s3 bucket.
+    - Search for IAM in the search bar in AWS page and click Identity and Access Management.
+    - Click the create a new group and create your new group for this project.
+    - Give your new group a policy by clicking the the policies tab and create a policy with the  
+    the import managed policy and search for and add the S3 Full access policy. Give the policy a name and create it.
+    - Attach the policy to the new group you create with the IAM. 
+    - Create a new user that will be added to the new group. Give them programmatic access when creating the new user.
+    - When added to the group you will now have a CSV file to be downloaded with the AWS secret key Id and password that will be used in the next steps (step 10). Store this CSV safely as you may only download it once.
+9. Click the settings button of the app and click the reveal config variables button.
+10. Enter the following config variables:
+
+| Key | Value |
+ --- | ---
+SECRET KEY | `<your_secret_key>`
+AWS_ACCESS_KEY_ID | `<your_aws_access_key_id>`
+AWS_SECRET_ACCESS_KEY | `<your_aws_access_key>`
+USE_AWS | True
+
+11. Connecting to the S3 bucket the following should be added to the settings.py file of your django project. This is already to this project if you cloned the repo from the main branch.
+    ```
+        if 'USE_AWS' in os.environ:
+            AWS_STORAGE_BUCKET_NAME = 'gaming-gifts-elixir'
+            AWS_S3_REGION_NAME = 'eu-west-1'
+            AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+            AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+            AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+            STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+            STATICFILES_LOCATION = 'static'
+            DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+            MEDIAFILES_LOCATION = 'media'
+
+            STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+            MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+    ```
+12. Your app should be ready for deployment now so click on Deploy button on the your heroku app page.
+13. Enable automatic deployment so new changes get deployed automatically.
 
 ## Credits
 ### Media
