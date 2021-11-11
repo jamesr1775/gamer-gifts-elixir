@@ -3,7 +3,9 @@ html {
 }
 main{
     min-height: 70vh;
+    padding: 10px;
 }
+
 /************************* NavBar *************************/
 .bg-navbar{
     background-color: #2D2D3C ;
@@ -28,7 +30,6 @@ main{
     background-color: #2D2D3C;
 }
 footer {
-    margin-top: 20px;
     height: 120px;
     width: 100%;
     color: #863AFF;   

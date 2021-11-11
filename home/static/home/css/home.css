@@ -1,3 +1,8 @@
+main{
+    background: url('/media/images/hero-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
 /*************** Carousel Cards ***************/
 .cards-wrapper {
 	display: flex;
