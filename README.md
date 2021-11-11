@@ -78,6 +78,13 @@
 ### Features to implement in the future
 
 ### Database Design
+The 3 main models used are below
+1. User Profile
+2. Products
+3. Checkout / Orders
+
+The full data schema and relations is posted in the image:
+<div align="center"><img src="static/read-me/data_schema.png" alt="Site Logo"></div>
 
 
 ## Technologies Used
@@ -99,7 +106,8 @@
     - Used to store static files and images when deployed to heroku.
 * [ezgif](https://ezgif.com/video-to-gif)
     - Used to generate gifs used throughout testing, readme and tutorial.
-
+* [dbdiagram.io](https://dbdiagram.io/)
+    - Used to create/design the database schema for this project.
 ## Testing
 
 ## Deployment
@@ -221,6 +229,7 @@ USE_AWS | True
 - [Image by ZMorph3D from Pixabay](https://pixabay.com/photos/3d-printing-3d-technology-tech-3758154/)
 - [Photo by Ross Sneddon on Unsplash](https://unsplash.com/photos/sWlDOWk0Jp8)
 - [Photo by AbsolutVision on Unsplash](https://unsplash.com/photos/82TpEld0_e4)
+- [Photo by Luis Villasmil on Unsplash](https://unsplash.com/photos/ITFwHdPEED0)
 ### Acknowledgements
 
 
