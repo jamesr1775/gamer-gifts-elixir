@@ -7,5 +7,6 @@ def all_products(request):
     products = Product.objects.all()
     context = {
         'products': products,
+        'star_loop': range(1, 6),
     }
     return render(request, 'products/products.html', context)

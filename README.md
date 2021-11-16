@@ -230,7 +230,6 @@ USE_AWS | True
 - [Photo by Ross Sneddon on Unsplash](https://unsplash.com/photos/sWlDOWk0Jp8)
 - [Photo by AbsolutVision on Unsplash](https://unsplash.com/photos/82TpEld0_e4)
 - [Photo by Luis Villasmil on Unsplash](https://unsplash.com/photos/ITFwHdPEED0)
+
 ### Acknowledgements
-
-
-
+- [1] This answered question helped me with the jquery for styling the rating stars based on fractional rating [stackoverflow](https://stackoverflow.com/questions/37562892/jquery-font-awesome-star-rating-default-value/37563393)
