@@ -1,0 +1,22 @@
+.product-image{
+    height: 400px;
+}
+.product-card{
+    height: 100%;
+    border: none;
+    text-align: center;
+}
+
+@media (max-width: 992px) {
+    .product-image{
+        height: 250px;
+    }
+}
+
+@media (max-width: 575px) {
+    .product-image{
+        width: 280px;
+        position: relative;
+        left: calc(50% - 140px);
+    }
+}
