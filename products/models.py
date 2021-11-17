@@ -18,8 +18,8 @@ class Category(models.Model):
 
 class Product(models.Model):
     class Product_status(models.TextChoices):
-        LOWSTOCK = "Low Stock < 20",
-        INSTOCK = "In Stock > 20",
+        LOWSTOCK = "Low Stock",
+        INSTOCK = "In Stock",
         OUTOFSTOCK = "Out of Stock"
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
