@@ -19,8 +19,10 @@
     <div class="row">
         {% for product in products %}
             <div class="col-sm-6 col-md-4 col-xl-4 mb-3">
-                <div class="card product-card">                        
-                    <img class="card-img-top product-image img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                <div class="card product-card">
+                    <a href="{% url 'product_detail' product.id %}">              
+                        <img class="card-img-top product-image img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                    </a>
                     <div class="card-body">
                         <p class="card-text product-name mt-auto">{{ product.name }}</p>
                         
