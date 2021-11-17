@@ -1,0 +1,652 @@
+[
+    {
+        "pk":1,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg340155",
+            "name":"Nintendo Controller Men's T-Shirt",
+            "description":"Short sleeve t-shirt, Wear the Nintendo controller on this tee. This will keep you loyal to the brand.",
+            "price":19.99,
+            "category":1,
+            "product_rating":4.0,
+            "image":"4542267725_7d2bbd96f5_o.jpg"
+        }
+    },
+    {
+        "pk":2,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg600425",
+            "name":"Video Gamer Controller T-Shirt Boys & Girls Retro Tee",
+            "description":"Up your fashion game a notch while proclaiming your love of video gaming with this t-shirt. Designed and branded by Us.",
+            "price":19.99,
+            "category":1,
+            "product_rating":4.2,
+            "image":"5991887324_c1ef92ef37_c.jpg"
+        }
+    },
+    {
+        "pk":3,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg730010",
+            "name":"Paladone Game Boy Heat Changing Coffee Mug - For Gamers and Coffee Enthusiasts",
+            "description":"Enjoy retro refreshment while gaming with this Nintendo Game Boy heat change mug. Simply add a hot drink to see the screen of the classic handheld console load up with a game.",
+            "price":14.99,
+            "category":2,
+            "product_rating":4.7,
+            "image":"24136902398_82b9ec8090_c.jpg"
+        }
+    },
+    {
+        "pk":4,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg730011",
+            "name":"Super Mario Coffee Mug, Porcelain, Multi-Colour",
+            "description":"Amazing super Mario themed mug, the perfect gift for super Mario fans. High quality artwork and memorabilia.",
+            "price":14.99,
+            "category":2,
+            "product_rating":3.8,
+            "image":"43725735875_7ef38b07f9_c.jpg"
+        }
+    },
+    {
+        "pk":5,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg111605",
+            "name":"House Stark Tankard Game of Thrones Mug 20cm Black",
+            "description":"Amazing Game of Thrones themed mug, the perfect gift for GOT fans. High quality artwork and memorabilia. Dishwasher and Microwave Safe",
+            "price":16.99,
+            "category":2,
+            "product_rating":5.0,
+            "image":"12916512504_0eef57f69e_o.jpg"
+        }
+    },
+    {
+        "pk":6,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg260206",
+            "name":"Pacman Men's T-Shirt Classic Action Scene Adults Top",
+            "description":"Add some retro style to your day with this Pacman Classic Action Scene men’s t-shirt! Perfect for gaming fans and retro fans alike this awesome official t-shirt sees a cool classic design from the arcade game.",
+            "price":21.99,
+            "category":1,
+            "product_rating":4.7,
+            "image":"3473311953_1704223ee8_c.jpg"
+        }
+    },
+    {
+        "pk":7,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg440521",
+            "name":"My Life is A Game Mens T-Shirt",
+            "description":" All of us like to either watch TV or play video games when we want to relax. Show off your gamer geek with this gaming design. Makes a great gamer birthday gift for your teenage boy or for the adult who just quit hasn't grown out of gaming yet.",
+            "price":16.99,
+            "category":1,
+            "product_rating":4.1,
+            "image":"183465320_3bf3ed11d7_c.jpg"
+        }
+    },
+    {
+        "pk":8,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg601115",
+            "name":"Nuclear Capsule Gift Mug",
+            "description":"High Quality Ceramic Mug Which is Dishwasher and Microwave Safe! Comes Carefully Packaged to Prevent Breakage in Transport. The perfect gift for that tea or coffee loving person",
+            "price":22.99,
+            "category":2,
+            "product_rating":4.5,
+            "image":"47727556351_b17d1e1e73_c.jpg"
+        }
+    },
+    {
+        "pk":9,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg690715",
+            "name":"Overwatch Character Action Figure Widowmaker Q Version Model Doll Toys Collection",
+            "description":"Made of environmentally friendly PVC materials, hand-made, exquisite and vivid appearance. It is the best gift for Overwatch fans",
+            "price":10.99,
+            "category":3,
+            "product_rating":3.6,
+            "image":"33848483408_c8f149c175_c.jpg"
+        }
+    },
+    {
+        "pk":10,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg701115",
+            "name":"Game Of Thrones: A Feast of Ice and Fire - The Official Companion Cookbook ",
+            "description":"Ever wonder what it's like to attend a feast at Winterfell? Wish you could split a lemon cake with Sansa Stark, scarf down a pork pie with the Night's Watch, or indulge in honeyfingers with Daenerys Targaryen? Well don't anymore with this book!",
+            "price":24.99,
+            "category":2,
+            "product_rating":4.4,
+            "image":"12916513134_3208d65b24_e.jpg"
+        }
+    },
+    {
+        "pk":11,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg761055",
+            "name":"Breaking Bad LED Coaster Light Up Cup Mat",
+            "description":"Colorful and gorgeous, safety and environmental protected, create a cool inviting retro space with these coasters.",
+            "price":8.99,
+            "category":2,
+            "product_rating":2.0,
+            "image":"12916192043_b0d16005a6_o.jpg"
+        }
+    },
+    {
+        "pk":12,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg820069",
+            "name":"Men's Pac-Man  Tshirt Game Over Man Ss Black",
+            "description":"Add some retro style to your day with this Pacman Classic Action Scene men’s t-shirt! Perfect for gaming fans and retro fans alike this awesome official t-shirt sees a cool classic design from the arcade game.",
+            "price":19.99,
+            "category":1,
+            "product_rating":4.3,
+            "image":"5991330131_8644858baa_c.jpg"
+        }
+    },
+    {
+        "pk":13,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg820147",
+            "name":"Zelda Characters Close Up Print, Multicoloured, 61 x 91.5 cm",
+            "description":"Everyone has a favorite video game. Most people would have Zelda close to their hearts. Liven up your gaming space with this amazing high quality poster on your wall or wardrobe.",
+            "price":20.0,
+            "category":2,
+            "product_rating":3.8,
+            "image":"5771410044_d1965ab13a_c.jpg"
+        }
+    },
+    {
+        "pk":14,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg910572",
+            "name":"Rock, Paper, Scissors, Lizard, Spock Ceramic Mug",
+            "description":"Rock, Paper, Scissors, Lizard, Spock Mug Game Covering Both Sides. 10 oz Ceramic Mug  that is Dishwasher & Microwave safe. Why not drink coffee and challenge a friend to this better version of a classic.",
+            "price":20.99,
+            "category":2,
+            "product_rating":4.6,
+            "image":"12916100155_2ac80e8a4f_z.jpg"
+        }
+    },
+    {
+        "pk":15,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg990740",
+            "name":"Diablo Lord of Desctruction Painted Game Model",
+            "description":"Diablo is death incarnate, a towering war machine whose fear and fire will destroy anyone who gets in his path. This model is already vividly painted and is ready to impress anyone to gaze upon it.",
+            "price":49.99,
+            "category":3,
+            "product_rating":5.0,
+            "image":"1598206175_f1d1900015_c.jpg"
+        }
+    },
+    {
+        "pk":16,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg050248",
+            "name":"Controller - Piano White/Gold Buttons (Xbox One)",
+            "description":"Experience the action like never before with new Impulse Triggers delivering fingertip vibration feedback, so you can feel every jolt and crash in high definition (in supported games). Redesigned thumb sticks and an all new D-pad provide greater precision. Amazing gift for Xbox Gamers",
+            "price":35.99,
+            "category":4,
+            "product_rating":4.4,
+            "image":"pexels-fox-1445238.jpg"
+        }
+    },
+    {
+        "pk":17,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg070787",
+            "name":"Warhammer - The Best Miniature Painting Desk",
+            "description":"Finding a space to work on your hobby is one of the bigger decisions you’ll make in the beginning. This desk is perfect to store supplies and concentrate the art and craft of miniature painting. Take your figurines to the next stage with this desk.",
+            "price":233.99,
+            "category":6,
+            "product_rating":4.2,
+            "image":"8567308533_6660c0f26d_o.jpg"
+        }
+    },
+    {
+        "pk":18,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg090182",
+            "name":"Games Workshop Warhammer AoS - Skaven Warlock Bombardier",
+            "description":"The Skaven are a race of man-sized anthropomorphic rat-creatures, a clan-based society in which the number 13 holds important significance, they are sneaky, conniving, selfish, cowardly and backstabbing. This model is perfect for Warhammer fans alike.",
+            "price":29.99,
+            "category":3,
+            "product_rating":4.9,
+            "image":"51663671207_219bc66148_c.jpg"
+        }
+    },
+    {
+        "pk":19,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg090186",
+            "name":"Halo Master Chief Movable Model Statue Decoration",
+            "description":"Features 1 Master Chief figure, 1 Assault Rifle Accessory & 1 Terrain stand. The Master Chief figure is fully articulated for maximum playability and posing possibility! Halo Fans will love this!",
+            "price":20.99,
+            "category":3,
+            "product_rating":4.0,
+            "image":"pexels-erik-mclean-5795433.jpg"
+        }
+    },
+    {
+        "pk":20,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg161326",
+            "name":"Star Wars The Child Talking Plush Toy with Character Sounds and Accessories",
+            "description":"Fans call him “Baby Yoda”, but this lovable character is known as the Child. Now you can become his protector with this cuddly plush toy from Star Wars. Includes live-action TV series-based character-inspired accessories that allow fans and collectors to imagine scenes from the Star Wars galaxy.",
+            "price":20.99,
+            "category":3,
+            "product_rating":4.5,
+            "image":"pexels-erik-mclean-9983799.jpg"
+        }
+    },
+    {
+        "pk":21,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg230723",
+            "name":"Halloween Snow Globe with Continuous Swirling Glitter",
+            "description":"Cute Halloween snow globe lantern is made of sturdy plastic with black glitter finish. Motor makes glitter swirl continuously in this LED light up snow globe lantern.",
+            "price":22.99,
+            "category":3,
+            "product_rating":4.4,
+            "image":"pexels-erik-mclean-9901504.jpg"
+        }
+    },
+    {
+        "pk":22,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg270936",
+            "name":"Apex Legends Gray and Orange Nerf Gun",
+            "description":"Gear up for battle with Nerf Elite 2.0 blasters that feature built-in customising capabilities so you can upgrade them and seize the advantage in Nerf competitions. The gun is modelled after Apex Legends Volt",
+            "price":54.99,
+            "category":3,
+            "product_rating":5.0,
+            "image":"pexels-erik-mclean-9727547.jpg"
+        }
+    },
+    {
+        "pk":23,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg360384",
+            "name":"Card Collectors Clear Plastic Cover Sleeve Dust Protector ID",
+            "description":"The sleeves are transparent and made of hard plastic, which protects your cards safely. Keep your most precious rarest cards of any collecting game pristine and perfect for ever.",
+            "price":10.99,
+            "category":3,
+            "product_rating":4.7,
+            "image":"pexels-erik-mclean-9661256.jpg"
+        }
+    },
+    {
+        "pk":24,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg440111",
+            "name":"Ambient Light Bar, 2 Pack Smart RGB Gaming Lamp Lighting",
+            "description":"The immersion lights add depth of color to your gaming or tv creating a more impressive visual experience, CURUK rgb light bar include 15 scene modes and 4 music modes, depth up to 16 million colors hue signe will give a colorful gaming environment.",
+            "price":30.0,
+            "category":4,
+            "product_rating":4.4,
+            "image":"pexels-erik-mclean-9515296.jpg"
+        }
+    },
+    {
+        "pk":25,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg540313",
+            "name":"Anime Groot Figure Guardians of The Galaxy 2 Tree Man",
+            "description":"Anime Groot Figure Guardians of The Galaxy 2 Tree Man Baby Sitting Ver Collectible Model Toys. Moisture-proof, high temperature and easy to clean",
+            "price":24.99,
+            "category":3,
+            "product_rating":3.7,
+            "image":"pexels-erik-mclean-4048093.jpg"
+        }
+    },
+    {
+        "pk":26,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg560513",
+            "name":"Slick White and Black Xbox One Game Controller",
+            "description":"Experience the action like never before with new Impulse Triggers delivering fingertip vibration feedback, so you can feel every jolt and crash in high definition (in supported games). Redesigned thumb sticks and an all new D-pad provide greater precision. Amazing gift for Xbox Gamers.",
+            "price":41.99,
+            "category":4,
+            "product_rating":4.4,
+            "image":"pexels-erik-mclean-9408470.jpg"
+        }
+    },
+    {
+        "pk":27,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg560948",
+            "name":"Joy-Con Pair Green/Yellow (Nintendo Switch)",
+            "description":"The two Joy-Con can be used stand-alone, one in each hand, or together to form a single controller by nesting them on either side of the Joy-Con holder. They can be attached to the main console for on-the-go use, or shared with a friend to enjoy two-player games in compatible games.",
+            "price":38.99,
+            "category":4,
+            "product_rating":4.1,
+            "image":"pexels-caleb-oquendo-7104772.jpg"
+        }
+    },
+    {
+        "pk":28,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg570628",
+            "name":"Creality Official Ender 3 Pro 3D Printer with Meanwell Power Supply",
+            "description":"Meanwell Power Supply: Ender 3 Pro comes with a UL Certified Meanwell power supply, protecting your printer from unexpected power surges, that can heat the hot bed to 110C in just 5 minutes.",
+            "price":149.99,
+            "category":4,
+            "product_rating":4.3,
+            "image":"printer-g43c957782_1280.jpg"
+        }
+    },
+    {
+        "pk":29,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg620308",
+            "name":"ELEGOO Saturn MSLA 3D Printers UV Photocuring LCD Resin 3D Printer",
+            "description":"Saturn 3D printer comes with an 8.9inch 4K Monochrome LCD with an HD resolution of 3840 x 2400, reducing the layer printing time to 2s-3s, which is 60% faster than Mars Pro yet still delivers outstanding printing results.",
+            "price":300.0,
+            "category":4,
+            "product_rating":4.6,
+            "image":"3d-printing-ge2eafb1e6_1280.jpg"
+        }
+    },
+    {
+        "pk":30,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg690115",
+            "name":"Voxelab Aquila 3D Printer with Removable Build Surface Plate",
+            "description":"Voxelab Aquila has classic appearance in integrated all-metal body. The power supply is concealed inside the machine to make it much safer and easier to assemble.",
+            "price":172.99,
+            "category":4,
+            "product_rating":4.1,
+            "image":"printing-press-gccfa782b1_1280.jpg"
+        }
+    },
+    {
+        "pk":31,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg690116",
+            "name":"Games Workshop - Warhammer 40,000 - Paints and Tools Set",
+            "description":"Building and painting models is a fun and exciting way to engage with the hobby, and it only gets more rewarding with time. You’ll need a few tools and a set of paints to get started, and this box includes the basics that will form the core of your hobby kit. ",
+            "price":29.99,
+            "category":3,
+            "product_rating":4.5,
+            "image":"paint-tube-g2c96cb46a_1280.jpg"
+        }
+    },
+    {
+        "pk":32,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg780391",
+            "name":"Yoshi & Mario Bros  – Super Mario Action Figures Toys",
+            "description":"Enjoy Mario, Luigi and Yoshi in a beautiful Super Mario Party action figure set. The premium Mario brothers action figures!With premium PVC material and amazing details.",
+            "price":18.99,
+            "category":3,
+            "product_rating":4.3,
+            "image":"pexels-pixabay-163036.jpg"
+        }
+    },
+    {
+        "pk":33,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg790542",
+            "name":"Oculus Quest 2 - Advanced All-in-One Virtual Reality Headset - 128 GB",
+            "description":"Oculus quest 2 is our most advanced all-in-one VR system yet. Every detail has been engineered to make virtual worlds adapt to your movements, letting you explore awe-inspiring games and experiences with unparalleled freedom. No PC or console required. Get the most out of each moment with blazing-fast performance and next-generation graphics..",
+            "price":158.99,
+            "category":4,
+            "product_rating":4.8,
+            "image":"pexels-eren-li-7241425.jpg"
+        }
+    },
+    {
+        "pk":34,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg831225",
+            "name":"Classic Mini Console: Super Nintendo System (Electronic Games)",
+            "description":"The Nintendo Classic Mini: Super Nintendo Entertainment System has the same look and feel of the original system only smaller and comes pre-loaded with 21 games.",
+            "price":199.99,
+            "category":4,
+            "product_rating":4.7,
+            "image":"pexels-mateusz-dach-4502978.jpg"
+        }
+    },
+    {
+        "pk":35,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg861402",
+            "name":"Numskull Pro Steering Wheel with Pedals and Gear Stick - For PlayStation",
+            "description":"Numskull Pro Steering Wheel with Pedals and Gear Stick - For PlayStation 3, PS4, PC, and Xbox One - Realistic Steering Wheel Controller Accessory for Console Car Racing Simulator Driving Games",
+            "price":79.99,
+            "category":4,
+            "product_rating":4.0,
+            "image":"pexels-tima-miroshnichenko-6499176.jpg"
+        }
+    },
+    {
+        "pk":36,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg910638",
+            "name":"Game Boy Advance SP AGS-001 Console",
+            "description":"Not just a superb way of allowing you to fold up Game Boy Advance SP for ultra-convenience when you're on the move. When opened up, the flip-top screen settles into the perfect angle for perfect play.",
+            "price":44.99,
+            "category":4,
+            "product_rating":4.6,
+            "image":"pexels-marko-blazevic-2708981.jpg"
+        }
+    },
+    {
+        "pk":37,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg950574",
+            "name":"Microphone Stand, URMI Heavy Duty Table Microphone Arm Stand with Dual Layered Mic Pop Filter ",
+            "description":"ALL-IN-ONE PROFESSSIONAL MICROPHONE ACCESSORIES: 1 x Professional Microphone Scissor Arm Stand, 1 x Mic Pop Filter, 1 x Table Mounting Clamp, 1 x professional 3/8''to 5/8''Metal Screw Adapter, 1 x Microphone Windscreen, easy to assemble and adjust. All the items you need for studio recording and live sound.",
+            "price":49.99,
+            "category":4,
+            "product_rating":4.0,
+            "image":"pexels-george-milton-6953872.jpg"
+        }
+    },
+    {
+        "pk":38,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg950576",
+            "name":"Phone Tripod EVERESTA 42 Inch 360 flexible Smartphone Tripod",
+            "description":"The weight of compact and lightweight aluminum tripod with Bluetooth wireless remote shutter for photographer to take picture within 30ft is only 0.42kg, which make easy to carry and store.",
+            "price":17.99,
+            "category":4,
+            "product_rating":3.4,
+            "image":"pexels-george-milton-6953860.jpg"
+        }
+    },
+    {
+        "pk":39,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg960062",
+            "name":"LED Strip Lights 20M Ultra-Long LED Lights Strip Music Sync, App Control with Remote",
+            "description":"Come with 44-key remote, 4-button control, and phone App available on Google Play and iOS App Store, you can adjust the brightness, change color, on/off the lights. Come with sensitive built-in mic, lights will pulsate and change colors along with the environmental sound and music when you set to music mode.",
+            "price":11.99,
+            "category":4,
+            "product_rating":3.8,
+            "image":"pexels-john-petalcurin-2115257.jpg"
+        }
+    },
+    {
+        "pk":40,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg960682",
+            "name":"Ergonomic Office Chair with Adjustable Armrest Lumbar Support, High-density Sponge Cushion",
+            "description":"YONISEE mesh desk chairs comes with a variety of adjustments that allows you to further customize your task chair for maximum comfort and support. Ideal for home office workstation, reception, meeting room and more.",
+            "price":131.99,
+            "category":6,
+            "product_rating":3.9,
+            "image":"trinity-nguyen-Kl8UEhnKn2E-unsplash.jpg"
+        }
+    },
+    {
+        "pk":41,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg960775",
+            "name":"Sigtua Computer Chair Ergonomic Gaming Chair Racing Heavy Duty Office Chairs",
+            "description":"Our computer racing heavy chair is built for long-lasting comfort. Wider than the average desk chair, and easily adjusted for height, the locking mechanism keeps the back upright and relieves the stress and pain brought on by other office chairs.",
+            "price":241.99,
+            "category":6,
+            "product_rating":4.5,
+            "image":"amr-taha-8-yUbqk3XqI-unsplash.jpg"
+        }
+    },
+    {
+        "pk":42,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg990736",
+            "name":"Corner Desk Office Desk for Home L-Shaped Desk Gaming Desk Large",
+            "description":"The overall size of the desk is 140×40×75cm+140×50×75cm. The spacious desktop is large enough to accommodate computer, laptop, printer, speaker and other electronic equipment.",
+            "price":218.99,
+            "category":6,
+            "product_rating":4.2,
+            "image":"guglielmo-basile-FOT822IZaY0-unsplash.jpg"
+        }
+    },
+    {
+        "pk":43,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg990746",
+            "name":"Centurion Supports ADONIS Gloss Walnut and Matte Black Legs Ergonomic Luxury Gaming Desk",
+            "description":"Luxurious multi-purpose desk suitable for any home or office. Suitable for daily use with a generous work surface. Walnut with stylish X-Frame Matte Black and rubber floor protectors on the feet. Smooth easy glide shallow single drawer tray. Sturdy frame and solid build ensures exceptional stability for your equipment",
+            "price":265.99,
+            "category":6,
+            "product_rating":4.6,
+            "image":"amr-taha-_an7SFyNHF0-unsplash.jpg"
+        }
+    },
+    {
+        "pk":44,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg111503",
+            "name":"Sony Playstation Boy's Snapback Black Baseball Cap",
+            "description":"Playstation cap for men and women - The PlayStation hat comes in one size. It is an awesome gamer gift! The stylish hat comes with an adjustable closure at the back for the perfect fit and is 100% cotten.",
+            "price":13.99,
+            "category":1,
+            "product_rating":4.1,
+            "image":"hello-i-m-nik-yUS-0B7MUTc-unsplash.jpg"
+        }
+    },
+    {
+        "pk":45,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg230059",
+            "name":"Star Wars Poster AT-AT Fighter (91,5cm x 61cm)",
+            "description":"Star wars at-at poster. Crafted by artisan printers using a tried and true technique to create vivid designs. Liven up your game room with this sophisticated, hand made, original star wars art pieces",
+            "price":30.0,
+            "category":2,
+            "product_rating":4.6,
+            "image":"pxfuel.com.jpg"
+        }
+    },
+    {
+        "pk":46,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg310089",
+            "name":"GB eye Gaming Eat Sleep Game Repeat Maxi Poster",
+            "description":"Do you want to create a funny game world atmosphere for your room? Our video game picture is very attractive to boys&man. Whenever you sees it, you will feel joy and fun all the time",
+            "price":15.99,
+            "category":2,
+            "product_rating":3.1,
+            "image":"controller-g6248053b1_1280.jpg"
+        }
+    },
+    {
+        "pk":47,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg610254",
+            "name":"Halo UNSC Pelican Dropship 6 Inch Replica",
+            "description":"The UNSC Vulture, also known as the AC-220 Gunship, is a heavy gunship used by the United Nations Space Command during the early years of the Human-Covenant War. The premier aerial combat vehicle for extended air-to-ground battles, the Vulture was originally produced to combat the rebel threat during the early years of the Insurrection.",
+            "price":48.99,
+            "category":3,
+            "product_rating":5.0,
+            "image":"2461948860_7e8ab23a1b_c.jpg"
+        }
+    },
+    {
+        "pk":48,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg650050",
+            "name":"Left 4 Dead Shirt, Hat and Poster Sticker Set",
+            "description":"On day one, Left 4 Dead 2 features more co operative campaigns, more campaigns and maps for the versus game modes than the original Left 4 Dead did, plus support for Survival Mode right out of the box. Show your true fan with this merchandise",
+            "price":34.99,
+            "category":1,
+            "product_rating":3.7,
+            "image":"3081473986_1256135c09_c.jpg"
+        }
+    },
+    {
+        "pk":49,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg821375",
+            "name":"3D Illusion Half-Life Poster Valve",
+            "description":"This is the perfect gift for the Half Life fan of the century. Hang this frame in your gaming room and cross your fingers for Half Life 3",
+            "price":20.99,
+            "category":2,
+            "product_rating":4.0,
+            "image":"3080617459_ece21bed8e_c.jpg"
+        }
+    },
+    {
+        "pk":50,
+        "model":"products.product",
+        "fields":{
+            "sku":"gg900522",
+            "name":"The Legend of Zelda T Shirt ",
+            "description":"A must-have for fans of the hit Nintendo video game series, this officially licensed Legend Of Zelda Runes Mens T-shirt is the perfect addition to your gamer wardrobe. Printed on a black mens t-shirt, the design features an awesome lore from the game.",
+            "price":25.99,
+            "category":1,
+            "product_rating":4.6,
+            "image":"173849778_bcddebf66e_c.jpg"
+        }
+    }
+]

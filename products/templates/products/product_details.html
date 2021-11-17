@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block extra_css %}    
+    <link rel="stylesheet" href="{% static 'css/custom_slick.css' %}">
+    <link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+            <div class="image-detail-container">
+                <img class="card-img-top product-image-detail img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">      
+            <h4 class="card-text mt-auto">{{ product.name }}</h4>
+            
+            <h5 class="card-text mt-3 text-muted">Product Description</h5>
+            
+            <p class="card-text">{{ product.description }}</p>
+            <p class="price-text">Price: ${{ product.price }}</p>
+            <p class="stock-text">Stock: {{ product.status }}</p>
+            {% include 'products/includes/star-rating.html' %}
+
+            <form class="form product-form" action="" method="POST">
+                {% csrf_token %}
+                <div class="form-row mt-3">
+                    {% with product.has_sizes as s %}
+                        {% if s %}
+                            <div class="col-12 mt-3">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <p class=""><strong>Size:</strong></p>
+                                    </div>
+                                    <div class="col-6">
+                                        <select class="form-control rounded-0" name="product_size" id='id_product_size'>
+                                            <option value="xs">XS</option>
+                                            <option value="s">S</option>
+                                            <option value="m" selected>M</option>
+                                            <option value="l">L</option>
+                                            <option value="xl">XL</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                        <div class="col-12 mt-3">
+                            <div class="row">
+                                <div class="col-3">
+                                    <p><strong>Quantity:</strong></p>
+                                </div>
+                                <div class="col-6">
+                                    <select class="form-control rounded-0" name="product_quantity" id='id_product_quantity'>
+                                        {% for i in product_quantity_loop %}
+                                            <option value="{{i}}">{{i}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 text-center">
+                            <a href="{% url 'products' %}" class="btn btn-return-products mt-5">
+                                <span class="icon">
+                                    <i class="fas fa-arrow-left"></i>
+                                </span>
+                                <span class="text-uppercase">Continue Shopping</span>
+                            </a>
+                            <input type="submit" class="btn btn-add-to-bag text-uppercase mt-5" value="Add to Bag">
+                        </div>
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                    {% endwith %}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% include 'products/includes/review-section.html' %}
+{% include 'products/includes/others-purchased-section.html' %}
+
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="{% static 'js/custom_slick.js' %}"></script>
+    <script src="{% static 'products/js/star_rating.js' %}"></script>
+{% endblock %}

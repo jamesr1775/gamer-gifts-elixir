@@ -68,6 +68,21 @@ The source code for the project can be viewed at [github](https://github.com/jam
     <img style="width:90%;"  src="static/read-me/test-gifs/test_home_page.gif" alt="Testing Bar Chart">
     </div>
 
+#### Products Page Tests
+
+##### All Products
+- On large screens and laptops the products page contains 3 products per row with their image, name, price and rating showing.
+- The images should adjust to not be distorted for different screen sizes.
+- The images in each row remain aligned and are the same heights.
+- The name, price and rating should remain under the image and hug the left side of the container they are in.
+- The text should remain aligned to the products text left and right of the product they belong to. (The price is aligned to price, rating aligned to other ratings in the same row)
+    <div><br/></div>
+    <div align="center">
+    <img style="width:90%;"  src="static/read-me/test-gifs/test_products_page.gif" alt="Testing Bar Chart">
+    </div>
+<!-- # TODO Test links when items hooked up to display the product detail pages -->
+
+
 
 <!-- # TODO Test links when items hooked up to display the correct pages -->
 
