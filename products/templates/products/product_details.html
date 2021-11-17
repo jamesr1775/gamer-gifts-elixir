@@ -24,25 +24,7 @@
             <p class="card-text">{{ product.description }}</p>
             <p class="price-text">Price: ${{ product.price }}</p>
             <p class="stock-text">Stock: {{ product.status }}</p>
-            <div class="star-rating text-muted mt-3" rating="{{ product.product_rating }}">
-
-                {% if product.product_rating %}
-                    <div class="rating-text">
-                        {{ product.product_rating|floatformat:1 }}/5.0
-                    </div>
-                    {% for i in star_loop %}
-                        {% if i > product.product_rating %}
-                            <i class="far fa-star mr-1" style="color:gold;"></i>
-                        {% else %}
-                            <i class="fas fa-star mr-1" style="color:gold;"></i>
-                        {% endif %}
-                    {% endfor %}
-                {% else %}
-                    <div class="rating-text">
-                        No Rating
-                    </div>
-                {% endif %}            
-            </div>
+            {% include 'products/includes/star-rating.html' %}
         </div>
     </div>
 </div>
@@ -50,26 +32,5 @@
 {% endblock %}
 
 {% block postloadjs %}
-    <script>
-        // [1] Helped me with having half stars for fractional ratings over 0.5
-        $( document ).ready(function() {
-            $('.star-rating').each(function (event) {
-                let rating = parseFloat($(this).attr('rating'));
-                var decimal = Math.floor(rating)
-                var fraction = rating%1
-                rating = parseFloat(rating)
-                if(rating % 1 > 0){
-                    if (fraction >= 0.5){
-                        $(this).find('i.fa-star').eq(decimal).removeClass('far');
-                        $(this).find('i.fa-star').eq(decimal).addClass('fas');
-                        $(this).find('i.fa-star').eq(decimal).addClass('fa-star-half-alt');
-                        $(this).find('i.fa-star').eq(decimal).css("color", "gold");
-                        $(this).find('i.fa-star').eq(decimal).removeClass('fa-star');
-                        
-                    }
-                }
-            });
-        });
-            
-    </script>
+    <script src="{% static 'products/js/star_rating.js' %}"></script>
 {% endblock %}

@@ -1,0 +1,20 @@
+<div class="star-rating text-muted" rating="{{ product.product_rating }}">
+
+    {% if product.product_rating %}
+        <div class="rating-text">
+            {{ product.product_rating|floatformat:1 }}/5.0
+        </div>
+        {% for i in star_loop %}
+            {% if i > product.product_rating %}
+                <i class="far fa-star mr-1" style="color:gold;"></i>
+            {% else %}
+                <i class="fas fa-star mr-1" style="color:gold;"></i>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        <div class="rating-text">
+            No Rating
+        </div>
+    {% endif %}
+    
+</div>
