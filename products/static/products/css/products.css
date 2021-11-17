@@ -43,6 +43,12 @@ i.fa-star-half {
     margin-left: -5px;
 }
 
+.btn-return-products, .btn-add-to-bag {
+    background: #2D2D3C;
+    color: white !important; /* use important to override link colors for <a> elements */
+    border: 1px solid black;
+}
+
 @media (max-width: 992px) {
     .product-image{
         height: 250px;
@@ -63,6 +69,12 @@ i.fa-star-half {
     .product-image-detail{
         height: 300px;
         width: 280px;
+    }
+}
+
+@media (max-width: 1075px) {
+    .btn-return-products, .btn-add-to-bag {
+        font-size: 14px;
     }
 }
 

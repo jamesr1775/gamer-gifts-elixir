@@ -17,6 +17,7 @@ def product_detail(request, product_id):
     context = {
         'product': product,
         'star_loop': range(1, 6),
+        'product_quantity_loop': range(1, 21),
     }
 
     return render(request, 'products/product_details.html', context)

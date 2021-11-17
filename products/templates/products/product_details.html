@@ -25,6 +25,57 @@
             <p class="price-text">Price: ${{ product.price }}</p>
             <p class="stock-text">Stock: {{ product.status }}</p>
             {% include 'products/includes/star-rating.html' %}
+
+            <form class="form product-form" action="" method="POST">
+                {% csrf_token %}
+                <div class="form-row mt-3">
+                    {% with product.has_sizes as s %}
+                        {% if s %}
+                            <div class="col-12 mt-3">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <p class=""><strong>Size:</strong></p>
+                                    </div>
+                                    <div class="col-6">
+                                        <select class="form-control rounded-0" name="product_size" id='id_product_size'>
+                                            <option value="xs">XS</option>
+                                            <option value="s">S</option>
+                                            <option value="m" selected>M</option>
+                                            <option value="l">L</option>
+                                            <option value="xl">XL</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                        <div class="col-12 mt-3">
+                            <div class="row">
+                                <div class="col-3">
+                                    <p><strong>Quantity:</strong></p>
+                                </div>
+                                <div class="col-6">
+                                    <select class="form-control rounded-0" name="product_quantity" id='id_product_quantity'>
+                                        {% for i in product_quantity_loop %}
+                                            <option value="{{i}}">{{i}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 text-center">
+                            <a href="{% url 'products' %}" class="btn btn-return-products mt-5">
+                                <span class="icon">
+                                    <i class="fas fa-arrow-left"></i>
+                                </span>
+                                <span class="text-uppercase">Continue Shopping</span>
+                            </a>
+                            <input type="submit" class="btn btn-add-to-bag text-uppercase mt-5" value="Add to Bag">
+                        </div>
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                    {% endwith %}
+                </div>
+            </form>
         </div>
     </div>
 </div>
