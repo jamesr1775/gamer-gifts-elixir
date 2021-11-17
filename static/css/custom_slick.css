@@ -1,0 +1,24 @@
+.slick-prev, .slick-next {
+	cursor: pointer;
+	color: rgba(255, 255, 255, 0.253)!important;
+	outline: none;
+	background: rgba(255, 255, 255, 0.253) !important;
+	height: 30px !important;
+	width: 30px !important;
+}
+.slick-prev{
+	left: 5px !important;
+	z-index: 9999;
+} 
+.slick-next{
+	right: 5px !important;
+}
+.slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus {
+	color: rgba(255, 255, 255, 0.250)!important;
+	outline: none;
+	background: rgba(255, 255, 255, 0.250) !important;
+}
+.slick-dots li button:before {
+	color: rgba(255, 255, 255, 0.7)!important;
+	outline: none;
+}
