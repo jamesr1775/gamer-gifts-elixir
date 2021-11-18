@@ -17,21 +17,31 @@
         </div>
     </div>
     <div class="row">
-        {% for product in products %}
+        {% if products|length > 0 %}
+            {% for product in products %}
+                <div class="col-sm-6 col-md-4 col-xl-4 mb-3">
+                    <div class="card product-card">
+                        <a href="{% url 'product_detail' product.id %}">              
+                            <img class="card-img-top product-image img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        </a>
+                        <div class="card-body">
+                            <p class="card-text product-name mt-auto">{{ product.name }}</p>
+                            
+                        </div>
+                        <p class="price-text">${{ product.price }}</p>
+                        {% include 'products/includes/star-rating.html' %}
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
             <div class="col-sm-6 col-md-4 col-xl-4 mb-3">
                 <div class="card product-card">
-                    <a href="{% url 'product_detail' product.id %}">              
-                        <img class="card-img-top product-image img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
-                    </a>
                     <div class="card-body">
-                        <p class="card-text product-name mt-auto">{{ product.name }}</p>
-                        
+                        <p class="card-text product-name mt-auto text-center">No Products Found.</p>
                     </div>
-                    <p class="price-text">${{ product.price }}</p>
-                    {% include 'products/includes/star-rating.html' %}
                 </div>
             </div>
-        {% endfor %}     
+        {% endif %}
     </div>      
 </div>
 
