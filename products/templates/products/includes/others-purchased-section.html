@@ -6,7 +6,7 @@
             <div id="recommendationsCarousel" class="card carousel-container mt-3">
                 <div class="slider slider-nav">
                     {% for product_recommended in products_others_bought %}
-                        <div class="col-sm-6 col-md-4 col-xl-4 mb-3">
+                        <div class="col-sm-6 col-md-4 col-xl-4 mb-3 mt-3">
                             <div class="card others-bought-product-card">
                                 <a href="{% url 'product_detail' product_recommended.id %}">              
                                     <img class="card-img-top product-image img-fluid" src="{{ product_recommended.image.url }}" alt="{{ product_recommended.name }}">

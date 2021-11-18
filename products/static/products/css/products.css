@@ -61,26 +61,9 @@ i.fa-star-half {
     border: 1px solid black;
 }
 
-
-.cards-wrapper {
-	display: flex;
-	justify-content: center;
-}
-.card img {
-	max-width: 100%;
-	max-height: 100%;
-	border-radius: 5%;
-}
-.card {
-	height: auto;
-	/* width: 100%; */
-	margin: 0 0.5em;
+#recommendationsCarousel .card {
 	box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
 	border: 1px;
-	border-radius: 5%;
-}
-.card-body{
-  	padding: 0;
 }
 
 .slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus {
@@ -97,7 +80,7 @@ i.fa-star-half {
 
 @media (min-width: 992px) {
 	#recommendationsCarousel .card img {
-		height: 200px;
+		height: 300px;
 	}
 }
 
