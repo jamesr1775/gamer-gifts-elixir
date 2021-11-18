@@ -1,3 +1,10 @@
+.sort-products-container{
+    display:flex;
+    float: right;
+}
+.num-products-text{
+    font-size: 19px;
+}
 .product-image, 
 .product-image-detail{
     height: 400px;
@@ -96,6 +103,10 @@ i.fa-star-half {
         width: 280px;
         position: relative;
         left: calc(50% - 140px);
+    }
+    .num-products-text{
+        font-size: 15px;
+        margin: 1rem 0 !important;
     }
 }
 @media (max-width: 767px) {

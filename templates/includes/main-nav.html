@@ -16,8 +16,12 @@
                 Gifts For Him
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="gifts-for-him-link">
-                <a href="" class="dropdown-item">Items 0</a>
-                <a href="" class="dropdown-item">Items 1</a>
+                <a href="{% url 'products' %}?category=clothing&gender=male" class="dropdown-item">Clothing</a>
+                <a href="{% url 'products' %}?category=electronics&gender=male" class="dropdown-item">Electronics</a>
+                <a href="{% url 'products' %}?category=apparel&gender=male" class="dropdown-item">Apparel</a>
+                <a href="{% url 'products' %}?category=figurine&gender=male" class="dropdown-item">Figurines</a>
+                <a href="{% url 'products' %}?category=book&gender=male" class="dropdown-item">Books</a>
+                <a href="{% url 'products' %}?category=furniture&gender=male" class="dropdown-item">Furniture</a>
             </div>
         </li>
 
@@ -26,8 +30,12 @@
                 Gifts For Her
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="gifts-for-her-link">
-                <a href="" class="dropdown-item">Items 0</a>
-                <a href="" class="dropdown-item">Items 1</a>
+                <a href="{% url 'products' %}?category=clothing&gender=female" class="dropdown-item">Clothing</a>
+                <a href="{% url 'products' %}?category=electronics&gender=female" class="dropdown-item">Electronics</a>
+                <a href="{% url 'products' %}?category=apparel&gender=female" class="dropdown-item">Apparel</a>
+                <a href="{% url 'products' %}?category=figurine&gender=female" class="dropdown-item">Figurines</a>
+                <a href="{% url 'products' %}?category=book&gender=female" class="dropdown-item">Books</a>
+                <a href="{% url 'products' %}?category=furniture&gender=female" class="dropdown-item">Furniture</a>
             </div>
         </li>
         <li class="nav-item dropdown">
@@ -35,8 +43,8 @@
                 3d Printed Gifts
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="three-d-print-gifts-link">
-                <a href="" class="dropdown-item">Items 0</a>
-                <a href="" class="dropdown-item">Items 1</a>
+                <a href="{% url 'products' %}?category=threedprinters" class="dropdown-item">3D Printers</a>
+                <a href="{% url 'products' %}?category=threedprintedgifts" class="dropdown-item">3D Printed Gifts</a>
             </div>
         </li>
         <li class="nav-item dropdown">
@@ -44,13 +52,13 @@
                 Offers
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="offers-link">
-                <a href="" class="dropdown-item">Items 0</a>
-                <a href="" class="dropdown-item">Items 1</a>
+                <a href="{% url 'products' %}?category=offers" class="dropdown-item">Special Offers</a>
+                <a href="{% url 'products' %}?category=clearance" class="dropdown-item">Clearance</a>
             </div>
         </li>
         <li class="nav-item d-none d-md-block">
             <div class="mr-5">
-                <form method="GET" action="">
+                <form method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
                         <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
                         <div class="input-group-append">

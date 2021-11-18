@@ -233,3 +233,4 @@ USE_AWS | True
 
 ### Acknowledgements
 - [1] This answered question helped me with the jquery for styling the rating stars based on fractional rating [stackoverflow](https://stackoverflow.com/questions/37562892/jquery-font-awesome-star-rating-default-value/37563393)
+- [2] Used the javascript and html from the course for the sorting selector [Code-Institute GitHub](https://github.com/Code-Institute-Solutions/boutique_ado_v1)
