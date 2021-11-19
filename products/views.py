@@ -3,6 +3,7 @@ from django.conf import settings
 from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
+from django.contrib import messages
 from .models import Product, Category
 from .forms import ProductForm
 
@@ -78,6 +79,9 @@ def product_detail(request, product_id):
 
 def add_product(request):
     """ View to add product """
+    if not request.user.is_superuser:
+        messages.error(request, "Error, you do not have permission.")
+        return redirect(reverse('home'))
     form = ProductForm()
     template = 'products/add_product.html'
     context = {
