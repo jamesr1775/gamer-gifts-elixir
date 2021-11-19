@@ -113,6 +113,8 @@
                     {% with message.level as level %}
                         {% if level == 40 %}
                             {% include 'includes/toasts/toast-error.html' %}
+                        {% elif level == 25 %}
+                            {% include 'includes/toasts/toast-success.html' %}
                         {% endif %}
                     {% endwith %}
                 {% endfor %}
