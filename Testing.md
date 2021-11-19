@@ -93,6 +93,9 @@ The source code for the project can be viewed at [github](https://github.com/jam
 
 ### Bugs and Issues Resolved
 - Having trouble with content appearing over/under the footer, found some information that helped from [stackoverflow](https://stackoverflow.com/questions/19330611/fixed-footer-in-bootstrap) where I was suggested to use 70 or 100vh for the content block.
+- Initial test_products_detail_view was throwing a 404 error. Eventually figured out that the others_bought_ids in the view was throwing the exception as the 
+products_others_bought in the product created in the test case setUp function did not exist and thus trying to split an empty string in the product_detail view. 
+Fixed this by adding an if clause in the view.
 
 ### Unsolved Bugs
 Currently there are no known bugs.

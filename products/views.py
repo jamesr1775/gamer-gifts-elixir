@@ -59,7 +59,9 @@ def all_products(request):
 def product_detail(request, product_id):
     """ View to show a products details """
     product = get_object_or_404(Product, pk=product_id)
-    others_bought_ids = list(product.products_others_bought.split("_"))
+    others_bought_ids = []
+    if others_bought_ids:
+        others_bought_ids = list(product.products_others_bought.split("_"))
     products_others_bought = []
 
     for pid in others_bought_ids:

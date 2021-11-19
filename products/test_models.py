@@ -37,7 +37,7 @@ class TestProductModels(TestCase):
             name='Product 2',
             price='35.99',
         )
-        self.assertEqual(item.status, 'In Stock > 20')
+        self.assertEqual(item.status, 'In Stock')
 
     def test_product_default_hassizes(self):
         """Test default has sizes"""
