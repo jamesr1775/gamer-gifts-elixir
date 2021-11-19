@@ -18,7 +18,7 @@ class TestProductsView(TestCase):
                     price=25.99,
                     product_rating=4.60,
                     product_type="both",
-                    products_others_bought="1_5_10_15",
+                    products_others_bought="1_1",
                     status="In Stock",
                     image="173849778_bcddebf66e_c.jpg",
             )

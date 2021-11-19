@@ -102,7 +102,6 @@ i.fa-star-half {
     .product-image{
         width: 280px;
         position: relative;
-        left: calc(50% - 140px);
     }
     .num-products-text{
         font-size: 15px;

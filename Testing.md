@@ -35,11 +35,9 @@ The source code for the project can be viewed at [github](https://github.com/jam
 
 ##### Site Header Tests
 - The logo was tested that when it is pressed it returns / refreshes to the home page.
-
-    <div><br/></div>
-    <div align="center">
-    <img style="width:70%;"  src="static/readme-images/test-gifs/test-header.gif" alt="Test Header">
-    </div>
+- All the product navigation links work and bring the user to the correct products page with the correct products displayed depending on the category selected.
+- The nav menu links with a drop down menu should be easily clickable and the drop down menu stays open until another click occurs.
+- The search bar functions correctly and displays products related to the users search queries.
 
 ##### Site Footer Tests
 - The social media icons opens up the relevant social media platforms in a new tab.
@@ -75,16 +73,20 @@ The source code for the project can be viewed at [github](https://github.com/jam
 - The images should adjust to not be distorted for different screen sizes.
 - The images in each row remain aligned and are the same heights.
 - The name, price and rating should remain under the image and hug the left side of the container they are in.
-- The text should remain aligned to the products text left and right of the product they belong to. (The price is aligned to price, rating aligned to other ratings in the same row)
+- The text should remain aligned to the other products text, left and right of the product they belong to. (The price is aligned to price, rating aligned to other ratings in the same row)
     <div><br/></div>
     <div align="center">
     <img style="width:90%;"  src="static/read-me/test-gifs/test_products_page.gif" alt="Testing Bar Chart">
     </div>
-<!-- # TODO Test links when items hooked up to display the product detail pages -->
 
+##### Product Detail Pages
+- The image of a product on the products page should open up the products details page.
+- The description, name, rating, price, quantity, size, add to basket and continue shopping buttons should be displayed to the user on the right of the image on large/medium screens and should appear under the image on smart phones screens.
+- The continue shopping button should return the user back to the all products page.
+- The reviews and other customers purchased sections should be on separate rows under the item image and description.
 
-
-<!-- # TODO Test links when items hooked up to display the correct pages -->
+<!-- # TODO Reviews Section when implemented -->
+<!-- # TODO Test Add to basket when implemented -->
 
 
 #### Further Testing
