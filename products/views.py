@@ -130,3 +130,21 @@ def edit_product(request, product_id):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def delete_product(request, product_id):
+    """ View to add product """
+    template = 'products/delete_product.html'
+    if not request.user.is_superuser:
+        messages.error(request, "Error, you do not have permission.")
+        return redirect(reverse('products'))
+    product = get_object_or_404(Product, pk=product_id)
+    context = {
+        "product": product,
+    }
+    if request.method == 'POST':
+        messages.success(request, 'Successfully deleted product!')
+        product.delete()
+        return redirect(reverse('products'))
+    return render(request, template, context)

@@ -51,6 +51,12 @@
                             <p class="card-text product-name mt-auto">{{ product.name }}</p>
                             
                         </div>
+                        {% if request.user.is_superuser %}
+                            <div class="text-left">
+                                <a href="{% url 'edit_product' product.id %}">Edit</a>  |
+                                <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                            </div>
+                        {% endif %}
                         <p class="price-text">${{ product.price }}</p>
                         {% include 'products/includes/star-rating.html' %}
                     </div>
