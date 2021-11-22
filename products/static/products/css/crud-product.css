@@ -6,7 +6,7 @@
     width: 60%;
     text-align: left;
 }
-.add-product-btn{
+.crud-product-btn{
     background: #2D2D3C;
     color: white !important; /* use important to override link colors for <a> elements */
     border: 1px solid black;

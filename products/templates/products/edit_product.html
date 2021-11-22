@@ -3,7 +3,7 @@
 
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'products/css/add-product.css' %}">
+<link rel="stylesheet" href="{% static 'products/css/crud-product.css' %}">
 {% endblock %}
 
 
@@ -34,8 +34,8 @@
                         {% endif %}
                     {% endfor %}
                     <div class="text-center mt-5">
-                        <a class="btn rounded-0 add-product-btn" href="{% url 'products' %}">Cancel</a>
-                        <button class="btn rounded-0 add-product-btn" type="submit">Update Product</button>
+                        <a class="btn rounded-0 crud-product-btn" href="{% url 'products' %}">Cancel</a>
+                        <button class="btn rounded-0 crud-product-btn" type="submit">Update Product</button>
                     </div>
                 </form>
             </div>
