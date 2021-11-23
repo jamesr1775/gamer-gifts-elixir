@@ -89,6 +89,17 @@ The source code for the project can be viewed at [github](https://github.com/jam
 <!-- # TODO Test Add to basket when implemented -->
 
 
+##### Add Product
+- The form and headers should remain centered on the screen for all screen sizes. On smart phones and tablets the width changes to 100% instead of 60%.
+- The form text headings should remain to the left border of their input field boxes.
+- The choose file and image text remain centered under the last input text field box. 
+- The choose image box opens the users explorer for them to select and upload a file.
+- The cancel and add product button remain centered under the choose image button.
+- The cancel button returns the admin to the all products page.
+- The form validators work as expected and do not allow the admin to add the product if required inputs are wrong or missing. A popup should be displayed to the user if the add product button is pressed and the form is not valid.
+- If the form is valid the admin is brought to the newly created products detail page after clicking the add product button.
+- The cancel button returns the admin to the all products page.
+
 #### Further Testing
 
 
@@ -100,4 +111,4 @@ products_others_bought in the product created in the test case setUp function di
 Fixed this by adding an if clause in the view.
 
 ### Unsolved Bugs
-Currently there are no known bugs.
+If a product is added without an image, the website currently crashes.

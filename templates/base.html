@@ -52,7 +52,7 @@
                                     {% if request.user.is_superuser %}
                                         <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
                                     {% endif %}
-                                    <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                                    <a href="" class="dropdown-item">My Profile</a>
                                     <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                                 {% else %}
                                     <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
@@ -106,7 +106,21 @@
                 </nav>
             </div>
         </header>
-            
+        
+        {% if messages %}
+            <div class="toasts-message-container">
+                {% for message in messages %}
+                    {% with message.level as level %}
+                        {% if level == 40 %}
+                            {% include 'includes/toasts/toast-error.html' %}
+                        {% elif level == 25 %}
+                            {% include 'includes/toasts/toast-success.html' %}
+                        {% endif %}
+                    {% endwith %}
+                {% endfor %}
+            </div>
+        {% endif %}
+
         {% block page_header %}
         {% endblock %}
         
@@ -144,6 +158,9 @@
             </div>
         </footer>
         {% block postloadjs %}
+            <script type="text/javascript">
+                $('.toast').toast('show');
+            </script>
         {% endblock %}
     </body>
 

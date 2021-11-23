@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'products/css/crud-product.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="text-center">
+                <h2>Product Admin</h2>
+                <hr>
+            </div>
+        </div>
+    </div> 
+    <div class="row">
+        <div class="col-12">
+            <h4 class="text-center text-muted mt-3">Add Product</h4>
+            <div class="text-center add-product-form-container">
+                <form method="POST" action="{% url 'add_product' %}" class="form mb-2 add-product-form" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        {% if field.name != 'image' %}
+                            {{ field | as_crispy_field }}
+                        {% else %}
+                            <div class="div_id_image text-center">
+                                <p class="mt-4">Upload Image File</p>
+                                {{ field }}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    <div class="text-center mt-5">
+                        <a class="btn rounded-0 crud-product-btn" href="{% url 'products' %}">Cancel</a>
+                        <button class="btn rounded-0 crud-product-btn" type="submit">Add Product</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div> 
+</div>
+
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% endblock %}

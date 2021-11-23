@@ -12,6 +12,7 @@
 
 
 {% block content %}
+
 <div class="container-fluid">
     <div class="row">
 
@@ -29,7 +30,12 @@
             <p class="price-text">Price: ${{ product.price }}</p>
             <p class="stock-text">Stock: {{ product.status }}</p>
             {% include 'products/includes/star-rating.html' %}
-
+            {% if request.user.is_superuser %}
+                <div class="text-left">
+                    <a href="{% url 'edit_product' product.id %}">Edit</a>  |
+                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                </div>
+            {% endif %}
             <form class="form product-form" action="" method="POST">
                 {% csrf_token %}
                 <div class="form-row mt-3">
@@ -66,7 +72,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-12 text-center">
                             <a href="{% url 'products' %}" class="btn btn-return-products mt-5">
                                 <span class="icon">

@@ -3,6 +3,7 @@ from django.urls import reverse, resolve
 
 from django.shortcuts import get_object_or_404
 from .models import Product, Category
+from django.contrib.auth.models import User
 
 class TestProductsView(TestCase):
     
@@ -22,6 +23,8 @@ class TestProductsView(TestCase):
                     status="In Stock",
                     image="173849778_bcddebf66e_c.jpg",
             )
+        user = User.objects.create_user('TestUser', 'TestUser@test.com', 'password')
+        admin = User.objects.create_superuser('admin', 'admin@test.com', 'password', )
 
     # test all products view
     def test_products_page(self):
@@ -37,3 +40,31 @@ class TestProductsView(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "products/product_details.html")
 
+    # test add product redirect not logged in
+    def test_add_product_not_logged_in_redirect(self):
+        """Test product detail view"""
+        response = self.client.get(f'/products/add/')
+        url = "/accounts/login/?next=/products/add/"
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, url)
+
+    # test add product redirect logged in
+    def test_add_product_logged_in_redirect(self):
+        """Test product detail view"""
+        loginresponse = self.client.login(
+        username='TestUser', password='password')
+        self.assertTrue(loginresponse)
+        response = self.client.get(f'/products/add/')
+        url = "/products/"
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, url)
+
+    # test add product view with superuser
+    def test_add_product_superuser_logged_in_redirect(self):
+        """Test product detail view"""
+        loginresponse = self.client.login(
+        username='admin', password='password')
+        self.assertTrue(loginresponse)
+        response = self.client.get(f'/products/add/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "products/add_product.html")
