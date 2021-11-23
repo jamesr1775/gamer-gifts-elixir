@@ -4,7 +4,7 @@ from decimal import Decimal
 def shopping_bag_contents(request):
 
     bag_items = []
-    total = 1
+    total = 0
     product_count = 0
     delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
     grand_total = total + delivery
