@@ -8,8 +8,12 @@
                     {% for product_recommended in products_others_bought %}
                         <div class="col-sm-6 col-md-4 col-xl-4 mb-3 mt-3">
                             <div class="card others-bought-product-card">
-                                <a href="{% url 'product_detail' product_recommended.id %}">              
-                                    <img class="card-img-top product-image img-fluid" src="{{ product_recommended.image.url }}" alt="{{ product_recommended.name }}">
+                                <a href="{% url 'product_detail' product_recommended.id %}">       
+                                    {% if product_recommended.image %}
+                                        <img class="card-img-top product-image img-fluid" src="{{ product_recommended.image.url }}" alt="{{ product_recommended.name }}">
+                                    {% else %}
+                                        <img class="card-img-top product-image img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product_recommended.name }}">
+                                    {% endif %}
                                 </a>
                                 <div class="card-body p-2">
                                     <p class="card-text others-bought-product-name mt-auto overflow-hidden">{{ product_recommended.name }}</p>

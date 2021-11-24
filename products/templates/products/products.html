@@ -45,7 +45,11 @@
                 <div class="col-sm-6 col-md-4 col-xl-4 mb-3">
                     <div class="card product-card">
                         <a href="{% url 'product_detail' product.id %}">              
-                            <img class="card-img-top product-image img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                            {% if product.image %}
+                                <img class="card-img-top product-image img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                            {% else %}
+                                <img class="card-img-top product-image img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                            {% endif %}
                         </a>
                         <div class="card-body">
                             <p class="card-text product-name mt-auto">{{ product.name }}</p>

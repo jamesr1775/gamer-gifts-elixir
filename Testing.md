@@ -90,6 +90,8 @@ The source code for the project can be viewed at [github](https://github.com/jam
 
 
 ##### Add Product
+- Admin users can access this page by going to the product management section of My account drop down or by modifying the url.
+- Non super users or logged out users should not be able to access the add products form.
 - The form and headers should remain centered on the screen for all screen sizes. On smart phones and tablets the width changes to 100% instead of 60%.
 - The form text headings should remain to the left border of their input field boxes.
 - The choose file and image text remain centered under the last input text field box. 
@@ -100,6 +102,28 @@ The source code for the project can be viewed at [github](https://github.com/jam
 - If the form is valid the admin is brought to the newly created products detail page after clicking the add product button.
 - The cancel button returns the admin to the all products page.
 
+##### Edit Product
+- Admin users can access this page by clicking the edit button on the products and products details pages.
+- Non super users or logged out users should not be able to access the edit products form.
+- All fields of the form should be prefilled in with the selected products fields in their correct input box.
+- The form and headers should remain centered on the screen for all screen sizes. On smart phones and tablets the width changes to 100% instead of 60%.
+- The form text headings should remain to the left border of their input field boxes.
+- The choose file and image text remain centered under the last input text field box. 
+- The choose image box opens the users explorer for them to select and upload a file.
+- The cancel and update product button remain centered under the choose image button.
+- The cancel button returns the admin to the all products page.
+- The form validators work as expected and do not allow the admin to update the product if required inputs are wrong or missing. A popup should be displayed to the user if the update product button is pressed and the form is not valid.
+- If the form is valid the admin is brought to the updated products detail page after clicking the update product button.
+- The clear checkbox if checked should remove the current image of the product.
+
+##### Delete Product
+- Admin users can access this page by clicking the delete button on the products and products details pages.
+- Non super users or logged out users should not be able to access the delete products page.
+- The Product image, name and description are side by side on medium screens and larger with the text under the image on mobiles.
+- The cancel and delete product button remain centered under product image / info.
+- The cancel button returns the admin to the all products page.
+- The delete button on the delete_product.html page will delete the correct product from the store and return the user to the products page.
+
 #### Further Testing
 
 
@@ -109,6 +133,6 @@ The source code for the project can be viewed at [github](https://github.com/jam
 - Initial test_products_detail_view was throwing a 404 error. Eventually figured out that the others_bought_ids in the view was throwing the exception as the 
 products_others_bought in the product created in the test case setUp function did not exist and thus trying to split an empty string in the product_detail view. 
 Fixed this by adding an if clause in the view.
+- If a product is added without an image, the website no longer crashes as a default no product image is loaded instead.
 
 ### Unsolved Bugs
-If a product is added without an image, the website currently crashes.
