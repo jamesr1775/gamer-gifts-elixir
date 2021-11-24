@@ -64,7 +64,7 @@ i.fa-star-half {
 
 .btn-return-products, .btn-add-to-bag {
     background: #2D2D3C;
-    color: white !important; /* use important to override link colors for <a> elements */
+    color: white !important;
     border: 1px solid black;
 }
 

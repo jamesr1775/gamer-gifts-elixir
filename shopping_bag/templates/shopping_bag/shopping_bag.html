@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}    
+    <link rel="stylesheet" href="{% static 'shopping_bag/css/bag.css' %}">
+{% endblock %}
+
+
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -19,6 +25,23 @@
         </div>
         <div class="row">
             <div class="col">
+                {% if bag_items %}
+                    {% for item in bag_items %}
+                        <div class="row">
+                            <div class="col">
+                                {{ item }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p class="mb-3">Your bag is empty.</p>
+                {% endif %}
+                <a href="{% url 'products' %}" class="btn btn-return-products mt-5">
+                    <span class="icon">
+                        <i class="fas fa-arrow-left"></i>
+                    </span>
+                    <span class="text-uppercase">Continue Shopping</span>
+                </a>
             </div>
         </div>
     </div>
