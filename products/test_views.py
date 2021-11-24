@@ -68,3 +68,68 @@ class TestProductsView(TestCase):
         response = self.client.get(f'/products/add/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "products/add_product.html")
+
+
+    # test delete product redirect not logged in
+    def test_delete_product_not_logged_in_redirect(self):
+        """Test product detail view"""
+        product = get_object_or_404(Product, name="Test")
+        response = self.client.get(f'/products/delete/{product.id}/')
+        url = "/accounts/login/?next=/products/delete/1/"
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, url)
+
+    # test delete product redirect logged in
+    def test_delete_product_logged_in_redirect(self):
+        """Test product detail view"""
+        loginresponse = self.client.login(
+        username='TestUser', password='password')
+        self.assertTrue(loginresponse)
+        product = get_object_or_404(Product, name="Test")
+        response = self.client.get(f'/products/delete/{product.id}/')
+        url = "/products/"
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, url)
+
+    # test delete product view with superuser
+    def test_delete_product_superuser_logged_in_redirect(self):
+        """Test product detail view"""
+        loginresponse = self.client.login(
+        username='admin', password='password')
+        self.assertTrue(loginresponse)
+        product = get_object_or_404(Product, name="Test")
+        response = self.client.get(f'/products/delete/{product.id}/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "products/delete_product.html")
+
+    # test edit product redirect not logged in
+    def test_edit_product_not_logged_in_redirect(self):
+        """Test product detail view"""
+        product = get_object_or_404(Product, name="Test")
+        response = self.client.get(f'/products/edit/{product.id}/')
+        url = "/accounts/login/?next=/products/edit/1/"
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, url)
+
+    # test edit product redirect logged in
+    def test_edit_product_logged_in_redirect(self):
+        """Test product detail view"""
+        loginresponse = self.client.login(
+        username='TestUser', password='password')
+        self.assertTrue(loginresponse)
+        product = get_object_or_404(Product, name="Test")
+        response = self.client.get(f'/products/edit/{product.id}/')
+        url = "/products/"
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, url)
+
+    # test edit product view with superuser
+    def test_edit_product_superuser_logged_in_redirect(self):
+        """Test product detail view"""
+        loginresponse = self.client.login(
+        username='admin', password='password')
+        self.assertTrue(loginresponse)
+        product = get_object_or_404(Product, name="Test")
+        response = self.client.get(f'/products/edit/{product.id}/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "products/edit_product.html")
