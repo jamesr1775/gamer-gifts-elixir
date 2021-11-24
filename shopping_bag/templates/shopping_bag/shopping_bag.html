@@ -26,22 +26,60 @@
         <div class="row">
             <div class="col">
                 {% if bag_items %}
-                    {% for item in bag_items %}
-                        <div class="row">
-                            <div class="col">
-                                {{ item }}
-                            </div>
+                    <div class="row">
+                        <div class="col">
+                            <table class="table">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">Product Info</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">Quantity</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for item in bag_items %}
+                                        <tr>
+                                            <td scope="row">
+                                                <a href="{% url 'product_detail' item.product.id %}">              
+                                                    <img class="shopping-bag-image img-fluid" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                                </a>                                            
+                                            </td>
+                                            <td>{{ item.product.name }}</td>
+                                            <td>${{ item.product.price }}</td>
+                                            <td>{{ item.quantity }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                            <h4 class="text-right my-0">Grand Total:</h4>
+                            <p class="text-right my-0">
+                                {% if grand_total %}
+                                    ${{ grand_total|floatformat:2 }}
+                                {% else %}
+                                    $0.00
+                                {% endif %}
+                            </p>
                         </div>
-                    {% endfor %}
+                    </div>
+                    
                 {% else %}
                     <p class="mb-3">Your bag is empty.</p>
                 {% endif %}
-                <a href="{% url 'products' %}" class="btn btn-return-products mt-5">
-                    <span class="icon">
-                        <i class="fas fa-arrow-left"></i>
-                    </span>
-                    <span class="text-uppercase">Continue Shopping</span>
-                </a>
+                <div class="text-center">
+                    <a href="{% url 'products' %}" class="btn btn-return-products mt-5">
+                        <span class="icon">
+                            <i class="fas fa-arrow-left"></i>
+                        </span>
+                        <span class="text-uppercase">Continue Shopping</span>
+                    </a>
+                    <a href="" class="btn btn-return-products mt-5">
+                        <span class="text-uppercase">Proceed To Checkout</span>
+                        <span class="icon">
+                            <i class="far fa-credit-card"></i>
+                        </span>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

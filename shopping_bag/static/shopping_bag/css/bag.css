@@ -3,3 +3,25 @@
     color: white !important;
     border: 1px solid black;
 }
+
+.shopping-bag-image{
+    height: 100px;
+    width: 100px;
+}
+
+.table td, .table th {
+    vertical-align:middle;
+}
+
+
+
+@media (max-width: 575px) {
+    .table td, .table th {
+        padding: 0;
+        text-align: center;
+        font-size: 10px;
+    }
+    .btn-return-products {
+        margin-top: 30px !important;
+    }
+}
