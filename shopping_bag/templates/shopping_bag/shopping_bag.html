@@ -45,9 +45,29 @@
                                                     <img class="shopping-bag-image img-fluid" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                                                 </a>                                            
                                             </td>
-                                            <td>{{ item.product.name }}  <br>Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}n/a{% endif %}</td>
-                                            <td>${{ item.product.price }}</td>
-                                            <td>{{ item.quantity }}</td>
+                                            <td class="p-1">{{ item.product.name }}  <br>Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}n/a{% endif %}</td>
+                                            <td class="p-1">${{ item.product.price }}</td>
+                                            <td>
+                                                <form class="form" method="POST" action="{% url 'update_bag' item.product.id %}">
+                                                    {% csrf_token %}
+                                                    <div class="form-group m-0">
+                                                        <div class="input-group">
+                                                            <select class="form-control rounded-0 p-0 h-auto" name="product_quantity" id='id_product_quantity'>
+                                                                {% for i in product_quantity_loop %}
+                                                                    {% if item.quantity == i %}
+                                                                        <option selected value="{{i}}">{{i}}</option>
+                                                                    {% else %}
+                                                                        <option  value="{{i}}">{{i}}</option>
+                                                                    {% endif %}
+                                                                {% endfor %}
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <button class="btn text-info p-0" type="submit"><small>Update</small></button>
+                                                    <br>
+                                                    <a class="btn text-danger p-0" href="{% url 'remove_product_from_bag' item.product.id %}?product_size={{ item.size }}"><small>Delete</small></a>
+                                                </form>
+                                            </td>
                                         </tr>
                                     {% endfor %}
                                 </tbody>

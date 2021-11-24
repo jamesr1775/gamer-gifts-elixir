@@ -188,6 +188,7 @@ if 'USE_AWS' in os.environ:
     
 
 STANDARD_DELIVERY_PERCENTAGE = 10
+MAX_ORDER_QUANTITY = 20
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
