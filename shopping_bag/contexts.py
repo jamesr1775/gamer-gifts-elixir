@@ -12,13 +12,25 @@ def shopping_bag_contents(request):
 
     for product_id, product_data in bag.items():
         product = get_object_or_404(Product, pk=product_id)
-        total += product_data * product.price
-        product_count += product_data
-        bag_items.append({
-            'product_id': product_id,
-            'quantity': product_data,
-            'product': product,
-        })
+        print(product)
+        if isinstance(product_data, dict):
+            for size, quantity in product_data['item_with_sizes'].items():
+                total += quantity * product.price
+                product_count += quantity
+                bag_items.append({
+                    'product_id': product_id,
+                    'quantity': quantity,
+                    'product': product,
+                    'size': size,
+                })
+        else:
+            total += product_data * product.price
+            product_count += product_data
+            bag_items.append({
+                'product_id': product_id,
+                'quantity': product_data,
+                'product': product,
+            })
 
     delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
     grand_total = total + delivery
