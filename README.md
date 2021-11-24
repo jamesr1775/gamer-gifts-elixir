@@ -234,3 +234,4 @@ USE_AWS | True
 ### Acknowledgements
 - [1] This answered question helped me with the jquery for styling the rating stars based on fractional rating [stackoverflow](https://stackoverflow.com/questions/37562892/jquery-font-awesome-star-rating-default-value/37563393)
 - [2] Used the javascript and html from the course for the sorting selector [Code-Institute GitHub](https://github.com/Code-Institute-Solutions/boutique_ado_v1)
+- [3] Got information about how to get the product size when deleting from the basket to the remove view from the question answered here [stackoverflow](https://stackoverflow.com/questions/67535665/pass-a-get-parameter-from-html-and-receive-in-django-view).
