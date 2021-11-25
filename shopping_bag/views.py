@@ -21,7 +21,6 @@ def add_product_to_bag(request, product_id):
     size = None
     if 'product_size' in request.POST:
         size = request.POST['product_size']
-        print(f"size is {size}")
     
     shopping_bag = request.session.get('shopping_bag', {})
 
@@ -56,7 +55,6 @@ def update_bag(request, product_id):
     size = None
     if 'product_size' in request.POST:
         size = request.POST['product_size']
-        print(f"size is {size}")
     shopping_bag = request.session.get('shopping_bag', {})
 
     if size:
@@ -78,7 +76,6 @@ def remove_product_from_bag(request, product_id):
         shopping_bag = request.session.get('shopping_bag', {})
         if isinstance(shopping_bag[product_id], dict):
             size = request.GET.get('product_size')
-            print(f"size:  {size}")
             del shopping_bag[product_id]['item_with_sizes'][size]
             if not shopping_bag[product_id]['item_with_sizes']:
                 shopping_bag.pop(product_id)

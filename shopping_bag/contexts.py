@@ -12,7 +12,6 @@ def shopping_bag_contents(request):
 
     for product_id, product_data in bag.items():
         product = get_object_or_404(Product, pk=product_id)
-        print(product)
         if isinstance(product_data, dict):
             for size, quantity in product_data['item_with_sizes'].items():
                 total += quantity * product.price

@@ -42,7 +42,11 @@
                                         <tr>
                                             <td scope="row">
                                                 <a href="{% url 'product_detail' item.product.id %}">              
-                                                    <img class="shopping-bag-image img-fluid" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                                    {% if item.product.image %}
+                                                        <img class="shopping-bag-image img-fluid" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                                    {% else %}
+                                                        <img class="shopping-bag-image img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                                                    {% endif %}
                                                 </a>                                            
                                             </td>
                                             <td class="p-1">{{ item.product.name }}  <br>Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}n/a{% endif %}</td>
