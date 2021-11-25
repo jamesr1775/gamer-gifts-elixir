@@ -53,7 +53,8 @@ The source code for the project can be viewed at [github](https://github.com/jam
 - The Navigation buttons to cycle through the items in the carousel should increment / decrement the slide index by 1 shifting the cards to the right or left.
 - The slider should show which card is in the left most position using carousel dots displayed at the bottom. They should remain centered on all screens at the bottom of the carousel.
 - The navigation buttons should remain within the carousel card.
-<!-- # TODO Test links when items hooked up to display the correct pages -->
+- All the drop down product pages should retrieve and display the correct products that are related to the drop down option selected.
+- The sorting drop down options should sort the products correctly depending on the sort option.
 
 ##### Tips / Print Info Cards
 - The gift tips and information callout cards should be side by side on tablets and larger screen sizes. 
@@ -84,9 +85,11 @@ The source code for the project can be viewed at [github](https://github.com/jam
 - The description, name, rating, price, quantity, size, add to basket and continue shopping buttons should be displayed to the user on the right of the image on large/medium screens and should appear under the image on smart phones screens.
 - The continue shopping button should return the user back to the all products page.
 - The reviews and other customers purchased sections should be on separate rows under the item image and description.
+- The add to basket button updates the shopping bag with the correct product, product size and quantity.
+- The bag in the nav bar should contain the correct grand total depending on the items in the shopping bag.
+- If the user tries to add too much of one product they are not able to and thus receive a message telling them of this issue.
 
 <!-- # TODO Reviews Section when implemented -->
-<!-- # TODO Test Add to basket when implemented -->
 
 
 ##### Add Product
@@ -123,6 +126,23 @@ The source code for the project can be viewed at [github](https://github.com/jam
 - The cancel and delete product button remain centered under product image / info.
 - The cancel button returns the admin to the all products page.
 - The delete button on the delete_product.html page will delete the correct product from the store and return the user to the products page.
+
+#### Shopping Bag Page Tests
+##### Shopping Bag Layout 
+- The table of products in the users bag should be the same layout wise except for on mobile phones when the continue shopping and proceed to checkout buttons are on separate rows. 
+- The images in each row remain aligned and are the same heights/ widths.
+- The name, price and quantity should remain in their divs and the text is smaller for small screen sizes.
+
+##### Shopping Bag Functionality 
+- When no products are in the users bag, the shopping bag page should tell the user that their bag is empty.
+- When products are added to the bag they should appear in a table with the price, quantity and buttons to adjust or remove items from their bag.
+- The product image loads the products detailed page view.
+- The delete button removes the item completely from the users shopping bag.
+- The update button changes the quantity of an item to that of the quantity input drop down.
+- If a user tries to add more the the maximum threshold allowed they should receive a message telling them they have too much of one product in their bag.
+- When products are removed and added the grand total, delivery and total cost is adjusted to reflect the correct value for the current state of the shopping bag.
+- The continue shopping button should return the user to the products page.
+<!-- TODO  test the proceed to checkout button -->
 
 #### Further Testing
 
