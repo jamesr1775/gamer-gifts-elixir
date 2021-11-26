@@ -65,9 +65,9 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <form method="POST" action="{% url 'checkout' %}">
+                <form method="POST" action="{% url 'checkout' %}" id="payment-form">
                     {% csrf_token %}
-                    <h4 class="fieldset-label small">Delivery Information:</h4>
+                    <h4 class="small">Delivery Information:</h4>
                     <div class="row">
                         <div class="rounded col-12 col-sm-6">
                             {{ order_form.full_name | as_crispy_field }}
@@ -108,7 +108,7 @@
                                 <i class="fas fa-shopping-bag fa-lg mr-2"></i>
                                 <span>View Shopping Bag</span>
                             </a>
-                            <button class="btn rounded-0 checkout-btn" type="submit">
+                            <button class="btn rounded-0 checkout-btn" id="submit-button">
                                 <span>Complete Checkout</span>
                                 <span class="icon">
                                     <i class="far fa-credit-card ml-2"></i>
