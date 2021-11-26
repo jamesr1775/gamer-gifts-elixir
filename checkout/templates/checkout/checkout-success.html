@@ -10,12 +10,60 @@
         <div class="row">
             <div class="col-12">
                 <h2 class="mt-2 mb-2">Thank your for your purchase!</h2>
-                <p>Your order information is below and a copy of your order will be emailed to you.</p>
+                <p>Your order information is below and a copy of your order will be emailed to <strong>{{ order.email }}</strong>.</p>
                 <hr>
             </div>
         </div>
         <div class="row">
             <div class="col-12 card">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="mt-2 mb-2">Order Details:</h2>
+                    </div>
+                    <div class="col-12">
+                        <p><strong>Order Number:</strong> {{ order.order_number }}</p>
+                        <p><strong>Order Received Date:</strong> {{ order.created_at_date }}</p>
+                    </div>
+                    <div class="col-12">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="mt-2 mb-2">Delivering To:</h2>
+                        <div class="rounded col-12">
+                            <p><strong>Name:</strong> {{ order.full_name }}</p>
+                            <p><strong>Phone:</strong> {{ order.phone_number }}</p>
+                            <p><strong>Email:</strong> {{ order.email }}</p>
+                            <p><strong>Street Address 1:</strong> {{ order.street_address1 }}</p>
+                            <p><strong>Street Address 2:</strong> {{ order.street_address2 }}</p>
+                            <p><strong>City:</strong> {{ order.city }}</p>
+                            <p><strong>County:</strong> {{ order.county }}</p>
+                            <p><strong>Postcode:</strong> {{ order.postcode}}</p>
+                            <p><strong>Country:</strong> {{ order.country}}</p>
+                        </div>  
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 card">
+                        <h2 class="mt-2 mb-2">Billing Information</h2>
+                        <div class="rounded col-12">
+                            <p>Total: ${{ order.order_total }}</p>
+                            <p>Delivery Cost: ${{ order.delivery_cost }}</p>
+                            <h4>Grand Total: ${{ order.grand_total }}</h4>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="text-center">
+                    <a href="{% url 'products' %}" class="btn btn-return-products mt-5">
+                        <span class="icon">
+                            <i class="fas fa-arrow-left"></i>
+                        </span>
+                        <span class="text-uppercase">Continue Shopping</span>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
