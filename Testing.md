@@ -142,7 +142,34 @@ The source code for the project can be viewed at [github](https://github.com/jam
 - If a user tries to add more the the maximum threshold allowed they should receive a message telling them they have too much of one product in their bag.
 - When products are removed and added the grand total, delivery and total cost is adjusted to reflect the correct value for the current state of the shopping bag.
 - The continue shopping button should return the user to the products page.
-<!-- TODO  test the proceed to checkout button -->
+- The proceed to the checkout button should bring the user to the checkout page.
+- The proceed to the checkout button is only present if the bag is not empty.
+
+#### Checkout Tests
+##### Checkout Layout
+- A table of the products in the shopping bag should be present on the top of the checkout page.
+- The total, delivery cost and grand total text is under the products table and hugs the right side of the screen.
+- The full name and phone number fields are on the same row for large screens and tablets and are on different rows for smart phones.
+- The rest of the fields and the credit card details are all on different rows.
+- The view shopping bag and complete checkout buttons are on the same row for all screen sizes except for small screens < 435px  where they are on separate rows.  
+
+##### Checkout Functionality 
+- The checkout forms required fields should all be complete before the form can be correctly posted.
+- When a field is incorrect or missing upon trying to submit the form the user should get a pop up on the field that is incorrect telling them. 
+- If the credit card fields are incorrect they should also receive feedback.
+- The view shopping bag button returns the user to their shopping bag.
+- When all the details in the form and credit card info are valid, the complete checkout button should process the users order. 
+    - The complete checkout button is frozen and a processing spinner is loaded to stop the user from submitting the form again by accident.
+    - When the order has been processed the user is brought to the checkout success page.
+    - An order success message is loaded in the top right of the page.
+
+##### Checkout Success Layout
+- The checkout success page shows the user the delivery information submitted, the order details and the billing information.
+- The text should hug the left side of the container.
+- The fields are all on separate rows.
+
+##### Checkout Success Functionality 
+- When the continue shopping button is pressed, it should take the user back to the products page.
 
 #### Further Testing
 

@@ -65,3 +65,16 @@
   margin: 0;
   height: 100%;
 }
+
+
+@media (max-width: 575px) {
+  .checkout-text {
+      padding: 0;
+      text-align: center;
+      font-size: 10px;
+  }
+  .checkout-image {
+    height: 75px;
+    width: 75px;
+  }
+}

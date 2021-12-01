@@ -13,26 +13,23 @@
                 {% if bag_items %}
                     {% for item in bag_items %}
                         <div class="row mt-2">
-                            <div class="col-2">
+                            <div class="col-2 checkout-text">
                                 {% if item.product.image %}
                                     <img class="checkout-image img-fluid" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                                 {% else %}
                                     <img class="checkout-image img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
                                 {% endif %}
                             </div>
-                            <div class="col-6">
+                            <div class="col-6 checkout-text">
                                 <small class="text-muted">Item</small>                                   
                                 <p class="my-0">{{ item.product.name }}</p>
+                                <p class="my-0">Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}n/a{% endif %}</p>
                             </div>
-                            <div class="col-1">
-                                <small class="text-muted">Size</small>                                   
-                                <p class="my-0"> {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}n/a{% endif %}</p>
-                            </div>
-                            <div class="col-1">
+                            <div class="col-2 checkout-text">
                                 <small class="text-muted">Quantity</small>                                   
                                 <p class="my-0">{{ item.quantity }}</p>
                             </div>
-                            <div class="col-2">
+                            <div class="col-2 checkout-text">
                                 <small class="text-muted">Total Price</small>                                   
                                 <p class="my-0">{{ item.product.price }}</p>
                             </div>
