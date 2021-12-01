@@ -78,30 +78,15 @@
                             </table>
                             <hr>
                             <p class="text-right my-0">
-                                Total:
-                                {% if grand_total %}
-                                    ${{ total|floatformat:2 }}
-                                {% else %}
-                                    $0.00
-                                {% endif %}
+                                Total: ${{ total|floatformat:2 }}
                             </p>
                             <p class="text-right my-0">
-                                *Delivery Charge:
-                                {% if grand_total %}
-                                    ${{ delivery|floatformat:2 }}
-                                {% else %}
-                                    $0.00
-                                {% endif %}
+                                *Delivery Charge: ${{ delivery|floatformat:2 }}
                             </p>
                             <hr>
-                            <h4 class="text-right my-0 mt-3">Grand Total:
-                                    {% if grand_total %}
-                                        ${{ grand_total|floatformat:2 }}
-                                    {% else %}
-                                        $0.00
-                                    {% endif %}
+                            <h4 class="text-right my-0 mt-3">
+                                Grand Total: ${{ grand_total|floatformat:2 }}
                             </h4>
-
                         </div>
                     </div>
                     
@@ -115,12 +100,14 @@
                         </span>
                         <span class="text-uppercase">Continue Shopping</span>
                     </a>
-                    <a href="" class="btn btn-return-products mt-5">
-                        <span class="text-uppercase">Proceed To Checkout</span>
-                        <span class="icon">
-                            <i class="far fa-credit-card"></i>
-                        </span>
-                    </a>
+                    {% if bag_items %}
+                        <a href="{% url 'checkout' %}" class="btn btn-return-products mt-5">
+                            <span class="text-uppercase">Proceed To Checkout</span>
+                            <span class="icon">
+                                <i class="far fa-credit-card"></i>
+                            </span>
+                        </a>
+                    {% endif %}
                 </div>
             </div>
         </div>
