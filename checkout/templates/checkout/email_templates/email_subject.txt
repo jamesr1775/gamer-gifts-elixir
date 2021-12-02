@@ -1,0 +1,1 @@
+Your Gaming Gifts Elixir Order: {{ order.order_number }}
