@@ -32,7 +32,6 @@ def cache_checkout_data(request):
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
-
     if request.method == 'POST':
         shopping_bag = request.session.get('shopping_bag', {})
         form_data = {
@@ -100,6 +99,24 @@ def checkout(request):
         )
         order_form = OrderForm()
 
+        if request.user.is_authenticated:
+            try:
+                profile = UserProfile.objects.get(user=request.user)
+                order_form = OrderForm(initial={
+                    'full_name': profile.default_full_name,
+                    'phone_number': profile.default_phone_number,
+                    'email': profile.user.email,
+                    'street_address1': profile.default_street_address1,
+                    'street_address2': profile.default_street_address2,
+                    'city': profile.default_city,
+                    'postcode': profile.default_postcode,
+                    'county': profile.default_county,
+                    'country': profile.default_country,
+                })
+            except UserProfile.DoesNotExist:
+                order_form = OrderForm()
+        else:
+            order_form = OrderForm()
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
@@ -123,6 +140,7 @@ def checkout_success(request, order_number):
 
         if save_info:
             profile_data = {
+                'default_full_name': order.full_name,
                 'default_phone_number': order.phone_number,
                 'default_country': order.country,
                 'default_postcode': order.postcode,
