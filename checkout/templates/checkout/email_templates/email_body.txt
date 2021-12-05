@@ -1,0 +1,20 @@
+
+Hello {{ order.full_name }}!
+
+Thank you for your purchase!
+This is a confirmation of your order at Gaming Gifts Elixir. Your order information is below:
+
+Order Number: {{ order.order_number }}
+Order Date: {{ order.created_at_date }}
+
+Order Total: ${{ order.order_total }}
+Delivery: ${{ order.delivery_cost }}
+Grand Total: ${{ order.grand_total }}
+
+Your order will be shipped to {{ order.street_address1 }} in {{ order.city }}, {{ order.country }}.
+The delivery driver may contact you on the phone number: {{ order.phone_number }}.
+
+If you have any questions or issues contact us at {{ contact_email }}.
+
+We hope to see you again soon.
+Gaming Gifts Elixir

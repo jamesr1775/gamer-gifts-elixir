@@ -1,0 +1,18 @@
+.btn-update-profile{
+    background: #2D2D3C;
+    color: white !important;
+    border: 1px solid black;
+}
+
+@media (max-width: 575px) {
+    .profile-order-row ul{
+        padding: 5px;
+    }
+}
+@media (max-width: 400px) {
+    .profile-order-row{
+        padding: 5px !important;
+        font-size: 70% !important;
+    }
+}
+  

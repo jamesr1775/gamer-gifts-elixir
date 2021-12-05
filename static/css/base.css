@@ -81,6 +81,45 @@ footer {
     width: 1.5rem;
 }
 
+
+/************************* All Auth Pages *************************/
+.allauth-form-inner-content input {
+    border-color: black;
+    border-radius: 0;
+}
+
+.allauth-form-inner-content label:not([for='id_remember']) {
+    display: none;
+}
+
+.allauth-form-inner-content input::placeholder {
+    color: gray;
+}
+
+.allauth-form-inner-content button,
+.allauth-form-inner-content input[type='submit'] {
+	display: inline-block;
+    text-align: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #863AFF;
+    color: white !important;
+    border-radius: 5px !important;
+    font-size: 20px;
+    font-weight: 700;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.allauth-form-inner-content button:hover,
+.allauth-form-inner-content input[type='submit']:hover {	
+	color: white;
+    background-color: rgba(134, 58, 255, 0.7);
+    border-color: black;
+}
+
+
 @media (min-width: 768px) {
     #site-nav-bar {
         flex-flow: wrap !important;    
