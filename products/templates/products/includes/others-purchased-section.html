@@ -5,22 +5,22 @@
             <h4>Other Customers Purchased</h4>
             <div id="recommendationsCarousel" class="card carousel-container mt-3">
                 <div class="slider slider-nav">
-                    {% for product_recommended in products_others_bought %}
+                    {% for product in products_others_bought %}
                         <div class="col-sm-6 col-md-4 col-xl-4 mb-3 mt-3">
                             <div class="card others-bought-product-card">
-                                <a href="{% url 'product_detail' product_recommended.id %}">       
-                                    {% if product_recommended.image %}
-                                        <img class="card-img-top product-image img-fluid" src="{{ product_recommended.image.url }}" alt="{{ product_recommended.name }}">
+                                <a href="{% url 'product_detail' product.id %}">       
+                                    {% if product.image %}
+                                        <img class="card-img-top product-image img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
                                     {% else %}
-                                        <img class="card-img-top product-image img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product_recommended.name }}">
+                                        <img class="card-img-top product-image img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                                     {% endif %}
                                 </a>
                                 <div class="card-body p-2">
-                                    <p class="card-text others-bought-product-name mt-auto overflow-hidden">{{ product_recommended.name }}</p>
+                                    <p class="card-text others-bought-product-name mt-auto overflow-hidden">{{ product.name }}</p>
                                     
                                 </div>
                                 <div class=" p-2">
-                                    <p class="price-text">${{ product_recommended.price }}</p>
+                                    <p class="price-text">${{ product.price }}</p>
                                     {% include 'products/includes/star-rating.html' %}
                                 </div>
                             </div>
