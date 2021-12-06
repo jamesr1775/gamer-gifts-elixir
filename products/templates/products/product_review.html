@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'products/css/crud-product.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container mb-2">
+        <div class="row">
+            <div class="col">
+                <h2 class="mt-2 mb-2">Product Review</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h4 class="text-center text-muted mt-3">Add a Review</h4>
+                <div class="text-center add-review-form-container">
+                    <form method="POST" action="{% url 'add_product_review' product.id %}" class="form mb-2 add-review-form" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% for field in form %}
+                            {{ field | as_crispy_field }}
+                        {% endfor %}
+                        <div class="text-center mt-5">
+                            <a class="btn rounded-0 crud-product-btn" href="{% url 'products' %}">Cancel</a>
+                            <button class="btn rounded-0 crud-product-btn" type="submit">Submit Review</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div> 
+    </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+{% endblock %}

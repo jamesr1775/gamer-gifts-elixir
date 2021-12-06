@@ -5,9 +5,10 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .models import Product, Category
-from .forms import ProductForm
-
+from .models import Product, Category, Review
+from .forms import ProductForm, ReviewForm
+from profiles.models import UserProfile
+from checkout.models import Order
 
 def all_products(request):
     """ View to return the products page """
@@ -62,11 +63,15 @@ def all_products(request):
 def product_detail(request, product_id):
     """ View to show a products details """
     product = get_object_or_404(Product, pk=product_id)
+    profile = UserProfile.objects.get(user=request.user)
     others_bought_ids = []
     if product.products_others_bought:
         others_bought_ids = list(product.products_others_bought.split("_"))
     products_others_bought = []
 
+    product_reviews = Review.objects.filter(product=product)
+    orders = profile.orders.all()
+    user_bought_product = True if orders else False
     for pid in others_bought_ids:
         products_others_bought.append(get_object_or_404(Product, pk=pid))
     context = {
@@ -74,6 +79,8 @@ def product_detail(request, product_id):
         'star_loop': range(1, 6),
         'product_quantity_loop': range(1, 21),
         'products_others_bought': products_others_bought,
+        'product_reviews': product_reviews,
+        'user_bought_product': user_bought_product,
     }
 
     return render(request, 'products/product_details.html', context)
@@ -147,4 +154,33 @@ def delete_product(request, product_id):
         messages.success(request, 'Successfully deleted product!')
         product.delete()
         return redirect(reverse('products'))
+    return render(request, template, context)
+
+
+@login_required
+def add_product_review(request, product_id):
+    """ View to add product """
+    template = 'products/product_review.html'
+    if not request.user.is_authenticated:
+        messages.error(request, "Error, you need to be logged in to leave a review.")
+        return redirect(reverse('products'))
+    product = get_object_or_404(Product, pk=product_id)
+    form = ReviewForm()
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, request.FILES)
+        profile = UserProfile.objects.get(user=request.user)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.product = product
+            review.user_profile = profile
+            review = form.save()
+            messages.success(request, 'Successfully added product review!')
+            return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            messages.error(request, 'Failed to add product review. Make sure the form is valid.')
+    context = {
+        "product": product,
+        "form": form,
+    }
+
     return render(request, template, context)
