@@ -2,13 +2,39 @@
     <div class="row">
         <div class="col-12">
             <hr>
-            <h4>Reviews</h4>
-            <div class="card reviews-card">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Cras justo odio</li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
-                  </ul>
+            <div class="row card">
+                <div class="col-12">
+                    <h4>Reviews</h4>
+                </div>
+
+                <hr>
+                <div class="col-12">
+                    Number Of Reviews: {{ product.getNumOfReviews }} 
+                </div>
+                <hr>
+                <div class="col-12 mb-3">
+                    {% include 'products/includes/star-rating.html' %}
+                    {% if user_bought_product %}
+                    <a href="{% url 'add_product_review' product.id %}"
+                    class="link-small px-1">Add a Review
+                    </a>
+                {% endif %} 
+                </div>
+                <hr>
+                {% if product_reviews %}
+                    {% for review in product_reviews %}
+                        <div class="col-12 col-md-6">
+                            {{ review.user_review }}
+                            <br>
+                            <small>Submitted by:{{ review.user_profile }}</small>
+                            {% include 'products/includes/star-rating-user.html' %}
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="col-12">
+                        <p>Currently no reviews.</p>
+                    </div>
+                {% endif %}
             </div>
         </div>
     </div>
