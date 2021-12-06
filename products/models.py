@@ -1,5 +1,8 @@
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
+from profiles.models import UserProfile
+from django.db.models import Avg, Count
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 class Category(models.Model):
 
@@ -40,3 +43,23 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+    def getAverageRating(self):
+        reviews = Review.objects.filter(product=self).aggregate(average=Avg('rating'))
+        if reviews['average']:
+            return float(reviews['average'])
+        else:
+            return 0
+
+    def getNumOfReviews(self):
+        reviews = Review.objects.filter(product=self).aggregate(numOfReviews=Count('id'))
+        return reviews['numOfReviews'] if reviews['numOfReviews'] else 0
+
+class Review(models.Model):
+    product = models.ForeignKey('Product', null=True, blank=True, on_delete=models.SET_NULL)
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL, null=True, blank=True, related_name='reviews') 
+    rating = models.DecimalField(max_digits=3, decimal_places=2, null=True, blank=True,  validators=[MinValueValidator(0), MaxValueValidator(5)])
+    user_review = models.TextField(max_length=500, null=False, blank=False)
+    submitted_date = models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return self.user_profile.user.username
