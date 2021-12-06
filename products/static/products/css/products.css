@@ -85,6 +85,10 @@ i.fa-star-half {
 	background: #2D2D3C !important;
 }
 
+#div_id_rating label{
+    float: left !important;
+}
+
 @media (min-width: 992px) {
 	#recommendationsCarousel .card img {
 		height: 300px;
