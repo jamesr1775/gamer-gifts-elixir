@@ -72,8 +72,15 @@ def product_detail(request, product_id):
     product_reviews = Review.objects.filter(product=product)
     orders = OrderLineItem.objects.filter(product=product, order__user_profile=profile)
     user_bought_product = True if orders else False
+    if Review.objects.filter(product=product, user_profile=profile):
+        users_submitted_review = Review.objects.filter(product=product, user_profile=profile)[0]
+    else:
+        users_submitted_review = []
+
+    print(users_submitted_review)
     for pid in others_bought_ids:
         products_others_bought.append(get_object_or_404(Product, pk=pid))
+    
     context = {
         'product': product,
         'star_loop': range(1, 6),
@@ -81,6 +88,7 @@ def product_detail(request, product_id):
         'products_others_bought': products_others_bought,
         'product_reviews': product_reviews,
         'user_bought_product': user_bought_product,
+        'users_submitted_review': users_submitted_review,
     }
 
     return render(request, 'products/product_details.html', context)
@@ -112,7 +120,7 @@ def add_product(request):
 
 @login_required
 def edit_product(request, product_id):
-    """ View to add product """
+    """ View to edit product """
     if not request.user.is_superuser:
         messages.error(request, "Error, you do not have permission.")
         return redirect(reverse('products'))
@@ -141,7 +149,7 @@ def edit_product(request, product_id):
 
 @login_required
 def delete_product(request, product_id):
-    """ View to add product """
+    """ View to delete product """
     template = 'products/delete_product.html'
     if not request.user.is_superuser:
         messages.error(request, "Error, you do not have permission.")
@@ -159,7 +167,7 @@ def delete_product(request, product_id):
 
 @login_required
 def add_product_review(request, product_id):
-    """ View to add product """
+    """ View to add product review """
     template = 'products/product_review.html'
     if not request.user.is_authenticated:
         messages.error(request, "Error, you need to be logged in to leave a review.")
@@ -182,5 +190,42 @@ def add_product_review(request, product_id):
         "product": product,
         "form": form,
     }
+    return render(request, template, context)
 
+@login_required
+def edit_product_review(request, review_id):
+    """ View to edit product review """
+    if not request.user.is_authenticated:
+        messages.error(request, "Error, you do not have permission.")
+        return redirect(reverse('products'))
+    review = get_object_or_404(Review, pk=review_id)
+    print(review.rating)
+    product = review.product
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, request.FILES, instance=review)
+        if form.is_valid():
+            review = form.save()
+            messages.success(request, 'Successfully edited your review!')
+            return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            messages.error(request, 'Failed to update your review. Make sure the form is valid.')
+    else:
+        review.rating = float(review.rating)
+        form = ReviewForm(instance=review)
+
+    template = 'products/edit_product_review.html'
+    context = {
+        "form": form,
+        'product': product,
+        "review": review,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def delete_product_review(request, product_id):
+    template = 'products/product_review.html'
+    context = {
+    }
     return render(request, template, context)

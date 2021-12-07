@@ -17,6 +17,20 @@
                         <a href="{% url 'add_product_review' product.id %}"
                         class="link-small px-1">Add a Review
                         </a>
+                        {% if users_submitted_review %}
+                        <div class="col-12 col-lg-6 break-word mt-4">
+                                {{ users_submitted_review.user_review }}
+                                <br>
+                                <small>Submitted by:{{ users_submitted_review.user_profile }}</small>
+                                {% include 'products/includes/star-rating-user.html' %}
+                                <a href="{% url 'edit_product_review' users_submitted_review.id %}"
+                                class="link-small px-1">Update Review
+                                </a>
+                                <a href="{% url 'delete_product_review' users_submitted_review.id %}"
+                                class="link-small px-1">Delete Review
+                                </a>
+                            {% endif %} 
+                        </div>   
                     {% endif %} 
                 </div>
                 <hr>
