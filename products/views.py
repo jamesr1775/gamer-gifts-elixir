@@ -8,7 +8,7 @@ from django.contrib import messages
 from .models import Product, Category, Review
 from .forms import ProductForm, ReviewForm
 from profiles.models import UserProfile
-from checkout.models import Order
+from checkout.models import Order, OrderLineItem
 
 def all_products(request):
     """ View to return the products page """
@@ -70,7 +70,7 @@ def product_detail(request, product_id):
     products_others_bought = []
 
     product_reviews = Review.objects.filter(product=product)
-    orders = profile.orders.all()
+    orders = OrderLineItem.objects.filter(product=product, order__user_profile=profile)
     user_bought_product = True if orders else False
     for pid in others_bought_ids:
         products_others_bought.append(get_object_or_404(Product, pk=pid))

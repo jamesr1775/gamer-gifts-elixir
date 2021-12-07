@@ -64,7 +64,7 @@ class Review(models.Model):
     product = models.ForeignKey('Product', null=True, blank=True, on_delete=models.SET_NULL)
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL, null=True, blank=True, related_name='reviews') 
     rating = models.DecimalField(max_digits=3, decimal_places=2, null=True, blank=True, choices=RATING_OPTIONS, default=Decimal("3.0"))
-    user_review = models.TextField(max_length=500, null=False, blank=False)
+    user_review = models.TextField(max_length=200, null=False, blank=False)
     submitted_date = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return self.user_profile.user.username

@@ -238,3 +238,4 @@ USE_AWS | True
 - [4] Utilized Django docs to learn more about forms and models. [docs.djangoproject](https://docs.djangoproject.com/en/3.2/ref/forms/fields/)
 - [5] Learnt how to change the rating in the review form to a drop down menu from [stackoverflow](https://stackoverflow.com/questions/55477387/django-modelform-doesnt-work-with-decimal-field).
 - [6] Was able to remove the no choice option added to the rating input in the review form by using the information I read on a stackoverflow question [stackoverflow](https://stackoverflow.com/questions/8798763/django-how-to-remove-the-blank-choice-from-the-choicefield-in-modelform)
+- [7] Checking whether the user has purchased the item aws tricky. This helped me solve the issue as profile was part of a foreign key in the order line items [docs.djangoproject](https://docs.djangoproject.com/en/3.2/topics/db/examples/many_to_one/#many-to-one-relationships).
