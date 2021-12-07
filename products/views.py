@@ -63,21 +63,22 @@ def all_products(request):
 def product_detail(request, product_id):
     """ View to show a products details """
     product = get_object_or_404(Product, pk=product_id)
-    profile = UserProfile.objects.get(user=request.user)
     others_bought_ids = []
+    products_others_bought = []
+    users_submitted_review = []
+    user_bought_product = False
+
     if product.products_others_bought:
         others_bought_ids = list(product.products_others_bought.split("_"))
-    products_others_bought = []
-
     product_reviews = Review.objects.filter(product=product)
-    orders = OrderLineItem.objects.filter(product=product, order__user_profile=profile)
-    user_bought_product = True if orders else False
-    if Review.objects.filter(product=product, user_profile=profile):
-        users_submitted_review = Review.objects.filter(product=product, user_profile=profile)[0]
-    else:
-        users_submitted_review = []
 
-    print(users_submitted_review)
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        orders = OrderLineItem.objects.filter(product=product, order__user_profile=profile)
+        user_bought_product = True if orders else False
+        if Review.objects.filter(product=product, user_profile=profile):
+            users_submitted_review = Review.objects.filter(product=product, user_profile=profile)[0]
+
     for pid in others_bought_ids:
         products_others_bought.append(get_object_or_404(Product, pk=pid))
     
@@ -199,7 +200,6 @@ def edit_product_review(request, review_id):
         messages.error(request, "Error, you do not have permission.")
         return redirect(reverse('products'))
     review = get_object_or_404(Review, pk=review_id)
-    print(review.rating)
     product = review.product
     if request.method == 'POST':
         form = ReviewForm(request.POST, request.FILES, instance=review)
@@ -248,5 +248,3 @@ def delete_product_review(request, review_id):
         review.delete()
         return redirect(reverse('product_detail', args=[product.id]))
     return render(request, template, context)
-    
-
