@@ -15,7 +15,7 @@
                     {% include 'products/includes/star-rating.html' %}
                     {% if user_bought_product %}
                         {% if users_submitted_review %}
-                        <div class="col-12 col-lg-6 break-word mt-4 pl-0">
+                            <div class="col-12 col-lg-6 break-word mt-4 pl-0">
                                 <h4>Your Review of this Product:</h4>
                                 {{ users_submitted_review.user_review }}
                                 <br>
@@ -25,9 +25,9 @@
                                 {% endwith %}
                                 <a href="{% url 'edit_product_review' users_submitted_review.id %}"
                                 class="link-small px-1">Update Review
-                                </a>
+                                </a> | 
                                 <a href="{% url 'delete_product_review' users_submitted_review.id %}"
-                                class="link-small px-1">Delete Review
+                                class="link-small px-1 text-danger">Delete Review
                                 </a>
                             {% else %} 
                                 <a href="{% url 'add_product_review' product.id %}"

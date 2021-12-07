@@ -55,6 +55,9 @@
 .star-rating{
     text-align: left;
 }
+#delete-review .star-rating{
+    text-align: center;
+}
 i.fa-star-half {
     color:yellow;
     -webkit-text-stroke-width: 1px;

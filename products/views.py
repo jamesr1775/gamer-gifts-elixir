@@ -224,8 +224,29 @@ def edit_product_review(request, review_id):
 
 
 @login_required
-def delete_product_review(request, product_id):
-    template = 'products/product_review.html'
+def delete_product_review(request, review_id):
+    """ View to delete product review """
+    template = 'products/delete_product_review.html'
+    if not request.user.is_authenticated:
+        messages.error(request, "Error, you do not have permission.")
+        return redirect(reverse('products'))
+
+    review = get_object_or_404(Review, pk=review_id)
+    product = review.product
+    profile = UserProfile.objects.get(user=request.user)
+    if Review.objects.filter(product=product, user_profile=profile):
+        users_submitted_review = Review.objects.filter(product=product, user_profile=profile)[0]
+    else:
+        users_submitted_review = []
     context = {
+        "product": product,
+        "users_submitted_review": users_submitted_review,
+        'star_loop': range(1, 6),
     }
+    if request.method == 'POST':
+        messages.success(request, 'Successfully deleted review!')
+        review.delete()
+        return redirect(reverse('product_detail', args=[product.id]))
     return render(request, template, context)
+    
+

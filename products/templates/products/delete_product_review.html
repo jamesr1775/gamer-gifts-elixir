@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block extra_css %}    
+    <link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+    <link rel="stylesheet" href="{% static 'products/css/crud-product.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="text-center">
+                <h2>Product Review</h2>
+                <hr>
+            </div>
+        </div>
+    </div> 
+    <div class="row">
+        <div class="col-12">
+            <h4 class="text-center text-muted mb-5">Delete Review</h4>
+            <div class="row">
+                <div id="delete-review" class="col-12 text-center">      
+                    <h4>Your Review of this Product:</h4>
+                    {{ users_submitted_review.user_review }}
+                    <br>
+                    <small>Submitted by:{{ users_submitted_review.user_profile }}</small>
+                    {% with users_submitted_review as review %}
+                        {% include 'products/includes/star-rating-user.html' %}
+                    {% endwith %}
+                </div>
+                <div class="col-12 text-center">
+                    <strong><p class="text-center text-muted mb-0 mt-3">Are you sure you want to delete your review?</p></strong>
+                    <form method="POST" action="{% url 'delete_product_review' users_submitted_review.id %}" class="form mb-2 add-product-form" enctype="multipart/form-data">
+                        {% csrf_token %}                        
+                        <div class="text-center">
+                            <a class="btn rounded-0 crud-product-btn" href="{% url 'product_detail' product.id %}" value="cancel">Cancel</a>
+                            <button class="btn rounded-0 crud-product-btn bg-danger" type="submit">Delete Review</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>
+
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script src="{% static 'products/js/star_rating.js' %}"></script>
+{% endblock %}
