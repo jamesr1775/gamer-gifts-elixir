@@ -1,6 +1,9 @@
 from django.test import TestCase
-from .models import Product, Category
-
+from django.shortcuts import get_object_or_404
+from .models import Product, Category, Review
+from profiles.models import UserProfile
+from django.contrib.auth.models import User
+from decimal import Decimal
 
 """Category Model Test"""
 class TestCategoryModels(TestCase):
@@ -46,3 +49,34 @@ class TestProductModels(TestCase):
             price='35.99',
         )
         self.assertEqual(item.has_sizes, False)
+
+"""Review Model Test"""
+class TestReviewModels(TestCase):
+    def test_review_str_method(self):
+        """Test string method"""
+        user = User.objects.create_user('TestUser', 'TestUser@test.com', 'password')
+        user_profile = get_object_or_404(UserProfile, user=user)
+        product = Product.objects.create(
+            name='Product 2',
+            price='35.99',
+        )
+        review = Review.objects.create(
+            rating=4.60,
+            user_profile= user_profile,
+            product=product,
+        )
+        self.assertEqual(str(review), 'TestUser')
+
+    def test_review_default_rating(self):
+        """Test default status"""
+        user = User.objects.create_user('TestUser', 'TestUser@test.com', 'password')
+        user_profile = get_object_or_404(UserProfile, user=user)
+        product = Product.objects.create(
+            name='Product 2',
+            price='35.99',
+        )
+        review = Review.objects.create(
+            user_profile= user_profile,
+            product=product,
+        )
+        self.assertEqual(review.rating, Decimal('3.0'))
