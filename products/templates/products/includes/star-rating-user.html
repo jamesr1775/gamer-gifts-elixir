@@ -1,11 +1,11 @@
-<div class="star-rating text-muted" rating="{{ product.getAverageRating }}">
+<div class="star-rating text-muted" rating="{{ review.rating }}">
 
-    {% if product.getAverageRating %}
+    {% if review.rating %}
         <div class="rating-text">
-            Average Rating: {{ product.getAverageRating|floatformat:1 }}/5.0
+            {{ review.rating|floatformat:1 }}/5.0
         </div>
         {% for i in star_loop %}
-            {% if i > product.getAverageRating %}
+            {% if i > review.rating %}
                 <i class="far fa-star mr-1" style="color:gold;"></i>
             {% else %}
                 <i class="fas fa-star mr-1" style="color:gold;"></i>
@@ -13,13 +13,9 @@
         {% endfor %}
     {% else %}
         <div class="rating-text">
-            Not Rated
-        </div>
-        <div class="rating-text">
             {% for i in star_loop %}
-                <i class="far fa-star mr-1" style="color:gold;"></i>
+                <i class="fas fa-star mr-1" style="color:white;"></i>
             {% endfor %}        
         </div>
     {% endif %}
-    
 </div>
