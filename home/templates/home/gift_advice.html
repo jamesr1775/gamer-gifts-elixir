@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block extra_css %}
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="text-center">
+            </div>
+        </div>
+    </div> 
+    <div class="row">
+        <div class="col-12 mb-2">
+            <h4>Tips to pick the perfect gift</h4>
+            <hr>
+            <p>
+                Are your struggling to find the perfect gift for your loved one?
+                Well these tips should help you!
+            </p>
+        </div>
+        <div class="col-12 col-lg-6 p-0">
+            <div class="">
+                <img src="{{ MEDIA_URL }}home-images/gift_tips.jpg" class="card-img-top" alt="...">
+            </div>
+        </div>
+        <div class="col-12 col-lg-6">
+
+            <ol class="list-group">
+                <li class="list-group-item"><strong class="mr-1">1. </strong> Find out the main platform they play on. Do they play on a console or Desktop. If yes then you could browse for games or new controllers, keyboards or mice etc. that take their gaming to the next level.</li>
+                <li class="list-group-item"><strong class="mr-1">2. </strong>Ask their friends what their interests are and what they enjoy playing. Maybe ask them a few weeks before you need the gift so as not to arise suspicion if you want to keep the gift a secret.</li>
+                <li class="list-group-item"><strong class="mr-1">3.</strong>Does their gaming environment need an upgrade with lighting, furniture or posters? Get them comfortable chair or a nice clean desk to sit at. Get posters relevant to their gaming interests.</li>
+                <li class="list-group-item"><strong class="mr-1">4.</strong>We have a large range of products available so you could browse them to get ideas by clicking <a href="{% url 'products' %}">here!</a>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+{% endblock %}
