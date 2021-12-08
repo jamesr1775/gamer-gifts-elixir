@@ -186,6 +186,8 @@ def add_product_review(request, product_id):
             review.product = product
             review.user_profile = profile
             review = form.save()
+            product.product_rating = product.getAverageRating()
+            product.save()
             messages.success(request, 'Successfully added product review!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
@@ -211,6 +213,8 @@ def edit_product_review(request, review_id):
         form = ReviewForm(request.POST, request.FILES, instance=review)
         if form.is_valid():
             review = form.save()
+            product.product_rating = product.getAverageRating()
+            product.save()
             messages.success(request, 'Successfully edited your review!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
@@ -248,6 +252,8 @@ def delete_product_review(request, review_id):
     if request.method == 'POST':
         messages.success(request, 'Successfully deleted review!')
         review.delete()
+        product.product_rating = product.getAverageRating()
+        product.save()
         return redirect(reverse('product_detail', args=[product.id]))
     template = 'products/delete_product_review.html'
     context = {
@@ -256,3 +262,82 @@ def delete_product_review(request, review_id):
         'star_loop': range(1, 6),
     }
     return render(request, template, context)
+
+
+def get_latest_products(request):
+    """ View to return the products page """
+    products = Product.objects.order_by("-id")[:20]
+    categories = None
+    sort = None
+    direction = None
+
+    if request.GET:
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                products = products.annotate(lower_name=Lower('name'))
+            if sortkey == 'category':
+                sortkey = 'category__name'
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+
+            products = products.order_by(sortkey)
+        if 'category' in request.GET:
+            categories = request.GET['category'].split(',')
+            products = products.filter(category__name__in=categories)
+            categories = Category.objects.filter(name__in=categories)
+
+        if 'gender' in request.GET:
+            gender = [request.GET['gender'], 'both']
+            products = products.filter(product_type__in=gender)
+
+    current_sorting = f'{sort}_{direction}'
+    context = {
+        'products': products,
+        'star_loop': range(1, 6),
+        'current_sorting': current_sorting,
+    }
+    return render(request, 'products/products.html', context)
+
+def get_popular_products(request):
+    """ View to return the products page """
+    products = Product.objects.order_by("-product_rating")[:20]
+    categories = None
+    sort = None
+    direction = None
+
+    if request.GET:
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                products = products.annotate(lower_name=Lower('name'))
+            if sortkey == 'category':
+                sortkey = 'category__name'
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+
+            products = products.order_by(sortkey)
+        if 'category' in request.GET:
+            categories = request.GET['category'].split(',')
+            products = products.filter(category__name__in=categories)
+            categories = Category.objects.filter(name__in=categories)
+
+        if 'gender' in request.GET:
+            gender = [request.GET['gender'], 'both']
+            products = products.filter(product_type__in=gender)
+
+    current_sorting = f'{sort}_{direction}'
+    context = {
+        'products': products,
+        'star_loop': range(1, 6),
+        'current_sorting': current_sorting,
+    }
+    return render(request, 'products/products.html', context)

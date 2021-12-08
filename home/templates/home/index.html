@@ -21,7 +21,7 @@
                     <div class="home-carousel-item">
                         <div class="cards-wrapper">
                             <div class="card">
-                                <a href="#" class="card-body">
+                                <a href="{% url 'get_latest_products' %}" class="card-body">
                                     <h5 class="card-title text-center">Latest Products</h5>
                                     <img src="{{ MEDIA_URL }}home-images/latest_products.jpg" class="card-img-top" alt="...">                                            
                                 </a>
@@ -31,7 +31,7 @@
                     <div class="home-carousel-item">
                         <div class="cards-wrapper">
                             <div class="card">
-                                <a href="#" class="card-body">
+                                <a href="{% url 'get_popular_products' %}" class="card-body">
                                     <h5 class="card-title text-center">Popular Products</h5>
                                     <img src="{{ MEDIA_URL }}home-images/popular_products.jpg" class="card-img-top" alt="...">                                            
                                 </a>
@@ -41,7 +41,7 @@
                     <div class="home-carousel-item">
                         <div class="cards-wrapper">
                             <div class="card">
-                                <a href="#" class="card-body">
+                                <a href="{% url 'products' %}?category=offers" class="card-body">
                                     <h5 class="card-title text-center">Fantastic Offers</h5>
                                     <img src="{{ MEDIA_URL }}home-images/offers.jpg" class="card-img-top" alt="...">   
                                 </a>                            
@@ -51,7 +51,7 @@
                     <div class="home-carousel-item">
                         <div class="cards-wrapper">
                             <div class="card">
-                                <a href="#" class="card-body">
+                                <a href="{% url 'products' %}?category=threedprintedgifts" class="card-body">
                                     <h5 class="card-title text-center">3d Printed Gifts</h5>
                                     <img src="{{ MEDIA_URL }}home-images/ddd_printing.jpg" class="card-img-top" alt="...">
                                 </a>    
