@@ -41,7 +41,11 @@
     </div>
     <div class="row">
         {% if products|length > 0 %}
+            <div class="col-12">
+                <hr>
+            </div>
             {% for product in products %}
+            
                 <div class="col-sm-6 col-md-4 col-xl-4 mb-3">
                     <div class="card product-card">
                         <a href="{% url 'product_detail' product.id %}">              
@@ -65,6 +69,16 @@
                         {% include 'products/includes/star-rating.html' %}
                     </div>
                 </div>
+                {% if forloop.counter|divisibleby:3 %}
+                <div class="col-12 mb-1 d-none d-md-block">
+                    <hr>
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:2 %}
+                <div class="col-12 mb-1 d-none d-sm-block d-md-none">
+                    <hr>
+                </div>
+                {% endif %}
             {% endfor %}
         {% else %}
             <div class="col-sm-6 col-md-4 col-xl-4 mb-3">

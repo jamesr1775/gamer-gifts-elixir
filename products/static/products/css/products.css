@@ -100,14 +100,25 @@ i.fa-star-half {
 }
 
 
-@media (min-width: 992px) {
+
+@media (min-width: 1300px) {
+    .product-image{
+        /* width: 400px !important; */
+    }
+    .product-card {
+        width: 400px !important;
+    }
+}
+
+
+@media (min-width: 1150px) {
 	#recommendationsCarousel .card img {
 		height: 300px;
 	}
 }
 
 
-@media (max-width: 992px) {
+@media (max-width: 1050px) {
     .product-image{
         height: 250px;
     }
