@@ -19,6 +19,92 @@ The source code for the project can be viewed at [github](https://github.com/jam
 ### Code Validation
 
 ### Testing User Stories
+#### Browse items & Navigation
+1. To be able to navigate the website efficiently and intuitively so that I can find products that will be perfect for me or my loved one for special occasions like birthdays and christmas.
+    - The navbar is fixed to the top of the page is the same across all views.
+    - Links are in the navbar to show products based on category.
+2. View a website / store that contains exciting, new and retro video game related gifts so that I can view and purchase them for some one. 
+    - There are over 50 products related to gaming / pop culture that users access via the products links.
+3. Read the product information so I know what I am purchasing and what to expect when receiving the item.
+    - Each product has a product detail page that shows the user more information about the product.
+4. Have a running sum of the total amount I need to pay for the items in the trolly while browsing so that I know how much I am currently about to spend.
+    - When an item is added to the basket, a running sum is kept of the total price of the products currently in the basket.
+
+    <div><br/></div>
+    <div align="center">
+    <img style="width:90%;"  src="static/read-me/test-gifs/test_browse_navigation.gif" alt="Testing Bar Chart">
+    </div>
+
+
+#### User Account 
+5. Have a quick and seamless account registration procedure.
+    - The register feature is quick and seamless with only 5 fields in the register form.
+6. Be able to recover my account password via email incase I forgot it.
+    - The forgot password button allows user to enter email to get a link to reset their password on their account.
+7. Be able to quickly and easily login to and log out of my account.
+    - The log in and out buttons work as expected.
+8. Store my information in my account page so I do not need to fill in details like delivery address or keep my basket saved when I return to the site to make it easier for me to purchase.
+    - The user profile can store delivery information and can autofill the order form if saved.
+9. Update my details such as delivery address incase I need to change it.
+    - In the profile page the user can edit their saved information.
+10. View my order history to track what I have ordered and how much I spent so that I can keep a record.
+    - In the profile page order history is shown to the user.
+11. Receive emails such as account registration confirmation or order details so I can keep a record.
+    - Emails are received to verify account email and when orders are successful.
+
+    <div><br/></div>
+    <div align="center">
+    <img style="width:90%;"  src="static/read-me/test-gifs/test_user_profile.gif" alt="Testing Bar Chart">
+    </div>
+
+#### Sorting & Searching 
+12. The ability to browse the store via intuitive and relevant categories so I may find the right gift for the right person easy and efficiently.
+    - The main nav bar provides useful links to filter and display products based on categories.
+13. Use a search bar to so that I can find if specific items or video game items exist.
+    - The search bar will show relevant products related to the users search query.
+14. Sort products by price or rating to help me choose the right gift.
+    - The drop down filter sorts the products displayed based on price, name, category or rating.
+
+    <div><br/></div>
+    <div align="center">
+    <img style="width:90%;"  src="static/read-me/test-gifs/test_sort_search.gif" alt="Testing Bar Chart">
+    </div>
+
+#### Checkout & Basket 
+15. View all the items I have added to my bag so that I can keep track of the total cost and what I will receive.
+    - The products added to the basket are shown in a user friendly table when the user clicks the basket icon in the navbar.
+16. Add, remove and update quantities of products from my shopping trolly easy and intuitively so that I can purchase the items I want to.
+    - Next to all items in the basket an update quantity and delete item from basket option is available.
+    - The total is adjusted based on any changes made.
+17. Checkout securely via a checkout page that shows exactly what I am receiving and how much I need to pay including delivery cost.
+    - The stripe credit card box is in the checkout form and provides the user with error information if necessary.
+18. Securely and easily enter my payment information so that I can checkout safely and quickly.
+    - Stripe payments and some javascript enable safe payments using webhooks and disabling the website / forms buttons.
+19. Receive an order confirmation / status update after clicking the final checkout button so I know my order was successful.
+    - When an order is successful a message and email is sent to user with the order information.
+
+    <div><br/></div>
+    <div align="center">
+    <img style="width:90%;"  src="static/read-me/test-gifs/test_checkout.gif" alt="Testing Bar Chart">
+    </div>
+
+#### Store Management
+20. Have the ability to add new products to the store easily so that I can add new exciting products to the store.
+    - Under the product management of the admins my account, he/she can add products to the store.
+    - The form provides feedback if some product fields are required or are incorrect / invalid .
+21. Edit existing products in the store incase I make a mistake or something about the product needs updating such as price.
+    - If the admin is logged in the edit button is shown with each product in all the products pages and product detail page.
+    - This button preloads the product form with the current product values.
+    - If the form is submitted the product updates the changes made.
+22. Delete a product from the store so that I can remove items no longer sold on the website.
+    - If the admin is logged in the delete button is shown with each product in all the products pages and product detail page.
+    - If the delete button is pressed the admin is brought to a confirmation delete form.
+    - If confirmed deletion, then the product is removed from the store.
+
+    <div><br/></div>
+    <div align="center">
+    <img style="width:90%;"  src="static/read-me/test-gifs/test_admin.gif" alt="Testing Bar Chart">
+    </div>
 
 ### Manual Testing
 * All manual tests below:
@@ -80,6 +166,7 @@ The source code for the project can be viewed at [github](https://github.com/jam
     <img style="width:90%;"  src="static/read-me/test-gifs/test_products_page.gif" alt="Testing Bar Chart">
     </div>
 
+
 ##### Product Detail Pages
 - The image of a product on the products page should open up the products details page.
 - The description, name, rating, price, quantity, size, add to basket and continue shopping buttons should be displayed to the user on the right of the image on large/medium screens and should appear under the image on smart phones screens.
@@ -130,7 +217,6 @@ The source code for the project can be viewed at [github](https://github.com/jam
 - The cancel and delete product button remain centered under product image / info.
 - The cancel button returns the admin to the all products page.
 - The delete button on the delete_product.html page will delete the correct product from the store and return the user to the products page.
-
 
 ##### Add Product Review
 - users who purchased this product can access the product review page by clicking the add review button on the product details page.
@@ -215,5 +301,5 @@ The source code for the project can be viewed at [github](https://github.com/jam
 products_others_bought in the product created in the test case setUp function did not exist and thus trying to split an empty string in the product_detail view. 
 Fixed this by adding an if clause in the view.
 - If a product is added without an image, the website no longer crashes as a default no product image is loaded instead.
-
+- Reviews added before the userprofile was added to the model caused the website to crash. Fixed by adding the profile in the django admin page.
 ### Unsolved Bugs
