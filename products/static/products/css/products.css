@@ -91,6 +91,10 @@ i.fa-star-half {
 #div_id_rating label{
     float: left !important;
 }
+#div_id_user_review label{
+    float: left !important;
+}
+
 .break-word{
     overflow-wrap: break-word;
 }

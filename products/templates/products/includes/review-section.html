@@ -3,16 +3,7 @@
         <div class="col-12">
             <hr>
             <div class="row">
-                <div class="col-12">
-                    <h4>Reviews</h4>
-                </div>
-                <hr>
-                <div class="col-12">
-                    Number Of Reviews: {{ product.getNumOfReviews }} 
-                </div>
-                <hr>
                 <div class="col-12 mb-3">
-                    {% include 'products/includes/star-rating.html' %}
                     {% if user_bought_product %}
                         {% if users_submitted_review %}
                             <div class="col-12 col-lg-6 break-word mt-4 pl-0">
@@ -36,6 +27,15 @@
                             {% endif %} 
                         </div>   
                     {% endif %} 
+                </div>
+                <hr>
+                <div class="col-12">
+                    <h4>Reviews</h4>
+                </div>
+                <hr>
+                <div class="col-12">
+                    Number Of Reviews: {{ product.getNumOfReviews }}
+                    {% include 'products/includes/star-rating.html' %}
                 </div>
                 <hr>
                 {% if product_reviews %}

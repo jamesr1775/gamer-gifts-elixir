@@ -87,10 +87,14 @@ The source code for the project can be viewed at [github](https://github.com/jam
 - The reviews and other customers purchased sections should be on separate rows under the item image and description.
 - The add to basket button updates the shopping bag with the correct product, product size and quantity.
 - The bag in the nav bar should contain the correct grand total depending on the items in the shopping bag.
-- If the user tries to add too much of one product they are not able to and thus receive a message telling them of this issue.
-
-<!-- # TODO Reviews Section when implemented -->
-
+- If the user tries to add too much of one product multiple times they are not able to and thus receive a message telling them of this issue.
+- The add review button appears if the user has purchased the product but not reviewed it yet and it should bring the user to the products review page when pressed.
+- The add review button disappears when a user has submitted a review. Their review is then shown to them under the aggregated review score.
+- The update and delete review buttons are present on the users review.
+- The update button brings the user to the edit review page and preloads their current reviews information into the form.
+- The delete review button brings the user to a confirmation page asking them to confirm if they wish to delete their review.
+- The average users rating and the logged in users rating is correctly displayed.
+- The correct gold stars and half colored stars appear for the ratings value.
 
 ##### Add Product
 - Admin users can access this page by going to the product management section of My account drop down or by modifying the url.
@@ -126,6 +130,36 @@ The source code for the project can be viewed at [github](https://github.com/jam
 - The cancel and delete product button remain centered under product image / info.
 - The cancel button returns the admin to the all products page.
 - The delete button on the delete_product.html page will delete the correct product from the store and return the user to the products page.
+
+
+##### Add Product Review
+- users who purchased this product can access the product review page by clicking the add review button on the product details page.
+- users who did not purchase the product or logged out users should not be able to access the add product review form.
+- The form text headings should remain to the left border of their input field boxes.
+- The cancel and submit review button remain centered under the form.
+- The cancel button returns the user to the products detail page.
+- The form validators work as expected and do not allow the user to add the review if required inputs are wrong or missing. A popup should be displayed to the user if the submit form button is pressed and the form is not valid.
+- If the form is valid the user is brought to the products detail page after clicking the submit review button.
+
+##### Edit Product Review
+- users who purchased this product and have created a review can access the edit product review page by clicking the update review button on the product details page in the review section.
+- users who did not create the review or logged out users should not be able to access the edit product review form.
+- The form text headings should remain to the left border of their input field boxes.
+- The edit review form should be prefilled in with the users current review information of the product.
+- The cursor should be in the user review text description box.
+- The cancel and update review button remain centered under the form.
+- The cancel button returns the user to the products detail page.
+- The form validators work as expected and do not allow the user to add the review if required inputs are wrong or missing. A popup should be displayed to the user if the update form button is pressed and the form is not valid.
+- If the form is valid the user is brought to the products detail page after clicking the update review button.
+
+##### Delete Product Review
+- users who purchased this product can access the delete product review page by clicking the delete review button on the product details page.
+- users who did not create the review or logged out users should not be able to access the delete product review form.
+- The user is shown his / her review of the product with confirmation buttons to delete or cancel their actions to delete the review.
+- The text headings should remain on the center of the screen.
+- The cancel and delete review button remain centered under the form.
+- The cancel button returns the user to the products detail page.
+- The delete review button, deletes the users review and returns the user back to the products detail page where the add review button now exists and the update/ delete review buttons are gone.
 
 #### Shopping Bag Page Tests
 ##### Shopping Bag Layout 
