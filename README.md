@@ -74,8 +74,72 @@
 - [Order Info](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/static/read-me/wireframes/order-info.png)
 
 ## Features
+### Navigation
+<div align="center"><img src="static/read-me/navigation.png" style="width:80%" alt="Site Logo"></div>
+
+1. The Nav Bar is a part of the base template and will be present in all webpages of this website. 
+2. The register and login options appear when a user is not logged in and disappear when they are. They are accessed via the my account drop down.
+3. The my profile and logout options appear when logged in and are accessed via the my account drop down.
+4. The basket icon will keep track of the price of all the products in the users basket across all the websites pages.
+5. The basket button shows the user the items they added to their basket.
+6. The admin account has the extra option of product management on the my account drop down tab so they may add new products.
+7. The NavBar becomes a expandable button when the website is accessed on small screens.
+
+### User Account
+<div align="center"><img src="static/read-me/profile.png" style="width:80%" alt="Site Logo"></div>
+
+1. The register and login button appear in the my account button if a user is not logged in.
+2. The registration is quick and easy but requires the account to be verified via an email sent to the user.
+3. The users can log in and out of their account seamlessly.
+4. The user can store / update their delivery information on their profile page to prefill in forms in the checkout process.
+5. In their profile page they can also view all orders they have made.
+6. A email will be sent to the user when they make a purchase with the order details.
+
+
+### Browse items
+<div align="center"><img src="static/read-me/products.png" style="width:80%" alt="Site Logo"></div>
+
+1. The our products link shows the user all the products the store has to offer in a responsive manner.
+2. The gifts for him drop down menu allows the user to show products by category 
+relevant for boys.
+3. The gifts for her drop down menu allows the user to show products by category relevant for girls.
+4. 3d Printed gifts link shows 3d printed gift ideas and 3d printers.
+5. Offers shows the user products on sale.
+6. A search field will show products relevant to the search query.
+
+### Sorting & Searching
+<div align="center"><img src="static/read-me/searching_sorting.png" style="width:80%" alt="Site Logo"></div>
+
+1. A search bar in the nav bar allows the user show products relevant to the search query.
+2. On the products page, the drop down in the top right allows the products to be sorted by price, name, category and rating
+
+### Basket
+<div align="center"><img src="static/read-me/basket.png" style="width:80%" alt="Site Logo"></div>
+
+1. Every user can add products to their basket selecting quantity and size.
+2. The total cost of the products is calculated and displayed under the basket icon in the top right of the nav bar across all web pages of this application.
+3. The basket icon will show the user what is currently in their basket and allow them to update the quantity or remove items from the basket.
+
+### Checkout
+<div align="center"><img src="static/read-me/checkout.png" style="width:80%" alt="Site Logo"></div>
+
+1. The stripe credit card box gives feedback if the user has entered their details incorrectly.
+2. When checking out a loader stops the user from interacting with the website until the payment processing has completed.
+3. An order details page is loaded upon successful payment.
+4. An email and message is displayed to indicate the order went through successfully.
+
+### Store Management
+<div align="center"><img src="static/read-me/product_admin.png" style="width:80%" alt="Site Logo"></div>
+
+1. As the site owner, they can access the add product form by going to the product management button in the my account drop down in the nav bar.
+2. Admins can also edit existing products via the products pages or products detail page using the edit button.
+3. The admin can delete a product from the store via the products pages or products detail page using the delete button.
 
 ### Features to implement in the future
+1. A wish list so users can watch and create a list of products they are interested in.
+2. The other users purchased carousel is currently hard coded. Ideally it would use a third party service for smart recommendations or some database querying to get a number of products that were purchased together.
+3. Recommended section based on user interests.
+4. Custom 3d printed gifts where the user provides details and requirements of something they want 3d printed.
 
 ### Database Design
 The 3 main models used are below
@@ -125,7 +189,7 @@ The full data schema and relations is posted in the image:
     - [Git](https://github.com/git-guides/install-git)
     - [PIP](https://pip.pypa.io/en/stable/installation/)
 - The next step is to install everything listed in the requirements.txt document of the repo. To do that run the command in terminal of the IDE with the project opened:
-    - pip -r requirements.txt.
+    - pip install -r requirements.txt.
 
 ### Using Heroku to deploy an application
 1. A requirements.txt file should be created and kept updated, you can use the terminal command 
@@ -140,7 +204,7 @@ The full data schema and relations is posted in the image:
 5. Select New button and then select to create a new app.
 6. Give your application a name and choose a region located nearest to you.
 7. Make sure the correct repo is linked and is selecting the correct branch on your git repository.
-8. A database for the static files is required to smoother deployment to heroku. Setup/ Create a new AWS account here [Amazon Web Services](https://aws.amazon.com/).
+8. A database for the static files is required for smoother deployment to heroku. Setup/ Create a new AWS account here [Amazon Web Services](https://aws.amazon.com/).
     - In the search bar once logged in search for S3 and click S3 services. 
     - Create a new bucket to be used for your heroku app choosing a region close to you.
     - Allow public access to this bucket before clicking create and then click create.
@@ -190,8 +254,17 @@ The full data schema and relations is posted in the image:
     - Attach the policy to the new group you create with the IAM. 
     - Create a new user that will be added to the new group. Give them programmatic access when creating the new user.
     - When added to the group you will now have a CSV file to be downloaded with the AWS secret key Id and password that will be used in the next steps (step 10). Store this CSV safely as you may only download it once.
-9. Click the settings button of the app and click the reveal config variables button.
-10. Enter the following config variables:
+9. Create a Stripe account
+    - Go to the developers webhook section and click add endpoint
+    - Enter the heroku url of your application and add /checkout/wh/ to the url in the box that says Endpoint Url. e.g (https//appname.herokuapp.com/checkout/wh/)
+    - Then click add all events, then click add endpoint.
+    - Now you should have access to stripe secret and pubic keys for the config variables required below.
+10. I used the gmail account for the automated emails for user authentication and order emails.
+    - Once created go manage your google account and go to the security section.
+    - Create an app password for email service that will be EMAIL_HOST_PASS variable below.
+    - The EMAIL_HOST_USER variable below is the gmail account email you created.
+11. Click the settings button of the app and click the reveal config variables button.
+12. Enter the following config variables:
 
 | Key | Value |
  --- | ---
@@ -199,8 +272,14 @@ SECRET KEY | `<your_secret_key>`
 AWS_ACCESS_KEY_ID | `<your_aws_access_key_id>`
 AWS_SECRET_ACCESS_KEY | `<your_aws_access_key>`
 USE_AWS | True
+DATABASE_URL | `<your_data_base_url>`
+EMAIL_HOST_PASS | `<your_email_host_password>`
+EMAIL_HOST_USER | `<your_email_host_email_name>`
+STRIPE_PUBLIC_KEY | `<your_stripe_public_key>`
+STRIPE_SECRET_KEY | `<your_stripe_private_key>`
+STRIPE_WH_SECRET | `<your_stripe_webhook_secret_key>`
 
-11. Connecting to the S3 bucket the following should be added to the settings.py file of your django project. This is already to this project if you cloned the repo from the main branch.
+13. Connecting to the S3 bucket the following should be added to the settings.py file of your django project. This is already to this project if you cloned the repo from the main branch.
     ```
         if 'USE_AWS' in os.environ:
             AWS_STORAGE_BUCKET_NAME = 'gaming-gifts-elixir'
@@ -217,8 +296,12 @@ USE_AWS | True
             STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
             MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
     ```
-12. Your app should be ready for deployment now so click on Deploy button on the your heroku app page.
-13. Enable automatic deployment so new changes get deployed automatically.
+14. Run the show migrations command in the terminal to see if you need to apply migrations to your new database.
+    - run the command:  `python3 manage.py showmigrations`
+    - If you need to make migrations run the command `python3 manage.py makemigrations`
+    - Now run the migrate command to `python3 manage.py migrate` to apply the migrations.
+15. Your app should be ready for deployment now so click on Deploy button on the your heroku app page.
+16. Enable automatic deployment so new changes get deployed automatically.
 
 ## Credits
 ### Media
@@ -232,6 +315,8 @@ USE_AWS | True
 - [Photo by Luis Villasmil on Unsplash](https://unsplash.com/photos/ITFwHdPEED0)
 
 ### Acknowledgements
+Huge thanks to my mentor Miguel Martinez for helping me, providing great insights and reviewing my progress over the course of this project.
+
 - [1] This answered question helped me with the jquery for styling the rating stars based on fractional rating [stackoverflow](https://stackoverflow.com/questions/37562892/jquery-font-awesome-star-rating-default-value/37563393)
 - [2] Used the javascript and html from the course for the sorting selector [Code-Institute GitHub](https://github.com/Code-Institute-Solutions/boutique_ado_v1)
 - [3] Got information about how to get the product size when deleting from the basket to the remove view from the question answered here [stackoverflow](https://stackoverflow.com/questions/67535665/pass-a-get-parameter-from-html-and-receive-in-django-view).
