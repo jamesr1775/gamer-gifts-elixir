@@ -3,7 +3,7 @@ from .models import Product, Category, Review
 
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = (        
+    list_display = (
         'name',
         'category',
         'price',
@@ -13,12 +13,14 @@ class ProductAdmin(admin.ModelAdmin):
     )
 
     ordering = ('category',)
-    
+
+
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
         'friendly_name',
         'name',
     )
+
 
 class ReviewAdmin(admin.ModelAdmin):
     list_display = (
@@ -27,6 +29,7 @@ class ReviewAdmin(admin.ModelAdmin):
         'user_profile',
         'user_review',
     )
+
 
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)

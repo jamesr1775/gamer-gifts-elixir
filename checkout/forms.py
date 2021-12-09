@@ -22,7 +22,7 @@ class OrderForm(forms.ModelForm):
             'postcode': 'Postal Code',
             'county': 'County or State',
         }
-        
+
         self.fields['full_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if field != 'country':

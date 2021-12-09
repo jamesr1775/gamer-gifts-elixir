@@ -22,7 +22,7 @@ class TestCategoryModels(TestCase):
             friendly_name='Category 2',
         )
         self.assertEqual(item.get_friendly_name(), 'Category 2')
-    
+
 
 """Product Model Test"""
 class TestProductModels(TestCase):
@@ -50,11 +50,14 @@ class TestProductModels(TestCase):
         )
         self.assertEqual(item.has_sizes, False)
 
+
 """Review Model Test"""
 class TestReviewModels(TestCase):
+
     def test_review_str_method(self):
         """Test string method"""
-        user = User.objects.create_user('TestUser', 'TestUser@test.com', 'password')
+        user = User.objects.create_user(
+            'TestUser', 'TestUser@test.com', 'password')
         user_profile = get_object_or_404(UserProfile, user=user)
         product = Product.objects.create(
             name='Product 2',
@@ -62,21 +65,22 @@ class TestReviewModels(TestCase):
         )
         review = Review.objects.create(
             rating=4.60,
-            user_profile= user_profile,
+            user_profile=user_profile,
             product=product,
         )
         self.assertEqual(str(review), 'TestUser')
 
     def test_review_default_rating(self):
         """Test default status"""
-        user = User.objects.create_user('TestUser', 'TestUser@test.com', 'password')
+        user = User.objects.create_user(
+            'TestUser', 'TestUser@test.com', 'password')
         user_profile = get_object_or_404(UserProfile, user=user)
         product = Product.objects.create(
             name='Product 2',
             price='35.99',
         )
         review = Review.objects.create(
-            user_profile= user_profile,
+            user_profile=user_profile,
             product=product,
         )
         self.assertEqual(review.rating, Decimal('3.0'))

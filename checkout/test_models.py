@@ -1,19 +1,27 @@
-from django.test import TestCase, client
+from django.test import TestCase
 from checkout.models import Order, OrderLineItem
 from django.shortcuts import get_object_or_404
 from products.models import Product, Category
 from django.contrib.auth.models import User
 
+
 """Order Model Test"""
 class TestOrderModels(TestCase):
     @classmethod
     def setUp(self):
-        category = Category.objects.create(name="clothing", friendly_name="Clothing")
+        category = Category.objects.create(
+            name="clothing", friendly_name="Clothing")
         product = Product.objects.create(
                     sku="gg900522",
                     name="Test",
                     category=category,
-                    description="A must-have for fans of the hit Nintendo video game series, this officially licensed Legend Of Zelda Runes Mens & Womens T-shirt is the perfect addition to your gamer wardrobe. Printed on a black t-shirt, the design features an awesome lore from the game.",
+                    description="A must-have for fans of \
+                        the hit Nintendo video game series, \
+                            this officially licensed Legend Of Zelda \
+                            Runes Mens & Womens T-shirt is the perfect \
+                            addition to your gamer wardrobe. Printed \
+                            on a black t-shirt, the design \
+                            features an awesome lore from the game.",
                     has_sizes="True",
                     price=10,
                     product_rating=4.60,
@@ -22,7 +30,8 @@ class TestOrderModels(TestCase):
                     status="In Stock",
                     image="173849778_bcddebf66e_c.jpg",
             )
-        user = User.objects.create_user('TestUser', 'TestUser@test.com', 'password')
+        user = User.objects.create_user(
+            'TestUser', 'TestUser@test.com', 'password')
 
     def test_order_str_method(self):
         """Test string method"""
@@ -65,12 +74,19 @@ class TestOrderModels(TestCase):
 class TestOrderLineItemModels(TestCase):
     @classmethod
     def setUp(self):
-        category = Category.objects.create(name="clothing", friendly_name="Clothing")
+        category = Category.objects.create(
+            name="clothing", friendly_name="Clothing")
         product = Product.objects.create(
                     sku="gg900522",
                     name="Test",
                     category=category,
-                    description="A must-have for fans of the hit Nintendo video game series, this officially licensed Legend Of Zelda Runes Mens & Womens T-shirt is the perfect addition to your gamer wardrobe. Printed on a black t-shirt, the design features an awesome lore from the game.",
+                    description="A must-have for fans of \
+                        the hit Nintendo video game series, \
+                            this officially licensed Legend Of Zelda \
+                            Runes Mens & Womens T-shirt is the perfect \
+                            addition to your gamer wardrobe. Printed \
+                            on a black t-shirt, the design \
+                            features an awesome lore from the game.",
                     has_sizes="True",
                     price=10,
                     product_rating=4.60,
@@ -79,7 +95,8 @@ class TestOrderLineItemModels(TestCase):
                     status="In Stock",
                     image="173849778_bcddebf66e_c.jpg",
             )
-        user = User.objects.create_user('TestUser', 'TestUser@test.com', 'password')
+        user = User.objects.create_user(
+            'TestUser', 'TestUser@test.com', 'password')
 
     def test_order_line_item_str_method(self):
         """Test string method"""
@@ -99,5 +116,5 @@ class TestOrderLineItemModels(TestCase):
             product=product,
             product_size='m',
             quantity=1)
-        self.assertEqual(str(order_line_item), f'SKU {product.sku} on order {order.order_number}' )
-
+        self.assertEqual(
+            str(order_line_item), f'SKU {product.sku} on order {order.order_number}')

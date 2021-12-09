@@ -18,7 +18,7 @@ class UserProfileForm(forms.ModelForm):
             'default_postcode': 'Postal Code',
             'default_county': 'County or State',
         }
-        
+
         self.fields['default_full_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if field != 'default_country':

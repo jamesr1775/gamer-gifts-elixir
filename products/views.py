@@ -1,14 +1,13 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-from django.conf import settings
 from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
 from django.contrib.auth.decorators import login_required
-from django.contrib import messages
 from .models import Product, Category, Review
 from .forms import ProductForm, ReviewForm
 from profiles.models import UserProfile
-from checkout.models import Order, OrderLineItem
+from checkout.models import OrderLineItem
+
 
 def all_products(request):
     """ View to return the products page """
@@ -45,10 +44,12 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(
+                    request, "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
-            
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+
+            queries = Q(
+                name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
@@ -59,6 +60,7 @@ def all_products(request):
         'current_sorting': current_sorting,
     }
     return render(request, 'products/products.html', context)
+
 
 def product_detail(request, product_id):
     """ View to show a products details """
@@ -74,14 +76,16 @@ def product_detail(request, product_id):
 
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
-        orders = OrderLineItem.objects.filter(product=product, order__user_profile=profile)
+        orders = OrderLineItem.objects.filter(
+            product=product, order__user_profile=profile)
         user_bought_product = True if orders else False
         if Review.objects.filter(product=product, user_profile=profile):
-            users_submitted_review = Review.objects.filter(product=product, user_profile=profile)[0]
+            users_submitted_review = Review.objects.filter(
+                product=product, user_profile=profile)[0]
 
     for pid in others_bought_ids:
         products_others_bought.append(get_object_or_404(Product, pk=pid))
-    
+
     context = {
         'product': product,
         'star_loop': range(1, 6),
@@ -110,7 +114,8 @@ def add_product(request):
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add product. Make sure the form is valid.')
+            messages.error(
+                request, 'Failed to add product. Make sure the form is valid.')
 
     template = 'products/add_product.html'
     context = {
@@ -119,15 +124,16 @@ def add_product(request):
 
     return render(request, template, context)
 
+
 @login_required
 def edit_product(request, product_id):
     """ View to edit product """
     if not request.user.is_superuser:
         messages.error(request, "Error, you do not have permission.")
         return redirect(reverse('products'))
-    
+
     product = get_object_or_404(Product, pk=product_id)
-    
+
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
@@ -135,11 +141,13 @@ def edit_product(request, product_id):
             messages.success(request, 'Successfully edited product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. Make sure the form is valid.')
+            messages.error(
+                request,
+                'Failed to update product. Make sure the form is valid.')
     else:
         form = ProductForm(instance=product)
-        
-    template = 'products/edit_product.html'    
+
+    template = 'products/edit_product.html'
     context = {
         "form": form,
         "product": product,
@@ -171,13 +179,17 @@ def add_product_review(request, product_id):
     """ View to add product review """
     profile = UserProfile.objects.get(user=request.user)
     product = get_object_or_404(Product, pk=product_id)
-    orders = OrderLineItem.objects.filter(product=product, order__user_profile=profile)
+    orders = OrderLineItem.objects.filter(
+        product=product, order__user_profile=profile)
     user_bought_product = True if orders else False
     template = 'products/product_review.html'
     if not request.user.is_authenticated or not user_bought_product:
-        messages.error(request, "Error, you need to be logged in and have purchased the product to leave a review.")
+        messages.error(
+            request,
+            "Error, you need to be logged in and have purchased the \
+                product to leave a review.")
         return redirect(reverse('products'))
-    
+
     form = ReviewForm()
     if request.method == 'POST':
         form = ReviewForm(request.POST, request.FILES)
@@ -191,12 +203,15 @@ def add_product_review(request, product_id):
             messages.success(request, 'Successfully added product review!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add product review. Make sure the form is valid.')
+            messages.error(
+                request,
+                'Failed to add product review. Make sure the form is valid.')
     context = {
         "product": product,
         "form": form,
     }
     return render(request, template, context)
+
 
 @login_required
 def edit_product_review(request, review_id):
@@ -204,7 +219,7 @@ def edit_product_review(request, review_id):
     review = get_object_or_404(Review, pk=review_id)
     profile = UserProfile.objects.get(user=request.user)
     product = review.product
-    user_reviewed_product = True if review.user_profile == profile  else False
+    user_reviewed_product = True if review.user_profile == profile else False
     if not request.user.is_authenticated or not user_reviewed_product:
         messages.error(request, "Error, you do not have permission.")
         return redirect(reverse('products'))
@@ -218,7 +233,9 @@ def edit_product_review(request, review_id):
             messages.success(request, 'Successfully edited your review!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update your review. Make sure the form is valid.')
+            messages.error(
+                request,
+                'Failed to update your review. Make sure the form is valid.')
     else:
         review.rating = float(review.rating)
         form = ReviewForm(instance=review)
@@ -239,13 +256,14 @@ def delete_product_review(request, review_id):
     review = get_object_or_404(Review, pk=review_id)
     profile = UserProfile.objects.get(user=request.user)
     product = review.product
-    user_reviewed_product = True if review.user_profile == profile  else False
+    user_reviewed_product = True if review.user_profile == profile else False
     if not request.user.is_authenticated or not user_reviewed_product:
         messages.error(request, "Error, you do not have permission.")
         return redirect(reverse('products'))
 
     if Review.objects.filter(product=product, user_profile=profile):
-        users_submitted_review = Review.objects.filter(product=product, user_profile=profile)[0]
+        users_submitted_review = Review.objects.filter(
+            product=product, user_profile=profile)[0]
     else:
         users_submitted_review = []
 
@@ -302,6 +320,7 @@ def get_latest_products(request):
         'current_sorting': current_sorting,
     }
     return render(request, 'products/products.html', context)
+
 
 def get_popular_products(request):
     """ View to return the products page """

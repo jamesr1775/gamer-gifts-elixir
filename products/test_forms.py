@@ -9,12 +9,19 @@ from .forms import ProductForm, ReviewForm
 class TestProductForm(TestCase):
     @classmethod
     def setUpTestData(cls):
-        category = Category.objects.create(name="clothing", friendly_name="Clothing")
+        category = Category.objects.create(
+            name="clothing", friendly_name="Clothing")
         product = Product.objects.create(
                     sku="gg900522",
                     name="Test",
                     category=category,
-                    description="A must-have for fans of the hit Nintendo video game series, this officially licensed Legend Of Zelda Runes Mens & Womens T-shirt is the perfect addition to your gamer wardrobe. Printed on a black t-shirt, the design features an awesome lore from the game.",
+                    description="A must-have for fans of \
+                        the hit Nintendo video game series, \
+                            this officially licensed Legend Of Zelda \
+                            Runes Mens & Womens T-shirt is the perfect \
+                            addition to your gamer wardrobe. Printed \
+                            on a black t-shirt, the design \
+                            features an awesome lore from the game.",
                     has_sizes="True",
                     price=25.99,
                     product_rating=4.60,
@@ -23,8 +30,10 @@ class TestProductForm(TestCase):
                     status="In Stock",
                     image="173849778_bcddebf66e_c.jpg",
             )
-        user = User.objects.create_user('TestUser', 'TestUser@test.com', 'password')
-        admin = User.objects.create_superuser('admin', 'admin@test.com', 'password', )
+        user = User.objects.create_user(
+            'TestUser', 'TestUser@test.com', 'password')
+        admin = User.objects.create_superuser(
+            'admin', 'admin@test.com', 'password', )
 
     def test_name_field_required(self):
         """Test name field required"""
@@ -64,7 +73,6 @@ class TestProductForm(TestCase):
         self.assertFalse(form.is_valid())
         self.assertIn('status', form.errors.keys())
 
-
     def test_valid_form(self):
         product = get_object_or_404(Product, name="Test")
         form = ProductForm({
@@ -79,17 +87,28 @@ class TestProductForm(TestCase):
     def test_fields_are_explicit_in_form_metaclass(self):
         """Test to check fields in form metaclass"""
         form = ProductForm()
-        self.assertEqual([field for field in form.fields ], ['sku', 'name', 'category', 'description', 'has_sizes', 'price', 'product_rating', 'product_type', 'products_others_bought', 'status', 'image'])
+        self.assertEqual([field for field in form.fields], [
+            'sku', 'name', 'category', 'description', 'has_sizes',
+            'price', 'product_rating', 'product_type',
+            'products_others_bought', 'status', 'image'])
+
 
 class TestReviewForm(TestCase):
     @classmethod
     def setUpTestData(cls):
-        category = Category.objects.create(name="clothing", friendly_name="Clothing")
+        category = Category.objects.create(
+            name="clothing", friendly_name="Clothing")
         product = Product.objects.create(
                     sku="gg900522",
                     name="Test",
                     category=category,
-                    description="A must-have for fans of the hit Nintendo video game series, this officially licensed Legend Of Zelda Runes Mens & Womens T-shirt is the perfect addition to your gamer wardrobe. Printed on a black t-shirt, the design features an awesome lore from the game.",
+                    description="A must-have for fans of \
+                        the hit Nintendo video game series, \
+                            this officially licensed Legend Of Zelda \
+                            Runes Mens & Womens T-shirt is the perfect \
+                            addition to your gamer wardrobe. Printed \
+                            on a black t-shirt, the design \
+                            features an awesome lore from the game.",
                     has_sizes="True",
                     price=25.99,
                     product_rating=4.60,
@@ -98,14 +117,17 @@ class TestReviewForm(TestCase):
                     status="In Stock",
                     image="173849778_bcddebf66e_c.jpg",
         )
-        user = User.objects.create_user('TestUser', 'TestUser@test.com', 'password')
+        user = User.objects.create_user(
+            'TestUser', 'TestUser@test.com', 'password')
         user_profile = get_object_or_404(UserProfile, user=user)
-        admin = User.objects.create_superuser('admin', 'admin@test.com', 'password', )
-        review =  Review.objects.create(
+        admin = User.objects.create_superuser(
+            'admin', 'admin@test.com', 'password',)
+        review = Review.objects.create(
                     rating=4.60,
-                    user_profile= user_profile,
+                    user_profile=user_profile,
                     product=product,
         )
+
     def test_rating_field_required(self):
         product = get_object_or_404(Product, name="Test")
         review = get_object_or_404(Review, product=product)
@@ -129,4 +151,5 @@ class TestReviewForm(TestCase):
     def test_fields_are_explicit_in_form_metaclass(self):
         """Test to check fields in form metaclass"""
         form = ReviewForm()
-        self.assertEqual([field for field in form.fields ], ['rating', 'user_review'])
+        self.assertEqual(
+            [field for field in form.fields], ['rating', 'user_review'])

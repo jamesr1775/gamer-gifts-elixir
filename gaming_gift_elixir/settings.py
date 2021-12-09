@@ -49,10 +49,10 @@ INSTALLED_APPS = [
     'shopping_bag',
     'checkout',
     'profiles',
-    
-    #django storages 
+
+    # django storages
     'storages',
-    
+
     'crispy_forms'
 ]
 
@@ -192,7 +192,7 @@ if 'USE_AWS' in os.environ:
 
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
-    
+
 
 STANDARD_DELIVERY_PERCENTAGE = 10
 MAX_ORDER_QUANTITY = 20
