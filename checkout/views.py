@@ -160,7 +160,7 @@ def checkout_success(request, order_number):
     if 'shopping_bag' in request.session:
         del request.session['shopping_bag']
 
-    template = 'checkout/checkout-success.html'
+    template = 'checkout/checkout_success.html'
     context = {
         'order': order,
     }

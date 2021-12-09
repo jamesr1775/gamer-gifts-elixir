@@ -33,7 +33,7 @@
             <p class="card-text">{{ product.description }}</p>
             <p class="price-text">Price: ${{ product.price }}</p>
             <p class="stock-text">Stock: {{ product.status }}</p>
-            {% include 'products/includes/star-rating.html' %}
+            {% include 'products/includes/star_rating.html' %}
             {% if request.user.is_superuser %}
                 <div class="text-left">
                     <a href="{% url 'edit_product' product.id %}">Edit</a>  |
@@ -92,8 +92,8 @@
         </div>
     </div>
 </div>
-{% include 'products/includes/review-section.html' %}
-{% include 'products/includes/others-purchased-section.html' %}
+{% include 'products/includes/review_section.html' %}
+{% include 'products/includes/others_purchased_section.html' %}
 
 {% endblock %}
 
