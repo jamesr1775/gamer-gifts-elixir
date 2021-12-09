@@ -302,7 +302,10 @@ def delete_product_review(request, review_id):
 
 def get_latest_products(request):
     """ View to return most recent added products """
-    products = Product.objects.order_by("-id")[:20]
+    products = Product.objects.order_by("-id")
+    latest_products = products[:20]
+    latest_products_dict = {product.id: product for product in latest_products}
+    print(latest_products_dict)
     categories = None
     sort = None
     direction = None
@@ -331,9 +334,14 @@ def get_latest_products(request):
             gender = [request.GET['gender'], 'both']
             products = products.filter(product_type__in=gender)
 
+    filtered_products = []
+    for product in products:
+        if product.id in latest_products_dict:
+            filtered_products.append(product)
+
     current_sorting = f'{sort}_{direction}'
     context = {
-        'products': products,
+        'products': filtered_products,
         'star_loop': range(1, 6),
         'current_sorting': current_sorting,
     }
@@ -342,7 +350,10 @@ def get_latest_products(request):
 
 def get_popular_products(request):
     """ View to return the highest reviewed products """
-    products = Product.objects.order_by("-product_rating")[:20]
+    products = Product.objects.order_by("-product_rating")
+    popular_products = products[:20]
+    popular_products_dict = {
+        product.id: product for product in popular_products}
     categories = None
     sort = None
     direction = None
@@ -370,10 +381,15 @@ def get_popular_products(request):
         if 'gender' in request.GET:
             gender = [request.GET['gender'], 'both']
             products = products.filter(product_type__in=gender)
-
     current_sorting = f'{sort}_{direction}'
+
+    filtered_products = []
+    for product in products:
+        if product.id in popular_products_dict:
+            filtered_products.append(product)
+
     context = {
-        'products': products,
+        'products': filtered_products,
         'star_loop': range(1, 6),
         'current_sorting': current_sorting,
     }

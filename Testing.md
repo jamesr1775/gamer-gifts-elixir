@@ -8,12 +8,12 @@ The source code for the project can be viewed at [github](https://github.com/jam
 1. [**Testing**](#testing)
     - [**Code Validation**](#code-validation)
 2. [**User Stories Tests**](#testing-user-stories)
-3. [**Manual Testing**](#manual-testing)
+4. [**Automated Testing**](#automated-testing)
+5. [**Manual Testing**](#manual-testing)
     - [**Site Header**](#site-header)
-
-4. [**Further Testing**](#further-testing)
-5. [**Bugs and Issues Resolved**](#bugs-and-issues-resolved)
-6. [**Unsolved Bugs**](#unsolved-bugs)
+6. [**Further Testing**](#further-testing)
+7. [**Bugs and Issues Resolved**](#bugs-and-issues-resolved)
+8. [**Unsolved Bugs**](#unsolved-bugs)
 
 ## Testing
 ### Code Validation
@@ -106,6 +106,16 @@ The source code for the project can be viewed at [github](https://github.com/jam
     <img style="width:90%;"  src="static/read-me/test-gifs/test_admin.gif" alt="Testing Bar Chart">
     </div>
 
+### Automated Testing
+The python views, forms and models were tested using [Django Unit Testing](https://docs.djangoproject.com/en/3.2/topics/testing/overview/).
+A total of 58 unit tests were written and all pass without errors or warnings.
+These tests were ran regularly and before each big commit to the working branch.
+    <div><br/></div>
+    <div align="center">
+    <img style="width:90%;"  src="static/read-me/automated_test_results.png" alt="Testing Bar Chart">
+    </div>
+ 
+
 ### Manual Testing
 * All manual tests below:
     - were ran on chrome and firefox.
@@ -147,7 +157,8 @@ The source code for the project can be viewed at [github](https://github.com/jam
 - On smart phones they should be both on separate rows.
 - The cards should be above the footer and under the carousel.
 - The images are to remain undistorted for all supported screen resolutions.
-
+- The gift advice card brings the user to the gift advice page when clicked.
+- The printing info card brings the user to the printing info page when clicked.
     <div><br/></div>
     <div align="center">
     <img style="width:90%;"  src="static/read-me/test-gifs/test_home_page.gif" alt="Testing Bar Chart">
@@ -290,10 +301,18 @@ The source code for the project can be viewed at [github](https://github.com/jam
 
 ##### Checkout Success Functionality 
 - When the continue shopping button is pressed, it should take the user back to the products page.
+- An email should be sent with the order information.
+
+#### Profile Tests
+- A form with the users details is present on the home page.
+- If the user made an order and clicked the save info, then this form is prefilled with the users saved information.
+- The user can update their information easily with the form.
+- The order history is presented to the user at the bottom of the profile page in a table.
+- Clicking an order number will bring up the order details page.
 
 #### Further Testing
-
-
+- I asked friends and family to test and interact with the site on their own devices which included ipads, iphones and samsung phones.
+- Tested myself on physical devices laptop, desktop, ipad, samsung phone, iphone.
 
 ### Bugs and Issues Resolved
 - Having trouble with content appearing over/under the footer, found some information that helped from [stackoverflow](https://stackoverflow.com/questions/19330611/fixed-footer-in-bootstrap) where I was suggested to use 70 or 100vh for the content block.
@@ -302,4 +321,7 @@ products_others_bought in the product created in the test case setUp function di
 Fixed this by adding an if clause in the view.
 - If a product is added without an image, the website no longer crashes as a default no product image is loaded instead.
 - Reviews added before the userprofile was added to the model caused the website to crash. Fixed by adding the profile in the django admin page.
+- Fixed a bug where sorting popular or latest products caused a crash. 
+`AssertionError: Cannot reorder a query once a slice has been taken.` Found this info here [djangoproject](https://docs.djangoproject.com/en/1.8/ref/models/querysets/)
+Instead of slicing the products query I created a dictionary of the same products and used it to get the products I need in the correct sort order.
 ### Unsolved Bugs
