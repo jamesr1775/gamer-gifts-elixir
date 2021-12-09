@@ -33,7 +33,7 @@ def all_products(request):
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
-        
+
         # get products of category type
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
@@ -72,7 +72,7 @@ def product_detail(request, product_id):
     products_others_bought = []
     users_submitted_review = []
     user_bought_product = False
-    
+
     # create products others bought id list
     if product.products_others_bought:
         others_bought_ids = list(product.products_others_bought.split("_"))
@@ -140,7 +140,7 @@ def edit_product(request, product_id):
         return redirect(reverse('products'))
 
     product = get_object_or_404(Product, pk=product_id)
-    
+
     # Check edit product form and update if valid
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)

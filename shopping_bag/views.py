@@ -81,7 +81,7 @@ def update_bag(request, product_id):
 
 def remove_product_from_bag(request, product_id):
     """ View to remove product from basket """
-    
+
     # Try Block to delete item from the basket session
     try:
         product = get_object_or_404(Product, pk=product_id)
