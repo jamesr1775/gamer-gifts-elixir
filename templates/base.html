@@ -127,7 +127,8 @@
 
         {% block page_header %}
         {% endblock %}
-        
+        <!-- div loader below obtained from [18] in readme acknowledgements -->
+        <div class="se-pre-con"></div>
         <main>
             {% block content %}
             {% endblock %}
@@ -164,7 +165,12 @@
         {% block postloadjs %}
             <script type="text/javascript">
                 $('.toast').toast('show');
+                // loader obtained from [18] in readme acknowledgements
+                $(window).on('load', function(){
+                    $(".se-pre-con").fadeOut();
+                });
             </script>
+
         {% endblock %}
     </body>
 
