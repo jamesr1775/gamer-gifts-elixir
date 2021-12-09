@@ -1,7 +1,7 @@
-# Esports Epics Testing
-The deployed version of the Sorting Visualiser can be found at [Esports Epics](https://esports-epics.herokuapp.com/).
+# Gaming Gifts Elixir Testing
+The deployed version of the Sorting Visualiser can be found at [Gaming Gifts Elixir](https://gaming-gifts-elixir.herokuapp.com/).
 
-The source code for the project can be viewed at [github](https://github.com/jamesr1775/esports-epics).
+The source code for the project can be viewed at [github](https://github.com/jamesr1775/gamer-gifts-elixir/).
 
 ## Table of Contents
 
