@@ -15,7 +15,7 @@
 
 <div class="container-fluid">
     <div class="row">
-
+        <!-- Product Image -->
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
             <div class="image-detail-container">
                 {% if product.image %}
@@ -25,6 +25,7 @@
                 {% endif %}
             </div>
         </div>
+        <!-- Product Details Section -->
         <div class="col-12 col-md-6 col-lg-4">      
             <h4 class="card-text mt-auto">{{ product.name }}</h4>
             
@@ -40,6 +41,7 @@
                     <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
                 </div>
             {% endif %}
+            <!-- Add to Bag Section -->
             <form class="form product-form" action="{% url 'add_product_to_bag' product.id %}" method="POST">
                 {% csrf_token %}
                 <div class="form-row mt-3">

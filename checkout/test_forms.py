@@ -7,6 +7,7 @@ from .forms import OrderForm
 
 
 class TestCheckoutForm(TestCase):
+    """ Testing the checkout form """
     @classmethod
     def setUpTestData(cls):
         category = Category.objects.create(

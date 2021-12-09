@@ -6,7 +6,7 @@ from checkout.models import Order, OrderLineItem
 
 
 class TestCheckoutView(TestCase):
-
+    """ Testing the checkout views """
     @classmethod
     def setUp(self):
         category = Category.objects.create(

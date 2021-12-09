@@ -17,7 +17,9 @@ def all_products(request):
     sort = None
     direction = None
 
+    # if sort or search
     if request.GET:
+        # getting sort direction
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
@@ -30,17 +32,18 @@ def all_products(request):
                 direction = request.GET['direction']
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
-
             products = products.order_by(sortkey)
+        
+        # get products of category type
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
-
+        # get products of gender type
         if 'gender' in request.GET:
             gender = [request.GET['gender'], 'both']
             products = products.filter(product_type__in=gender)
-
+        # if user searched get search query and find products
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -69,11 +72,13 @@ def product_detail(request, product_id):
     products_others_bought = []
     users_submitted_review = []
     user_bought_product = False
-
+    
+    # create products others bought id list
     if product.products_others_bought:
         others_bought_ids = list(product.products_others_bought.split("_"))
     product_reviews = Review.objects.filter(product=product)
 
+    # get the users review if they made one
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
         orders = OrderLineItem.objects.filter(
@@ -83,6 +88,7 @@ def product_detail(request, product_id):
             users_submitted_review = Review.objects.filter(
                 product=product, user_profile=profile)[0]
 
+    # create products others bought list
     for pid in others_bought_ids:
         products_others_bought.append(get_object_or_404(Product, pk=pid))
 
@@ -106,6 +112,7 @@ def add_product(request):
         messages.error(request, "Error, you do not have permission.")
         return redirect(reverse('products'))
 
+    # Check add product form and add if valid
     form = ProductForm()
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
@@ -133,7 +140,8 @@ def edit_product(request, product_id):
         return redirect(reverse('products'))
 
     product = get_object_or_404(Product, pk=product_id)
-
+    
+    # Check edit product form and update if valid
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
@@ -167,6 +175,7 @@ def delete_product(request, product_id):
     context = {
         "product": product,
     }
+    # Check confirm delete pressed so delete the product
     if request.method == 'POST':
         messages.success(request, 'Successfully deleted product!')
         product.delete()
@@ -183,6 +192,8 @@ def add_product_review(request, product_id):
         product=product, order__user_profile=profile)
     user_bought_product = True if orders else False
     template = 'products/product_review.html'
+
+    # Make sure user is logged in and also has purchased the product
     if not request.user.is_authenticated or not user_bought_product:
         messages.error(
             request,
@@ -190,6 +201,7 @@ def add_product_review(request, product_id):
                 product to leave a review.")
         return redirect(reverse('products'))
 
+    # save the review and update product rating in product model
     form = ReviewForm()
     if request.method == 'POST':
         form = ReviewForm(request.POST, request.FILES)
@@ -220,10 +232,13 @@ def edit_product_review(request, review_id):
     profile = UserProfile.objects.get(user=request.user)
     product = review.product
     user_reviewed_product = True if review.user_profile == profile else False
+
+    # Make sure user is logged in and also has purchased the product
     if not request.user.is_authenticated or not user_reviewed_product:
         messages.error(request, "Error, you do not have permission.")
         return redirect(reverse('products'))
 
+    # Update review if form is valid
     if request.method == 'POST':
         form = ReviewForm(request.POST, request.FILES, instance=review)
         if form.is_valid():
@@ -257,16 +272,19 @@ def delete_product_review(request, review_id):
     profile = UserProfile.objects.get(user=request.user)
     product = review.product
     user_reviewed_product = True if review.user_profile == profile else False
+    # Make sure user is logged in and also has purchased the product
     if not request.user.is_authenticated or not user_reviewed_product:
         messages.error(request, "Error, you do not have permission.")
         return redirect(reverse('products'))
 
+    # Make sure user review exists
     if Review.objects.filter(product=product, user_profile=profile):
         users_submitted_review = Review.objects.filter(
             product=product, user_profile=profile)[0]
     else:
         users_submitted_review = []
 
+    # delete review if confirm delete button posted
     if request.method == 'POST':
         messages.success(request, 'Successfully deleted review!')
         review.delete()
@@ -283,7 +301,7 @@ def delete_product_review(request, review_id):
 
 
 def get_latest_products(request):
-    """ View to return the products page """
+    """ View to return most recent added products """
     products = Product.objects.order_by("-id")[:20]
     categories = None
     sort = None
@@ -323,7 +341,7 @@ def get_latest_products(request):
 
 
 def get_popular_products(request):
-    """ View to return the products page """
+    """ View to return the highest reviewed products """
     products = Product.objects.order_by("-product_rating")[:20]
     categories = None
     sort = None

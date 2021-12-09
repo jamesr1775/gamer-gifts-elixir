@@ -32,6 +32,9 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
+    """
+    Checkout basket items view
+    """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
     if request.method == 'POST':
@@ -48,7 +51,7 @@ def checkout(request):
             'country': request.POST['country'],
         }
         order_form = OrderForm(form_data)
-
+        
         if order_form.is_valid():
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]

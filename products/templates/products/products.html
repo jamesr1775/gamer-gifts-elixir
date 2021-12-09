@@ -9,6 +9,7 @@
 
 {% block content %}
 <div class="container-fluid">
+    <!-- Header -->
     <div class="row">
         <div class="col-12">
             <div class="text-center">
@@ -17,6 +18,7 @@
         </div>
     </div>
     <div class="row">
+        <!-- Products Sort Drop Down -->
         <div class="col-12">
             <!-- taken/modified from the course [2]  -->
             <div class="sort-products-container">
@@ -39,6 +41,7 @@
             </div> 
         </div>
     </div>
+    <!-- Products Table -->
     <div class="row">
         {% if products|length > 0 %}
             <div class="col-12">
@@ -97,7 +100,8 @@
 {% block postloadjs %}
     {{ block.super }}
     <script type="text/javascript">
-        // taken from the course [2] 
+        // taken from the course [2]
+        // Javascript to sort products
         $('#sort-selector').change(function() {
             var selector = $(this);
             var currentUrl = new URL(window.location);

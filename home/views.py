@@ -7,10 +7,10 @@ def index(request):
 
 
 def gift_advice(request):
-    """ View to return the index page """
+    """ View to return the gift advice page """
     return render(request, 'home/gift_advice.html')
 
 
 def printing_info(request):
-    """ View to return the index page """
+    """ View to return the printing info page """
     return render(request, 'home/printing_info.html')

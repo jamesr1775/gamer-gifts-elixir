@@ -5,8 +5,8 @@ from products.models import Product, Category
 from django.contrib.auth.models import User
 
 
-"""Order Model Test"""
 class TestOrderModels(TestCase):
+    """ Testing the checkout order model """
     @classmethod
     def setUp(self):
         category = Category.objects.create(
@@ -70,8 +70,8 @@ class TestOrderModels(TestCase):
         self.assertEqual(order.delivery_cost, 1)
 
 
-"""Order Model Test"""
 class TestOrderLineItemModels(TestCase):
+    """ Testing the checkout order line item model """
     @classmethod
     def setUp(self):
         category = Category.objects.create(

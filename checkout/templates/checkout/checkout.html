@@ -7,7 +7,9 @@
 
 {% block content %}
     <div class="container mb-2">
+        <!-- Order Header Message -->
         <h2 class="mt-2 mb-2">Order Summary</h2>
+        <!-- Order Products in Bag Summary-->
         <div class="row">
             <div class="col card">
                 {% if bag_items %}
@@ -38,6 +40,7 @@
                     {% endfor %}
                 {% endif %}
             </div>
+            <!-- Order Charges  -->
             <div class="col-12">
                 <hr>
                 <p class="text-right my-0">
@@ -54,17 +57,20 @@
         </div>
     </div>
     <div class="container mb-2">
+        <!-- Checkout Header Message -->
         <div class="row">
             <div class="col">
                 <h2 class="mt-2 mb-2">Checkout</h2>
                 <hr>
             </div>
         </div>
+        <!-- Checkout Form -->
         <div class="row">
             <div class="col-12">
                 <form method="POST" action="{% url 'checkout' %}" id="payment-form">
                     {% csrf_token %}
                     <h4 class="small">Delivery Information:</h4>
+                    <!-- Delivery Info -->
                     <div class="row">
                         <div class="rounded col-12 col-sm-6">
                             {{ order_form.full_name | as_crispy_field }}
@@ -88,6 +94,7 @@
                             </div>
                         </div>                        
                     </div>
+                    <!-- Stripe Payment Card Input -->
                     <div class="row">
                         <div class="col-12">
                             <h4 class="fieldset-label small text-black px-2 w-auto">Payment</h4>
@@ -99,6 +106,7 @@
                             <input type="hidden" value="{{ client_secret }}" name="client_secret">
                         </div>
                     </div>
+                    <!-- Checkout Page Checkout and Back Buttons -->
                     <div class="row">
                         <div class="col-12 text-center mt-3">
                             <a class="btn rounded-0 checkout-btn" href="{% url 'view_shopping_bag' %}">
@@ -117,6 +125,7 @@
             </div>
         </div>
     </div>
+    <!-- Loading overlay when processing payments -->
     <div id="loading-overlay">
         <h1 class="text-light loading-spinner">
             <span class="icon">

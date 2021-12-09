@@ -14,7 +14,7 @@ def view_shopping_bag(request):
 
 
 def add_product_to_bag(request, product_id):
-    """ View to add product """
+    """ View to add product to bag """
     product = get_object_or_404(Product, pk=product_id)
     product_quantity = int(request.POST.get('product_quantity'))
     redirect_url = request.POST.get('redirect_url')
@@ -23,7 +23,7 @@ def add_product_to_bag(request, product_id):
         size = request.POST['product_size']
 
     shopping_bag = request.session.get('shopping_bag', {})
-
+    # Check if item has size field to add items with different sizes
     if size:
         if product_id in shopping_bag.keys():
             if size in shopping_bag[product_id]['item_with_sizes'].keys():
@@ -80,7 +80,9 @@ def update_bag(request, product_id):
 
 
 def remove_product_from_bag(request, product_id):
-    """ View to add product """
+    """ View to remove product from basket """
+    
+    # Try Block to delete item from the basket session
     try:
         product = get_object_or_404(Product, pk=product_id)
         size = None

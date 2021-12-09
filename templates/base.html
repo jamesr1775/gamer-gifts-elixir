@@ -43,6 +43,8 @@
                 <div class="col-12 col-md-6 my-auto py-1 py-lg-0">
                     <a href="{% url 'home' %}" class=""><img class="responsive-img company-logo" id="logo" src="{% static 'images/company-logo.png' %}" alt="Gamer Gifts Elixir Logo"></a>
                 </div>
+
+                <!-- My Account Drop Down -->
                 <div class="col-12 col-md-6 my-auto py-1 py-lg-0">
                     <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                         <li class="list-inline-item dropdown">
@@ -52,6 +54,7 @@
                                     <p class="my-0">My Account</p>
                                 </div>
                             </a>
+                            <!-- My Account Drop Down Options -->
                             <div class="dropdown-menu border-0" aria-labelledby="user-options">
                                 {% if request.user.is_authenticated %}
                                     {% if request.user.is_superuser %}
@@ -65,6 +68,7 @@
                                 {% endif %}
                             </div>
                         </li>
+                        <!-- Shopping Bag Button & Total -->
                         <li class="list-inline-item">
                             <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_shopping_bag' %}">
                                 <div class="text-center">
@@ -82,6 +86,7 @@
                     </ul>
                 </div>
             </div>
+            <!-- Nav Bar Links and Search -->
             <div class="row bg-navbar">
                 <nav id="site-nav-bar" class="navbar navbar-expand-md navbar-light w-100">
                     <a href="{% url 'home' %}" class="d-md-none"><img class="responsive-img company-logo" id="logo" src="{% static 'images/company-logo.png' %}" alt="Gamer Gifts Elixir Logo"></a>
@@ -110,7 +115,7 @@
                 </nav>
             </div>
         </header>
-        
+        <!-- Toasts -->
         {% if messages %}
             <div class="toasts-message-container">
                 {% for message in messages %}
@@ -127,7 +132,7 @@
 
         {% block page_header %}
         {% endblock %}
-        <!-- div loader below obtained from [18] in readme acknowledgements -->
+        <!-- div loader below obtained from [10] in readme acknowledgements -->
         <div class="se-pre-con"></div>
         <main>
             {% block content %}
@@ -165,7 +170,7 @@
         {% block postloadjs %}
             <script type="text/javascript">
                 $('.toast').toast('show');
-                // loader obtained from [18] in readme acknowledgements
+                // loader obtained from [10] in readme acknowledgements
                 $(window).on('load', function(){
                     $(".se-pre-con").fadeOut();
                 });

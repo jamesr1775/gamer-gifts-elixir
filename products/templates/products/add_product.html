@@ -9,6 +9,7 @@
 
 {% block content %}
 <div class="container-fluid">
+    <!-- Header -->
     <div class="row">
         <div class="col-12">
             <div class="text-center">
@@ -20,6 +21,7 @@
     <div class="row">
         <div class="col-12">
             <h4 class="text-center text-muted mt-3">Add Product</h4>
+            <!-- Add product form -->
             <div class="text-center add-product-form-container">
                 <form method="POST" action="{% url 'add_product' %}" class="form mb-2 add-product-form" enctype="multipart/form-data">
                     {% csrf_token %}
