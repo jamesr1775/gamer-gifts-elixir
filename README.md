@@ -77,7 +77,7 @@
 
 ## Features
 ### Navigation
-<div align="center"><img src="static/read-me/navigation.png" style="width:80%" alt="Site Logo"></div>
+<div align="center"><img src="static/read-me/navigation.png" style="width:80%" alt="Navigation Bar"></div>
 
 1. The Nav Bar is a part of the base template and will be present in all webpages of this website. 
 2. The register and login options appear when a user is not logged in and disappear when they are. They are accessed via the my account drop down.
@@ -88,7 +88,7 @@
 7. The NavBar becomes a expandable button when the website is accessed on small screens.
 
 ### User Account
-<div align="center"><img src="static/read-me/profile.png" style="width:80%" alt="Site Logo"></div>
+<div align="center"><img src="static/read-me/profile.png" style="width:80%" alt="Profile page"></div>
 
 1. The register and login button appear in the my account button if a user is not logged in.
 2. The registration is quick and easy but requires the account to be verified via an email sent to the user.
@@ -99,7 +99,7 @@
 
 
 ### Browse items
-<div align="center"><img src="static/read-me/products.png" style="width:80%" alt="Site Logo"></div>
+<div align="center"><img src="static/read-me/products.png" style="width:80%" alt="Products Page"></div>
 
 1. The our products link shows the user all the products the store has to offer in a responsive manner.
 2. The gifts for him drop down menu allows the user to show products by category 
@@ -110,20 +110,20 @@ relevant for boys.
 6. A search field will show products relevant to the search query.
 
 ### Sorting & Searching
-<div align="center"><img src="static/read-me/searching_sorting.png" style="width:80%" alt="Site Logo"></div>
+<div align="center"><img src="static/read-me/searching_sorting.png" style="width:80%" alt="Sorting and Searching  Products"></div>
 
 1. A search bar in the nav bar allows the user show products relevant to the search query.
 2. On the products page, the drop down in the top right allows the products to be sorted by price, name, category and rating
 
 ### Basket
-<div align="center"><img src="static/read-me/basket.png" style="width:80%" alt="Site Logo"></div>
+<div align="center"><img src="static/read-me/basket.png" style="width:80%" alt="Basket Page"></div>
 
 1. Every user can add products to their basket selecting quantity and size.
 2. The total cost of the products is calculated and displayed under the basket icon in the top right of the nav bar across all web pages of this application.
 3. The basket icon will show the user what is currently in their basket and allow them to update the quantity or remove items from the basket.
 
 ### Checkout
-<div align="center"><img src="static/read-me/checkout.png" style="width:80%" alt="Site Logo"></div>
+<div align="center"><img src="static/read-me/checkout.png" style="width:80%" alt="Checkout Page"></div>
 
 1. The stripe credit card box gives feedback if the user has entered their details incorrectly.
 2. When checking out a loader stops the user from interacting with the website until the payment processing has completed.
@@ -131,7 +131,7 @@ relevant for boys.
 4. An email and message is displayed to indicate the order went through successfully.
 
 ### Store Management
-<div align="center"><img src="static/read-me/product_admin.png" style="width:80%" alt="Site Logo"></div>
+<div align="center"><img src="static/read-me/product_admin.png" style="width:80%" alt="Product admin page"></div>
 
 1. As the site owner, they can access the add product form by going to the product management button in the my account drop down in the nav bar.
 2. Admins can also edit existing products via the products pages or products detail page using the edit button.
@@ -150,7 +150,7 @@ The 3 main models used are below
 3. Checkout / Orders
 
 The full data schema and relations is posted in the image:
-<div align="center"><img src="static/read-me/data_schema.png" alt="Site Logo"></div>
+<div align="center"><img src="static/read-me/data_schema.png" alt="Data Base Schema"></div>
 
 
 ## Technologies Used

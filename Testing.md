@@ -32,7 +32,7 @@ The source code for the project can be viewed at [github](https://github.com/jam
 
     <div><br/></div>
     <div align="center">
-    <img style="width:90%;"  src="static/read-me/test-gifs/test_browse_navigation.gif" alt="Testing Bar Chart">
+    <img style="width:90%;"  src="static/read-me/test-gifs/test_browse_navigation.gif" alt="Testing Navigation">
     </div>
 
 
@@ -54,7 +54,7 @@ The source code for the project can be viewed at [github](https://github.com/jam
 
     <div><br/></div>
     <div align="center">
-    <img style="width:90%;"  src="static/read-me/test-gifs/test_user_profile.gif" alt="Testing Bar Chart">
+    <img style="width:90%;"  src="static/read-me/test-gifs/test_user_profile.gif" alt="Testing User Profile">
     </div>
 
 #### Sorting & Searching 
@@ -67,7 +67,7 @@ The source code for the project can be viewed at [github](https://github.com/jam
 
     <div><br/></div>
     <div align="center">
-    <img style="width:90%;"  src="static/read-me/test-gifs/test_sort_search.gif" alt="Testing Bar Chart">
+    <img style="width:90%;"  src="static/read-me/test-gifs/test_sort_search.gif" alt="Testing Sort and Search products">
     </div>
 
 #### Checkout & Basket 
@@ -85,7 +85,7 @@ The source code for the project can be viewed at [github](https://github.com/jam
 
     <div><br/></div>
     <div align="center">
-    <img style="width:90%;"  src="static/read-me/test-gifs/test_checkout.gif" alt="Testing Bar Chart">
+    <img style="width:90%;"  src="static/read-me/test-gifs/test_checkout.gif" alt="Testing Checkout">
     </div>
 
 #### Store Management
@@ -103,7 +103,7 @@ The source code for the project can be viewed at [github](https://github.com/jam
 
     <div><br/></div>
     <div align="center">
-    <img style="width:90%;"  src="static/read-me/test-gifs/test_admin.gif" alt="Testing Bar Chart">
+    <img style="width:90%;"  src="static/read-me/test-gifs/test_admin.gif" alt="Testing Product Admin">
     </div>
 
 ### Automated Testing
@@ -112,7 +112,7 @@ A total of 58 unit tests were written and all pass without errors or warnings.
 These tests were ran regularly and before each big commit to the working branch.
     <div><br/></div>
     <div align="center">
-    <img style="width:90%;"  src="static/read-me/automated_test_results.png" alt="Testing Bar Chart">
+    <img style="width:90%;"  src="static/read-me/automated_test_results.png" alt="Testing using Django Unit Tests">
     </div>
  
 
@@ -137,7 +137,7 @@ These tests were ran regularly and before each big commit to the working branch.
 - The search bar functions correctly and displays products related to the users search queries.
 <div><br/></div>
 <div align="center">
-<img style="width:90%;"  src="static/read-me/test-gifs/test_site_header_footer.gif" alt="Testing Bar Chart">
+<img style="width:90%;"  src="static/read-me/test-gifs/test_site_header_footer.gif" alt="Testing Site header and footer">
 </div>
 
 ##### Site Footer Tests
@@ -158,7 +158,7 @@ These tests were ran regularly and before each big commit to the working branch.
 - The sorting drop down options should sort the products correctly depending on the sort option.
 <div><br/></div>
 <div align="center">
-<img style="width:90%;"  src="static/read-me/test-gifs/test_carousel.gif" alt="Testing Bar Chart">
+<img style="width:90%;"  src="static/read-me/test-gifs/test_carousel.gif" alt="Testing Carousel Home Page">
 </div>
 
 ##### Tips / Print Info Cards
@@ -170,7 +170,7 @@ These tests were ran regularly and before each big commit to the working branch.
 - The printing info card brings the user to the printing info page when clicked.
     <div><br/></div>
     <div align="center">
-    <img style="width:90%;"  src="static/read-me/test-gifs/test_home_page.gif" alt="Testing Bar Chart">
+    <img style="width:90%;"  src="static/read-me/test-gifs/test_home_page.gif" alt="Testing Home Page">
     </div>
 
 #### Products Page Tests
@@ -183,7 +183,7 @@ These tests were ran regularly and before each big commit to the working branch.
 - The text should remain aligned to the other products text, left and right of the product they belong to. (The price is aligned to price, rating aligned to other ratings in the same row)
     <div><br/></div>
     <div align="center">
-    <img style="width:90%;"  src="static/read-me/test-gifs/test_products_page.gif" alt="Testing Bar Chart">
+    <img style="width:90%;"  src="static/read-me/test-gifs/test_products_page.gif" alt="Testing All Products Page">
     </div>
 
 
@@ -204,7 +204,7 @@ These tests were ran regularly and before each big commit to the working branch.
 - The correct gold stars and half colored stars appear for the ratings value.
     <div><br/></div>
     <div align="center">
-    <img style="width:90%;"  src="static/read-me/test-gifs/test_products_details.gif" alt="Testing Bar Chart">
+    <img style="width:90%;"  src="static/read-me/test-gifs/test_products_details.gif" alt="Testing Product Details Page">
     </div>
 
 ##### Add Product
@@ -244,7 +244,7 @@ These tests were ran regularly and before each big commit to the working branch.
 
     <div><br/></div>
     <div align="center">
-    <img style="width:90%;"  src="static/read-me/test-gifs/test_product_admin.gif" alt="Testing Bar Chart">
+    <img style="width:90%;"  src="static/read-me/test-gifs/test_product_admin.gif" alt="Testing Product Admin">
     </div>
 
 ##### Add Product Review
@@ -269,7 +269,7 @@ These tests were ran regularly and before each big commit to the working branch.
 
     <div><br/></div>
     <div align="center">
-    <img style="width:90%;"  src="static/read-me/test-gifs/test_crud_reviews.gif" alt="Testing Bar Chart">
+    <img style="width:90%;"  src="static/read-me/test-gifs/test_crud_reviews.gif" alt="Testing Crud For Reviews">
     </div>
 
 ##### Delete Product Review
@@ -300,7 +300,7 @@ These tests were ran regularly and before each big commit to the working branch.
 - The proceed to the checkout button is only present if the bag is not empty.
     <div><br/></div>
     <div align="center">
-    <img style="width:90%;"  src="static/read-me/test-gifs/test_shopping_bag.gif" alt="Testing Bar Chart">
+    <img style="width:90%;"  src="static/read-me/test-gifs/test_shopping_bag.gif" alt="Testing Shopping Bag">
     </div>
 
 #### Checkout Tests
@@ -322,7 +322,7 @@ These tests were ran regularly and before each big commit to the working branch.
     - An order success message is loaded in the top right of the page.
     <div><br/></div>
     <div align="center">
-    <img style="width:90%;"  src="static/read-me/test-gifs/test_checkout_functionality.gif" alt="Testing Bar Chart">
+    <img style="width:90%;"  src="static/read-me/test-gifs/test_checkout_functionality.gif" alt="Testing Checkout functionality">
     </div>
 ##### Checkout Success Layout
 - The checkout success page shows the user the delivery information submitted, the order details and the billing information.
