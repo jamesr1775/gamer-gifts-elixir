@@ -68,3 +68,8 @@ main{
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+
+.print-vid{
+	width: 700px;
+	height: 400px;
+}

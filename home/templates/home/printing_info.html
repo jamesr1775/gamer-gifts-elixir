@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block extra_css %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="text-center">
+            </div>
+        </div>
+    </div> 
+    <div class="row">
+        <div class="col-12 mb-2">
+            <h4>3d Printing Tutorial</h4>
+            <hr>
+            <p>
+                This video should get you on your way to 3d printing your own gifts!
+            </p>
+        </div>
+        <div class="col-12">
+            <div class="text-center embed-responsive embed-responsive-16by9">
+                <!-- <iframe class="print-vid" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/T-Z3GmM20JM?start=1" frameborder="0" allow="autoplay;" allowfullscreen></iframe>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+{% endblock %}
