@@ -1,5 +1,7 @@
 # <div align="center"><img src="static/images/company-logo.png" alt="Site Logo"></div>
-[Gamer Gifts Elixir]() is a website for people trying to find the perfect gift for a loved one who enjoys video games. Finding the right gift can be difficult and this store aims to make that easier. It will have gifts of all kinds related to video games from clothing, office supplies and figurines.
+[Gamer Gifts Elixir](https://gaming-gifts-elixir.herokuapp.com/) is a website for people trying to find the perfect gift for a loved one who enjoys video games. Finding the right gift can be difficult and this store aims to make that easier. It will have gifts of all kinds related to video games from clothing, office supplies and figurines.
+<!-- TODO -->
+<h2 align="center"><img src="" alt="Site Mock ups"></h2>
 
 ## Table of Contents
 1. [**UX**](#ux)
@@ -172,7 +174,13 @@ The full data schema and relations is posted in the image:
     - Used to generate gifs used throughout testing, readme and tutorial.
 * [dbdiagram.io](https://dbdiagram.io/)
     - Used to create/design the database schema for this project.
+* [loading.io](https://loading.io/)
+    - Used to create site loading gif.
+* [favicon.io](https://favicon.io/)
+    - Used to create site favicons.
 ## Testing
+Testing details can be viewed here [Testing.md](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/Testing.md)
+
 
 ## Deployment
 
