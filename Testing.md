@@ -122,7 +122,8 @@ These tests were ran regularly and before each big commit to the working branch.
     - were repeated on various screen resolutions using the chrome and firefox developer tools that include desktops, ipad, ipad pro, iphone X, 5, 6 ,7 , 8 and the plus models.
     - were repeated on the developers own smartphone (samsung) and tablet (ipad), desktop and laptop.
 
-#### Site Header & Hero Image
+#### Site Header, Footer & Hero Image
+
 ##### Device Specific Layout Checks
 - The Header responsiveness was tested by varying the screen size to see that the logo and navbar links were responsive and also that the navbar becomes an expandable burger icon on smartphones.
 - The logo stays to the left of the header on all screens with the my account and basket links to the right of the page.
@@ -134,6 +135,10 @@ These tests were ran regularly and before each big commit to the working branch.
 - All the product navigation links work and bring the user to the correct products page with the correct products displayed depending on the category selected.
 - The nav menu links with a drop down menu should be easily clickable and the drop down menu stays open until another click occurs.
 - The search bar functions correctly and displays products related to the users search queries.
+<div><br/></div>
+<div align="center">
+<img style="width:90%;"  src="static/read-me/test-gifs/test_site_header_footer.gif" alt="Testing Bar Chart">
+</div>
 
 ##### Site Footer Tests
 - The social media icons opens up the relevant social media platforms in a new tab.
@@ -151,6 +156,10 @@ These tests were ran regularly and before each big commit to the working branch.
 - The navigation buttons should remain within the carousel card.
 - All the drop down product pages should retrieve and display the correct products that are related to the drop down option selected.
 - The sorting drop down options should sort the products correctly depending on the sort option.
+<div><br/></div>
+<div align="center">
+<img style="width:90%;"  src="static/read-me/test-gifs/test_carousel.gif" alt="Testing Bar Chart">
+</div>
 
 ##### Tips / Print Info Cards
 - The gift tips and information callout cards should be side by side on tablets and larger screen sizes. 
@@ -193,6 +202,10 @@ These tests were ran regularly and before each big commit to the working branch.
 - The delete review button brings the user to a confirmation page asking them to confirm if they wish to delete their review.
 - The average users rating and the logged in users rating is correctly displayed.
 - The correct gold stars and half colored stars appear for the ratings value.
+    <div><br/></div>
+    <div align="center">
+    <img style="width:90%;"  src="static/read-me/test-gifs/test_products_details.gif" alt="Testing Bar Chart">
+    </div>
 
 ##### Add Product
 - Admin users can access this page by going to the product management section of My account drop down or by modifying the url.
@@ -229,6 +242,11 @@ These tests were ran regularly and before each big commit to the working branch.
 - The cancel button returns the admin to the all products page.
 - The delete button on the delete_product.html page will delete the correct product from the store and return the user to the products page.
 
+    <div><br/></div>
+    <div align="center">
+    <img style="width:90%;"  src="static/read-me/test-gifs/test_product_admin.gif" alt="Testing Bar Chart">
+    </div>
+
 ##### Add Product Review
 - users who purchased this product can access the product review page by clicking the add review button on the product details page.
 - users who did not purchase the product or logged out users should not be able to access the add product review form.
@@ -248,6 +266,11 @@ These tests were ran regularly and before each big commit to the working branch.
 - The cancel button returns the user to the products detail page.
 - The form validators work as expected and do not allow the user to add the review if required inputs are wrong or missing. A popup should be displayed to the user if the update form button is pressed and the form is not valid.
 - If the form is valid the user is brought to the products detail page after clicking the update review button.
+
+    <div><br/></div>
+    <div align="center">
+    <img style="width:90%;"  src="static/read-me/test-gifs/test_crud_reviews.gif" alt="Testing Bar Chart">
+    </div>
 
 ##### Delete Product Review
 - users who purchased this product can access the delete product review page by clicking the delete review button on the product details page.
@@ -275,6 +298,10 @@ These tests were ran regularly and before each big commit to the working branch.
 - The continue shopping button should return the user to the products page.
 - The proceed to the checkout button should bring the user to the checkout page.
 - The proceed to the checkout button is only present if the bag is not empty.
+    <div><br/></div>
+    <div align="center">
+    <img style="width:90%;"  src="static/read-me/test-gifs/test_shopping_bag.gif" alt="Testing Bar Chart">
+    </div>
 
 #### Checkout Tests
 ##### Checkout Layout
@@ -293,7 +320,10 @@ These tests were ran regularly and before each big commit to the working branch.
     - The complete checkout button is frozen and a processing spinner is loaded to stop the user from submitting the form again by accident.
     - When the order has been processed the user is brought to the checkout success page.
     - An order success message is loaded in the top right of the page.
-
+    <div><br/></div>
+    <div align="center">
+    <img style="width:90%;"  src="static/read-me/test-gifs/test_checkout_functionality.gif" alt="Testing Bar Chart">
+    </div>
 ##### Checkout Success Layout
 - The checkout success page shows the user the delivery information submitted, the order details and the billing information.
 - The text should hug the left side of the container.
@@ -325,3 +355,4 @@ Fixed this by adding an if clause in the view.
 `AssertionError: Cannot reorder a query once a slice has been taken.` Found this info here [djangoproject](https://docs.djangoproject.com/en/1.8/ref/models/querysets/)
 Instead of slicing the products query I created a dictionary of the same products and used it to get the products I need in the correct sort order.
 ### Unsolved Bugs
+Currently no known bugs.
