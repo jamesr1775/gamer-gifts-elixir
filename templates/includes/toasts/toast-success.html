@@ -12,40 +12,42 @@
                 <hr>     
             </div>
         </div>
-        <div class="shopping-bag-wrapper my-2">
-            <p><strong>Bag Contains {{ product_count }} items.</strong></p>
-            {% for item in bag_items %}
-                <div class="row">
-                    <div class="col-3 my-1">
-                        {% if item.product.image %}
-                        <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-                        {% else %}
-                        <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
-                        {% endif %}
+        {% if product_count != 0 %}
+            <div class="shopping-bag-wrapper my-2">
+                <p><strong>Bag Contains {{ product_count }} items.</strong></p>
+                {% for item in bag_items %}
+                    <div class="row">
+                        <div class="col-3 my-1">
+                            {% if item.product.image %}
+                            <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                            {% else %}
+                            <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                            {% endif %}
+                        </div>
+                        <div class="col-9">
+                            <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                            <p class="my-0 small">Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
+                            <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
+                        </div>
                     </div>
-                    <div class="col-9">
-                        <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                        <p class="my-0 small">Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
-                        <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
+                {% endfor %}
+            </div>
 
-                    </div>
+            <div class="row">
+                <div class="col-12">
+                    <hr>
+                    <p class="my-0">
+                        <strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong>
+                    </p>
                 </div>
-            {% endfor %}
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <hr>
-                <p class="my-0">
-                    <strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong>
-                </p>
+                <div class="col-12 text-center">
+                    <hr>
+                    <a class="btn rounded-0 message-bag-btn" href="{% url 'view_shopping_bag' %}">
+                        <i class="fas fa-shopping-bag fa-lg mr-2"></i>
+                        <span>View Shopping Bag</span>
+                    </a>
+                </div>
             </div>
-            <div class="col-12 text-center">
-                <hr>
-                <a class="btn rounded-0 message-bag-btn" href="{% url 'view_shopping_bag' %}">
-                    <i class="fas fa-shopping-bag fa-lg mr-2"></i>
-                    <span>View Shopping Bag</span>
-                </a>
-            </div>
-        </div>
+        {% endif %}
     </div>
 </div>
