@@ -10,5 +10,6 @@ class WishList(models.Model):
     product = models.ForeignKey(
         Product, null=False, blank=False, on_delete=models.CASCADE)
     added_date = models.DateTimeField(auto_now_add=True)
+
     def __str__(self):
         return f'{self.user_profile.user.username}\'s Wishlist'
