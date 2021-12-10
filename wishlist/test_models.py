@@ -1,5 +1,4 @@
 from django.test import TestCase
-from django.urls import reverse
 from django.shortcuts import get_object_or_404
 from .models import WishList
 from products.models import Product, Category
@@ -7,17 +6,15 @@ from profiles.models import UserProfile
 from django.contrib.auth.models import User
 
 
-"""Wishlist Model Test"""
 class TestWishlistModels(TestCase):
     """ Testing the wishlist model """
     @classmethod
     def setUp(self):
-        category = Category.objects.create(
+        Category.objects.create(
             name="clothing", friendly_name="Clothing")
-        product = Product.objects.create(
+        Product.objects.create(
                     sku="gg900522",
                     name="Test",
-                    category=category,
                     description="A must-have for fans of \
                         the hit Nintendo video game series, \
                             this officially licensed Legend Of Zelda \
@@ -33,7 +30,7 @@ class TestWishlistModels(TestCase):
                     status="In Stock",
                     image="173849778_bcddebf66e_c.jpg",
             )
-        user = User.objects.create_user(
+        User.objects.create_user(
             'TestUser', 'TestUser@test.com', 'password')
 
     def test_wishlist_str_method(self):

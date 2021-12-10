@@ -5,8 +5,9 @@ from profiles.models import UserProfile
 from django.contrib.auth.models import User
 from decimal import Decimal
 
-"""Category Model Test"""
+
 class TestCategoryModels(TestCase):
+    """Category Model Test"""
     def test_category_str_method(self):
         """Test string method"""
         item = Category.objects.create(
@@ -24,8 +25,8 @@ class TestCategoryModels(TestCase):
         self.assertEqual(item.get_friendly_name(), 'Category 2')
 
 
-"""Product Model Test"""
 class TestProductModels(TestCase):
+    """Product Model Test"""
     def test_product_str_method(self):
         """Test string method"""
         item = Product.objects.create(
@@ -51,9 +52,8 @@ class TestProductModels(TestCase):
         self.assertEqual(item.has_sizes, False)
 
 
-"""Review Model Test"""
 class TestReviewModels(TestCase):
-
+    """Review Model Test"""
     def test_review_str_method(self):
         """Test string method"""
         user = User.objects.create_user(

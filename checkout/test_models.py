@@ -9,12 +9,11 @@ class TestOrderModels(TestCase):
     """ Testing the checkout order model """
     @classmethod
     def setUp(self):
-        category = Category.objects.create(
+        Category.objects.create(
             name="clothing", friendly_name="Clothing")
-        product = Product.objects.create(
+        Product.objects.create(
                     sku="gg900522",
                     name="Test",
-                    category=category,
                     description="A must-have for fans of \
                         the hit Nintendo video game series, \
                             this officially licensed Legend Of Zelda \
@@ -30,7 +29,7 @@ class TestOrderModels(TestCase):
                     status="In Stock",
                     image="173849778_bcddebf66e_c.jpg",
             )
-        user = User.objects.create_user(
+        User.objects.create_user(
             'TestUser', 'TestUser@test.com', 'password')
 
     def test_order_str_method(self):
@@ -60,7 +59,7 @@ class TestOrderModels(TestCase):
             country="IE",
             order_total=10,
             stripe_pid="Test Pid")
-        order_line_item = OrderLineItem.objects.create(
+        OrderLineItem.objects.create(
             order=order,
             product=product,
             product_size='m',
@@ -76,7 +75,7 @@ class TestOrderLineItemModels(TestCase):
     def setUp(self):
         category = Category.objects.create(
             name="clothing", friendly_name="Clothing")
-        product = Product.objects.create(
+        Product.objects.create(
                     sku="gg900522",
                     name="Test",
                     category=category,
@@ -95,7 +94,7 @@ class TestOrderLineItemModels(TestCase):
                     status="In Stock",
                     image="173849778_bcddebf66e_c.jpg",
             )
-        user = User.objects.create_user(
+        User.objects.create_user(
             'TestUser', 'TestUser@test.com', 'password')
 
     def test_order_line_item_str_method(self):
@@ -117,4 +116,5 @@ class TestOrderLineItemModels(TestCase):
             product_size='m',
             quantity=1)
         self.assertEqual(
-            str(order_line_item), f'SKU {product.sku} on order {order.order_number}')
+            str(order_line_item),
+            f'SKU {product.sku} on order {order.order_number}')

@@ -1,39 +1,9 @@
-from django.test import TestCase, client
-from checkout.models import Order, OrderLineItem
-from products.models import Product, Category
-from django.contrib.auth.models import User
-
+from django.test import TestCase
 from .forms import OrderForm
 
 
 class TestCheckoutForm(TestCase):
     """ Testing the checkout form """
-    @classmethod
-    def setUpTestData(cls):
-        category = Category.objects.create(
-            name="clothing", friendly_name="Clothing")
-        product = Product.objects.create(
-                    sku="gg900522",
-                    name="Test",
-                    category=category,
-                    description="A must-have for fans of the hit \
-                        Nintendo video game series, this officially \
-                        licensed Legend Of Zelda Runes Mens & Womens \
-                        T-shirt is the perfect addition to your gamer \
-                        wardrobe. Printed on a black t-shirt, the design \
-                        features an awesome lore from the game.",
-                    has_sizes="True",
-                    price=25.99,
-                    product_rating=4.60,
-                    product_type="both",
-                    products_others_bought="1_1",
-                    status="In Stock",
-                    image="173849778_bcddebf66e_c.jpg",
-            )
-        user = User.objects.create_user(
-            'TestUser', 'TestUser@test.com', 'password')
-        admin = User.objects.create_superuser(
-            'admin', 'admin@test.com', 'password', )
 
     def test_full_name_is_required(self):
         """Test to check full name is required"""

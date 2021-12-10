@@ -1,10 +1,6 @@
 from django.test import TestCase
-from django.urls import reverse
 from django.shortcuts import get_object_or_404
-from .models import WishList
-from products.models import Product, Category, Review
-from profiles.models import UserProfile
-from checkout.models import Order, OrderLineItem
+from products.models import Product, Category
 from django.contrib.auth.models import User
 
 
@@ -12,12 +8,11 @@ class TestProductsView(TestCase):
 
     @classmethod
     def setUp(self):
-        category = Category.objects.create(
+        Category.objects.create(
             name="clothing", friendly_name="Clothing")
-        product = Product.objects.create(
+        Product.objects.create(
             sku="gg900522",
             name="Test",
-            category=category,
             description="A must-have for fans of the hit \
              Nintendo video game series, this officially \
             licensed Legend Of Zelda Runes Mens & Womens \
@@ -32,10 +27,9 @@ class TestProductsView(TestCase):
             status="In Stock",
             image="173849778_bcddebf66e_c.jpg",
         )
-        user = User.objects.create_user(
+        User.objects.create_user(
             'TestUser', 'TestUser@test.com', 'password')
-        user_profile = get_object_or_404(UserProfile, user=user)
-        admin = User.objects.create_superuser(
+        User.objects.create_superuser(
             'admin', 'admin@test.com', 'password', )
 
     # test wishlist redirect not logged in
@@ -60,8 +54,10 @@ class TestProductsView(TestCase):
     def test_add_product_wishlist_not_logged_in_redirect(self):
         """Test add product to wishlist redirect not logged in"""
         product = get_object_or_404(Product, name="Test")
-        response = self.client.get(f'/wishlist/add_product_to_wishlist/{product.id}/')
-        url = f"/accounts/login/?next=/wishlist/add_product_to_wishlist/{product.id}/"
+        response = self.client.get(
+            f'/wishlist/add_product_to_wishlist/{product.id}/')
+        url = f'/accounts/login/?next=/'\
+            f'wishlist/add_product_to_wishlist/{product.id}/'
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, url)
 
@@ -72,7 +68,8 @@ class TestProductsView(TestCase):
             username='admin', password='password')
         self.assertTrue(loginresponse)
         product = get_object_or_404(Product, name="Test")
-        response = self.client.get(f'/wishlist/add_product_to_wishlist/{product.id}/')
+        response = self.client.get(
+            f'/wishlist/add_product_to_wishlist/{product.id}/')
         url = f"/products/{product.id}/"
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, url)
@@ -81,8 +78,10 @@ class TestProductsView(TestCase):
     def test_remove_product_wishlist_not_logged_in_redirect(self):
         """Test add product to wishlist redirect not logged in"""
         product = get_object_or_404(Product, name="Test")
-        response = self.client.get(f'/wishlist/remove_product_from_wishlist/{product.id}/')
-        url = f"/accounts/login/?next=/wishlist/remove_product_from_wishlist/{product.id}/"
+        response = self.client.get(
+            f'/wishlist/remove_product_from_wishlist/{product.id}/')
+        url = f'/accounts/login/?next=/'\
+            f'wishlist/remove_product_from_wishlist/{product.id}/'
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, url)
 
@@ -93,11 +92,13 @@ class TestProductsView(TestCase):
             username='admin', password='password')
         self.assertTrue(loginresponse)
         product = get_object_or_404(Product, name="Test")
-        response = self.client.get(f'/wishlist/add_product_to_wishlist/{product.id}/')
+        response = self.client.get(
+            f'/wishlist/add_product_to_wishlist/{product.id}/')
         url = f"/products/{product.id}/"
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, url)
-        response = self.client.get(f'/wishlist/remove_product_from_wishlist/{product.id}/')
+        response = self.client.get(
+            f'/wishlist/remove_product_from_wishlist/{product.id}/')
         url = "/wishlist/"
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, url)

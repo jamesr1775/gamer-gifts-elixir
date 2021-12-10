@@ -34,9 +34,9 @@ class TestProductsView(TestCase):
         user = User.objects.create_user(
             'TestUser', 'TestUser@test.com', 'password')
         user_profile = get_object_or_404(UserProfile, user=user)
-        admin = User.objects.create_superuser(
+        User.objects.create_superuser(
             'admin', 'admin@test.com', 'password', )
-        review = Review.objects.create(
+        Review.objects.create(
             rating=4.60,
             user_profile=user_profile,
             product=product
@@ -52,7 +52,7 @@ class TestProductsView(TestCase):
             country="IE",
             order_total=10,
             stripe_pid="Test Pid")
-        order_line_item = OrderLineItem.objects.create(
+        OrderLineItem.objects.create(
             order=order,
             product=product,
             product_size='m',
@@ -172,7 +172,8 @@ class TestProductsView(TestCase):
         product = get_object_or_404(Product, name="Test")
         response = self.client.get(
             f'/products/add_product_review/{product.id}/')
-        url = f"/accounts/login/?next=/products/add_product_review/{product.id}/"
+        url = f'/accounts/login/?next=/'\
+            f'products/add_product_review/{product.id}/'
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, url)
 
@@ -183,7 +184,9 @@ class TestProductsView(TestCase):
             username='admin', password='password')
         self.assertTrue(loginresponse)
         product = get_object_or_404(Product, name="Test")
-        response = self.client.get(f'/products/add_product_review/{product.id}/')
+        response = self.client.get(
+            f'/products/'
+            f'add_product_review/{product.id}/')
         url = "/products/"
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, url)
@@ -195,7 +198,8 @@ class TestProductsView(TestCase):
             username='TestUser', password='password')
         self.assertTrue(loginresponse)
         product = get_object_or_404(Product, name="Test")
-        response = self.client.get(f'/products/add_product_review/{product.id}/')
+        response = self.client.get(
+            f'/products/'f'add_product_review/{product.id}/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "products/product_review.html")
 
@@ -203,8 +207,10 @@ class TestProductsView(TestCase):
     def test_edit_product_review_logged_out_redirect(self):
         """Test add product review view"""
         product = get_object_or_404(Product, name="Test")
-        response = self.client.get(f'/products/edit_product_review/{product.id}/')
-        url = f"/accounts/login/?next=/products/edit_product_review/{product.id}/"
+        response = self.client.get(
+            f'/products/'f'edit_product_review/{product.id}/')
+        url = f'/accounts/login/?next=/'\
+            f'products/edit_product_review/{product.id}/'
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, url)
 
@@ -215,7 +221,8 @@ class TestProductsView(TestCase):
             username='admin', password='password')
         self.assertTrue(loginresponse)
         product = get_object_or_404(Product, name="Test")
-        response = self.client.get(f'/products/edit_product_review/{product.id}/')
+        response = self.client.get(
+            f'/products/'f'edit_product_review/{product.id}/')
         url = "/products/"
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, url)
@@ -227,7 +234,8 @@ class TestProductsView(TestCase):
             username='TestUser', password='password')
         self.assertTrue(loginresponse)
         product = get_object_or_404(Product, name="Test")
-        response = self.client.get(f'/products/edit_product_review/{product.id}/')
+        response = self.client.get(
+            f'/products/'f'edit_product_review/{product.id}/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "products/edit_product_review.html")
 
@@ -235,8 +243,10 @@ class TestProductsView(TestCase):
     def test_delete_product_review_logged_out_redirect(self):
         """Test delete product review view"""
         product = get_object_or_404(Product, name="Test")
-        response = self.client.get(f'/products/delete_product_review/{product.id}/')
-        url = f"/accounts/login/?next=/products/delete_product_review/{product.id}/"
+        response = self.client.get(
+            f'/products/'f'delete_product_review/{product.id}/')
+        url = f'/accounts/login/?next=/'\
+            f'products/delete_product_review/{product.id}/'
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, url)
 
@@ -247,7 +257,8 @@ class TestProductsView(TestCase):
             username='admin', password='password')
         self.assertTrue(loginresponse)
         product = get_object_or_404(Product, name="Test")
-        response = self.client.get(f'/products/delete_product_review/{product.id}/')
+        response = self.client.get(
+            f'/products/delete_product_review/{product.id}/')
         url = "/products/"
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, url)
@@ -259,7 +270,8 @@ class TestProductsView(TestCase):
             username='TestUser', password='password')
         self.assertTrue(loginresponse)
         product = get_object_or_404(Product, name="Test")
-        response = self.client.get(f'/products/delete_product_review/{product.id}/')
+        response = self.client.get(
+            f'/products/delete_product_review/{product.id}/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(
             response, "products/delete_product_review.html")
