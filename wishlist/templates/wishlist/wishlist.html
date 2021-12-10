@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+
+{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid">
+    <!-- Header -->
+    <div class="row">
+        <div class="col-12">
+            <div class="text-center">
+                <h2>Your Wish List</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Products Table -->
+<div class="row">
+    {% if products|length > 0 %}
+        <div class="col-12">
+            <hr>
+        </div>
+        {% for product in products %}
+        
+            <div class="col-sm-6 col-md-4 col-xl-4 mb-3">
+                <div class="card product-card">
+                    <a href="{% url 'product_detail' product.id %}">              
+                        {% if product.image %}
+                            <img class="card-img-top product-image img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        {% else %}
+                            <img class="card-img-top product-image img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                        {% endif %}
+                    </a>
+                    <div class="card-body">
+                        <p class="card-text product-name mt-auto">{{ product.name }}</p>
+                        <a href="{% url 'remove_product_from_wishlist' product.id %}"
+                        class="link-small px-1"> <i class="fas fa-eye-slash mr-2"></i></i>Remove product from your wishlist.
+                        </a>
+                    </div>
+                    {% if request.user.is_superuser %}
+                        <div class="text-left">
+                            <a href="{% url 'edit_product' product.id %}">Edit</a>  |
+                            <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                        </div>
+                    {% endif %}
+                    <p class="price-text">${{ product.price }}</p>
+                    {% include 'products/includes/star_rating.html' %}
+                </div>
+            </div>
+            {% if forloop.counter|divisibleby:3 %}
+            <div class="col-12 mb-1 d-none d-md-block">
+                <hr>
+            </div>
+            {% endif %}
+            {% if forloop.counter|divisibleby:2 %}
+            <div class="col-12 mb-1 d-none d-sm-block d-md-none">
+                <hr>
+            </div>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        <div class="col-sm-6 col-md-4 col-xl-4 mb-3">
+            <div class="card product-card">
+                <div class="card-body">
+                    <p class="card-text product-name mt-auto text-center">You have no products in your wishlist.</p>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</div>      
+</div>
+
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript">
+    // taken from the course [2]
+    // Javascript to sort products
+    $('#sort-selector').change(function() {
+        var selector = $(this);
+        var currentUrl = new URL(window.location);
+
+        var selectedVal = selector.val();
+        if(selectedVal != "reset"){
+            if (selectedVal.includes("product_rating")){
+                var sort = "product_rating";
+                var direction = selectedVal.split("_")[2];
+            }
+            else{
+                var sort = selectedVal.split("_")[0];
+                var direction = selectedVal.split("_")[1];
+            }
+
+            
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
+
+            window.location.replace(currentUrl);
+        } else {
+            currentUrl.searchParams.delete("sort");
+            currentUrl.searchParams.delete("direction");
+
+            window.location.replace(currentUrl);
+        }
+    })
+</script>
+<script src="{% static 'products/js/star_rating.js' %}"></script>
+{% endblock %}

@@ -7,6 +7,7 @@ from .models import Product, Category, Review
 from .forms import ProductForm, ReviewForm
 from profiles.models import UserProfile
 from checkout.models import OrderLineItem
+from wishlist.models import WishList
 
 
 def all_products(request):
@@ -72,6 +73,7 @@ def product_detail(request, product_id):
     products_others_bought = []
     users_submitted_review = []
     user_bought_product = False
+    product_in_user_wishlist = False
 
     # create products others bought id list
     if product.products_others_bought:
@@ -81,6 +83,8 @@ def product_detail(request, product_id):
     # get the users review if they made one
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
+        product_in_user_wishlist = True if WishList.objects.filter(
+            user_profile=profile, product=product) else False
         orders = OrderLineItem.objects.filter(
             product=product, order__user_profile=profile)
         user_bought_product = True if orders else False
@@ -100,6 +104,7 @@ def product_detail(request, product_id):
         'product_reviews': product_reviews,
         'user_bought_product': user_bought_product,
         'users_submitted_review': users_submitted_review,
+        'product_in_user_wishlist': product_in_user_wishlist,
     }
 
     return render(request, 'products/product_details.html', context)

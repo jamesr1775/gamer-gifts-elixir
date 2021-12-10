@@ -9,12 +9,11 @@ from .forms import ProductForm, ReviewForm
 class TestProductForm(TestCase):
     @classmethod
     def setUpTestData(cls):
-        category = Category.objects.create(
+        Category.objects.create(
             name="clothing", friendly_name="Clothing")
-        product = Product.objects.create(
+        Product.objects.create(
                     sku="gg900522",
                     name="Test",
-                    category=category,
                     description="A must-have for fans of \
                         the hit Nintendo video game series, \
                             this officially licensed Legend Of Zelda \
@@ -30,14 +29,13 @@ class TestProductForm(TestCase):
                     status="In Stock",
                     image="173849778_bcddebf66e_c.jpg",
             )
-        user = User.objects.create_user(
+        User.objects.create_user(
             'TestUser', 'TestUser@test.com', 'password')
-        admin = User.objects.create_superuser(
+        User.objects.create_superuser(
             'admin', 'admin@test.com', 'password', )
 
     def test_name_field_required(self):
         """Test name field required"""
-        product = get_object_or_404(Product, name="Test")
         form = ProductForm({
             'name': '',
         })
@@ -45,7 +43,6 @@ class TestProductForm(TestCase):
         self.assertIn('name', form.errors.keys())
 
     def test_desc_field_required(self):
-        product = get_object_or_404(Product, name="Test")
         form = ProductForm({
             'name': 'Test',
             'description': '',
@@ -54,7 +51,6 @@ class TestProductForm(TestCase):
         self.assertIn('description', form.errors.keys())
 
     def test_price_field_required(self):
-        product = get_object_or_404(Product, name="Test")
         form = ProductForm({
             'name': 'Test',
             'description': 'Test Description',
@@ -64,7 +60,6 @@ class TestProductForm(TestCase):
         self.assertIn('price', form.errors.keys())
 
     def test_status_field_required(self):
-        product = get_object_or_404(Product, name="Test")
         form = ProductForm({
             'name': 'Test',
             'description': 'Test Description',
@@ -96,12 +91,11 @@ class TestProductForm(TestCase):
 class TestReviewForm(TestCase):
     @classmethod
     def setUpTestData(cls):
-        category = Category.objects.create(
+        Category.objects.create(
             name="clothing", friendly_name="Clothing")
         product = Product.objects.create(
                     sku="gg900522",
                     name="Test",
-                    category=category,
                     description="A must-have for fans of \
                         the hit Nintendo video game series, \
                             this officially licensed Legend Of Zelda \
@@ -120,17 +114,15 @@ class TestReviewForm(TestCase):
         user = User.objects.create_user(
             'TestUser', 'TestUser@test.com', 'password')
         user_profile = get_object_or_404(UserProfile, user=user)
-        admin = User.objects.create_superuser(
+        User.objects.create_superuser(
             'admin', 'admin@test.com', 'password',)
-        review = Review.objects.create(
+        Review.objects.create(
                     rating=4.60,
                     user_profile=user_profile,
                     product=product,
         )
 
     def test_rating_field_required(self):
-        product = get_object_or_404(Product, name="Test")
-        review = get_object_or_404(Review, product=product)
         form = ReviewForm({
             'user_review': 'Test',
             'rating': '10',
@@ -139,8 +131,6 @@ class TestReviewForm(TestCase):
         self.assertIn('rating', form.errors.keys())
 
     def test_user_review_field_required(self):
-        product = get_object_or_404(Product, name="Test")
-        review = get_object_or_404(Review, product=product)
         form = ReviewForm({
             'user_review': '',
             'rating': '4.5',
