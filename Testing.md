@@ -340,6 +340,24 @@ These tests were ran regularly and before each big commit to the working branch.
 - The order history is presented to the user at the bottom of the profile page in a table.
 - Clicking an order number will bring up the order details page.
 
+
+#### WishList Tests 
+##### WishList Page
+- WishList Page is tested the same as the products page as its the same template code.
+- A remove product from wishlist button is added underneath the product name.
+##### WishList Add Product
+- The add product to wishlist button is visible to logged in users on the product details page.
+- The add product to wishlist button adds the product to the users wishlist.
+##### WishList Remove Product
+- The remove product from wishlist button exists on the products detail page if the product is in the users wishlist.
+- The remove product from wishlist button exists on wishlists page.
+- The remove product from wishlist button removes a the product from the users wishlist.
+
+    <div><br/></div>
+    <div align="center">
+    <img style="width:90%;"  src="static/read-me/test-gifs/test_wishlist.gif" alt="Testing Wishlist functionality">
+    </div>
+
 #### Further Testing
 - I asked friends and family to test and interact with the site on their own devices which included ipads, iphones and samsung phones.
 - Tested myself on physical devices laptop, desktop, ipad, samsung phone, iphone.
