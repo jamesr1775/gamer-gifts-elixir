@@ -42,7 +42,7 @@
                                 <tbody>
                                     {% for item in bag_items %}
                                         <tr>
-                                            <td scope="row">
+                                            <td>
                                                 <a href="{% url 'product_detail' item.product.id %}">              
                                                     {% if item.product.image %}
                                                         <img class="shopping-bag-image img-fluid" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">

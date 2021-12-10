@@ -11,7 +11,7 @@
         <!-- Header -->
         <div class="row">
             <div class="col-12">
-                <h2 class="text-center">Your Profile</h4>
+                <h2 class="text-center">Your Profile</h2>
                 <hr>
             </div>
         </div>
@@ -59,17 +59,15 @@
                                     </td>
                                     <td class="profile-order-row">{{ order.created_at_date }}</td>
                                     <td class="profile-order-row">                                     
-                                        <small>
-                                            <ul>
-                                                {% for item in order.lineitems.all %}
-                                                    <li>
-                                                        {% if item.product.has_sizes %}
-                                                            Size {{ item.size|upper }}
-                                                        {% endif %}{{ item.product.name }} Qty: {{ item.quantity }}
-                                                    </li>
-                                                {% endfor %}
-                                            </ul>
-                                        </small> 
+                                        <ul>
+                                            {% for item in order.lineitems.all %}
+                                                <li>
+                                                    {% if item.product.has_sizes %}
+                                                        Size {{ item.size|upper }}
+                                                    {% endif %}{{ item.product.name }} Qty: {{ item.quantity }}
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
                                     </td>
                                     <td class="profile-order-row">${{ order.grand_total }}</td>
                                 </tr>

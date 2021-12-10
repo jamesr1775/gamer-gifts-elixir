@@ -88,7 +88,7 @@
                             {{ order_form.country | as_crispy_field }}
                             <div class="form-check form-check-inline float-right mr-0">
                                 {% if user.is_authenticated %}
-                                    <p class="form-check-label" for="id-save-info">Save this delivery information to my profile</p>
+                                    <p class="form-check-label">Save this delivery information to my profile</p>
                                     <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
                                 {% endif %}
                             </div>

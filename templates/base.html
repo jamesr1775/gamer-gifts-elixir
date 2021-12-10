@@ -41,7 +41,7 @@
         <header class="container-fluid">
             <div id="topnav" class="row bg-navbar pt-lg-2 d-none d-md-flex">
                 <div class="col-12 col-md-6 my-auto py-1 py-lg-0">
-                    <a href="{% url 'home' %}" class=""><img class="responsive-img company-logo" id="logo" src="{% static 'images/company-logo.png' %}" alt="Gamer Gifts Elixir Logo"></a>
+                    <a href="{% url 'home' %}" class=""><img class="responsive-img company-logo" src="{% static 'images/company-logo.png' %}" alt="Gamer Gifts Elixir Logo"></a>
                 </div>
 
                 <!-- My Account Drop Down -->
@@ -90,7 +90,7 @@
             <!-- Nav Bar Links and Search -->
             <div class="row bg-navbar">
                 <nav id="site-nav-bar" class="navbar navbar-expand-md navbar-light w-100">
-                    <a href="{% url 'home' %}" class="d-md-none"><img class="responsive-img company-logo" id="logo" src="{% static 'images/company-logo.png' %}" alt="Gamer Gifts Elixir Logo"></a>
+                    <a href="{% url 'home' %}" class="d-md-none"><img class="responsive-img company-logo" src="{% static 'images/company-logo.png' %}" alt="Gamer Gifts Elixir Logo"></a>
                     {% include 'includes/mobile_nav.html' %}
                     {% include 'includes/main_nav.html' %}
                     
@@ -170,11 +170,11 @@
         </footer>
         {% block postloadjs %}
             <script type="text/javascript">
-                $('.toast').toast('show');
+                $('.toast').toast('show')
                 // loader obtained from [10] in readme acknowledgements
                 $(window).on('load', function(){
-                    $(".se-pre-con").fadeOut();
-                });
+                    $(".se-pre-con").fadeOut()
+                })
             </script>
 
         {% endblock %}

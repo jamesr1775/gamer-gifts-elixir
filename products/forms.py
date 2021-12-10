@@ -29,16 +29,16 @@ class ReviewForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         placeholders = {
-            'rating': 'Product Rating',
             'user_review': 'Product Review Description',
         }
         self.fields['user_review'].widget.attrs['autofocus'] = True
         self.fields['rating'].label = 'Rate the product out of 5 Stars:'
         for field in self.fields:
-            if self.fields[field].required:
-                placeholder = f'{placeholders[field]} *'
-            else:
-                placeholder = placeholders[field]
-            self.fields[field].widget.attrs['placeholder'] = placeholder
+            if field != 'rating':
+                if self.fields[field].required:
+                    placeholder = f'{placeholders[field]} *'
+                else:
+                    placeholder = placeholders[field]
+                self.fields[field].widget.attrs['placeholder'] = placeholder
             if field == 'rating':
                 self.fields[field].choices = self.fields[field].choices[1:]

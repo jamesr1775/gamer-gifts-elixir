@@ -35,11 +35,11 @@
                 </div>
                 <!-- Delete product review form -->
                 <div class="col-12 text-center">
-                    <strong><p class="text-center text-muted mb-0 mt-3">Are you sure you want to delete your review?</p></strong>
+                    <p class="text-center text-muted mb-0 mt-3">Are you sure you want to delete your review?</p>
                     <form method="POST" action="{% url 'delete_product_review' users_submitted_review.id %}" class="form mb-2 add-product-form" enctype="multipart/form-data">
                         {% csrf_token %}                        
                         <div class="text-center">
-                            <a class="btn rounded-0 crud-product-btn" href="{% url 'product_detail' product.id %}" value="cancel">Cancel</a>
+                            <a class="btn rounded-0 crud-product-btn" href="{% url 'product_detail' product.id %}">Cancel</a>
                             <button class="btn rounded-0 crud-product-btn bg-danger" type="submit">Delete Review</button>
                         </div>
                     </form>
