@@ -17,7 +17,10 @@ The source code for the project can be viewed at [github](https://github.com/jam
 
 ## Testing
 ### Code Validation
-
+* The HTML passed and showed no errors in the [W3C Markup Validation](https://validator.w3.org/)
+* The CSS passed and showed no errors in the [W3C CSS validation ](https://jigsaw.w3.org/css-validator)
+* The Java Script was tested and no errors were found using [JSHint](https://jshint.com/)
+* The python Pep8 standard was checked with the IDE using [flake8](https://flake8.pycqa.org/en/latest/)
 ### Testing User Stories
 #### Browse items & Navigation
 1. To be able to navigate the website efficiently and intuitively so that I can find products that will be perfect for me or my loved one for special occasions like birthdays and christmas.
