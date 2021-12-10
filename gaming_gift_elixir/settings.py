@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'shopping_bag',
     'checkout',
     'profiles',
-
+    'wishlist',
     # django storages
     'storages',
 
