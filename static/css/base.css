@@ -130,6 +130,24 @@ footer {
 	background: url(/static/images/eclipse-loader.gif) center no-repeat #fff;
 }
 
+.bg-success-tst{
+    background-color: #863AFF;
+}
+
+.shopping-bag-wrapper{
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.message-bag-btn{
+    background: #2D2D3C;
+    color: white !important;
+    border: 1px solid black;
+    border-radius: 5px !important;
+    font-size: 15px;
+    font-weight: 700;
+}
 
 @media (min-width: 768px) {
     #site-nav-bar {

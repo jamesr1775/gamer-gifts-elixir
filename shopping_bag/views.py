@@ -38,9 +38,13 @@ def add_product_to_bag(request, product_id):
                     return redirect(redirect_url)
                 shopping_bag[product_id][
                     'item_with_sizes'][size] += product_quantity
+                messages.success(request, f'Added size {size.upper()} {product.name} \
+                    to your bag')
             else:
                 shopping_bag[product_id][
                     'item_with_sizes'][size] = product_quantity
+                messages.success(request, f'Added size {size.upper()} {product.name} \
+                    to your bag')
         else:
             shopping_bag[product_id] = {
                 'item_with_sizes': {size: product_quantity}}
