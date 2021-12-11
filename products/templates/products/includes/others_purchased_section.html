@@ -11,9 +11,9 @@
                             <div class="card others-bought-product-card">
                                 <a href="{% url 'product_detail' product.id %}">       
                                     {% if product.image %}
-                                        <img class="card-img-top product-image img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                        <img class="card-img-top carousel-image img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
                                     {% else %}
-                                        <img class="card-img-top product-image img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                        <img class="card-img-top carousel-image img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                                     {% endif %}
                                 </a>
                                 <div class="card-body p-2">
