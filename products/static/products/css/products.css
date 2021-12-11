@@ -104,8 +104,21 @@ i.fa-star-half {
     .product-card {
         width: 400px !important;
     }
+    .product-image-detail{
+        width: 80%;
+    }
+}
+@media (min-width: 1600px) {
+    .product-image-detail{
+        width: 70%;
+    }
 }
 
+@media (max-width: 1300px) {
+    .product-image-detail{
+        width: 90%;
+    }
+}
 
 @media (max-width: 991px) {
 	.carousel-image {
