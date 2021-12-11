@@ -317,14 +317,16 @@ STRIPE_WH_SECRET | `<your_stripe_webhook_secret_key>`
 ## Credits
 ### Media
 - [Free Logo Design](https://www.freelogodesign.org/)   -   Created the Company logo.
-- [Photo by Karolina Grabowska from Pexels](https://www.pexels.com/photo/a-red-sale-tags-on-red-and-black-background-5625008/)
-- [Photo by Anthony from Pexels](https://www.pexels.com/photo/xbox-one-controller-beside-three-xbox-one-cases-139038/)
-- [Photo by Andrea Piacquadio from Pexels](https://www.pexels.com/photo/man-wearing-white-virtual-reality-goggles-834949/)
-- [Image by ZMorph3D from Pixabay](https://pixabay.com/photos/3d-printing-3d-technology-tech-3758154/)
-- [Photo by Ross Sneddon on Unsplash](https://unsplash.com/photos/sWlDOWk0Jp8)
-- [Photo by AbsolutVision on Unsplash](https://unsplash.com/photos/82TpEld0_e4)
-- [Photo by Luis Villasmil on Unsplash](https://unsplash.com/photos/ITFwHdPEED0)
+- [Photo by Karolina Grabowska from Pexels](https://www.pexels.com/photo/a-red-sale-tags-on-red-and-black-background-5625008/)  -   Offers/Sales
+- [Photo by Anthony from Pexels](https://www.pexels.com/photo/xbox-one-controller-beside-three-xbox-one-cases-139038/)   -  Popular Products
+- [Photo by Andrea Piacquadio from Pexels](https://www.pexels.com/photo/man-wearing-white-virtual-reality-goggles-834949/)  -   latest products
+- [Image by ZMorph3D from Pixabay](https://pixabay.com/photos/3d-printing-3d-technology-tech-3758154/)  -   3d printing gifts
+- [Photo by AbsolutVision on Unsplash](https://unsplash.com/photos/82TpEld0_e4)     -   Gift Advice
+- [Photo by ZMorph3D on Pixabay](https://pixabay.com/photos/printer-technology-3d-printer-4348147)     -   Printing Info
+- [Photo by Luis Villasmil on Unsplash](https://unsplash.com/photos/ITFwHdPEED0)    -   home background image
+- [Photo by Kira auf der Heide](https://unsplash.com/photos/IPx7J1n_xUc)    -   gift advice page
 
+The product images used are in the following [text file](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/static/read-me/media_product_references.txt)
 ### Acknowledgements
 Huge thanks to my mentor Miguel Martinez for helping me, providing great insights and reviewing my progress over the course of this project.
 
