@@ -148,7 +148,7 @@ i.fa-star-half {
 	}
 }
 
-@media (max-width: 1075px) {
+@media (max-width: 1150px) {
     .btn-return-products, .btn-add-to-bag {
         font-size: 14px;
     }
