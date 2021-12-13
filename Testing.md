@@ -146,7 +146,7 @@ These tests were ran regularly and before each big commit to the working branch.
 ##### Site Footer Tests
 - The social media icons opens up the relevant social media platforms in a new tab.
 - The icons remain centered on all screen sizes.
-- The Copyright Info text stays under the icons to the left side of the screen.
+- The Developer Info text stays under the icons to the left side of the screen.
 
 
 #### Home Page Tests
