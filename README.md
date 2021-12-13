@@ -147,14 +147,22 @@ relevant for boys.
 4. Custom 3d printed gifts where the user provides details and requirements of something they want 3d printed.
 
 ### Database Design
-The 3 main models used are below
+The 4 main models used are below
 1. User Profile
 2. Products
-3. Checkout / Orders
+3. Orders
+4. Order Items
 
 The full data schema and relations is posted in the image:
 <div align="center"><img src="static/read-me/data_schema.png" alt="Data Base Schema"></div>
 
+Two more models were added after completing the user profile app.
+
+5. Reviews
+6. Wishlist
+
+Using django-extensions and GraphViz the models diagram from the final version of the site is below.
+<div align="center"><img src="static/read-me/models.png" alt="Data Base Schema"></div>
 
 ## Technologies Used
 * [Heroku:](https://www.heroku.com/)
@@ -180,6 +188,8 @@ The full data schema and relations is posted in the image:
 * [loading.io](https://loading.io/)
     - Used to create site loading gif.
 * [favicon.io](https://favicon.io/)
+    - Used to create site favicons.
+* [Django-Extensions](https://django-extensions.readthedocs.io/en/latest/)
     - Used to create site favicons.
 ## Testing
 Testing details can be viewed here [Testing.md](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/Testing.md)
@@ -340,3 +350,4 @@ Huge thanks to my mentor Miguel Martinez for helping me, providing great insight
 - [8] Required a for loop counter in products template, got some info at [stackoverflow](https://stackoverflow.com/questions/11481499/django-iterate-number-in-for-loop-of-a-template).
 - [9] Required modulo operator to add horizontal dividers for large - medium screens every 3 products and then every two for small screens and none for xs screens, got some info at [stackoverflow](https://stackoverflow.com/questions/8494209/modulus-in-django-template/8494425).
 - [10] The site pre loader code was obtained from [stackoverflow](https://stackoverflow.com/questions/30478549/pre-loader-image-at-page-load-issue) and [smallenvelop](https://smallenvelop.com/display-loading-icon-page-loads-completely/).
+- [11] Thanks to Sean Young for posting how to generate a image of the django models in the code institute slack community. 
