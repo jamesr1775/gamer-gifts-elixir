@@ -111,7 +111,7 @@ The source code for the project can be viewed at [github](https://github.com/jam
 
 ### Automated Testing
 The python views, forms and models were tested using [Django Unit Testing](https://docs.djangoproject.com/en/3.2/topics/testing/overview/).
-A total of 65 unit tests were written and all pass without errors or warnings.
+A total of 66 unit tests were written and all pass without errors or warnings.
 These tests were ran regularly and before each big commit to the working branch.
     <div><br/></div>
     <div align="center">

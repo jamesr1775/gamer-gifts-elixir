@@ -68,6 +68,17 @@ class TestProductForm(TestCase):
         self.assertFalse(form.is_valid())
         self.assertIn('status', form.errors.keys())
 
+    def test_product_rating_required(self):
+        product = get_object_or_404(Product, name="Test")
+        form = ProductForm({
+            'name': 'Test',
+            'description': 'Test Description',
+            'price': '19.99',
+            'status': product.status,
+        })
+        self.assertFalse(form.is_valid())
+        self.assertIn('product_rating', form.errors.keys())
+
     def test_valid_form(self):
         product = get_object_or_404(Product, name="Test")
         form = ProductForm({
@@ -75,6 +86,7 @@ class TestProductForm(TestCase):
             'description': 'Test Description',
             'price': '19.99',
             'status': product.status,
+            'product_rating': 0,
         })
         self.assertTrue(form.is_valid())
         self.assertDictEqual({}, form.errors)
