@@ -324,6 +324,11 @@ STRIPE_WH_SECRET | `<your_stripe_webhook_secret_key>`
 15. Your app should be ready for deployment now so click on Deploy button on the your heroku app page.
 16. Enable automatic deployment so new changes get deployed automatically.
 
+## Issues
+- It was difficult to get license free images that are related to the store I wanted to build so I had to make do
+with what I could find. Some of the images might be a little distorted as they vary in size alot. If this store was 
+real I would take my own images and make sure they are all uniform size to prevent this.
+
 ## Credits
 ### Media
 - [Free Logo Design](https://www.freelogodesign.org/)   -   Created the Company logo.
@@ -335,6 +340,7 @@ STRIPE_WH_SECRET | `<your_stripe_webhook_secret_key>`
 - [Photo by ZMorph3D on Pixabay](https://pixabay.com/photos/printer-technology-3d-printer-4348147)     -   Printing Info
 - [Photo by Luis Villasmil on Unsplash](https://unsplash.com/photos/ITFwHdPEED0)    -   home background image
 - [Photo by Kira auf der Heide](https://unsplash.com/photos/IPx7J1n_xUc)    -   gift advice page
+- [Teaching Tech](https://www.youtube.com/watch?v=T-Z3GmM20JM&t=1s)    -   Printing Video
 
 The product images used are in the following [text file](https://github.com/jamesr1775/gamer-gifts-elixir/blob/main/static/read-me/media_product_references.txt)
 ### Acknowledgements
@@ -350,4 +356,5 @@ Huge thanks to my mentor Miguel Martinez for helping me, providing great insight
 - [8] Required a for loop counter in products template, got some info at [stackoverflow](https://stackoverflow.com/questions/11481499/django-iterate-number-in-for-loop-of-a-template).
 - [9] Required modulo operator to add horizontal dividers for large - medium screens every 3 products and then every two for small screens and none for xs screens, got some info at [stackoverflow](https://stackoverflow.com/questions/8494209/modulus-in-django-template/8494425).
 - [10] The site pre loader code was obtained from [stackoverflow](https://stackoverflow.com/questions/30478549/pre-loader-image-at-page-load-issue) and [smallenvelop](https://smallenvelop.com/display-loading-icon-page-loads-completely/).
-- [11] Thanks to Sean Young for posting how to generate a image of the django models in the code institute slack community. 
+- [11] Thanks to Sean Young for posting how to generate a image of the django models in the code institute slack community.
+- [12] For some of the products descriptions I searched for related products on amazon to help speed up building relevant descriptions of the products for my database.
