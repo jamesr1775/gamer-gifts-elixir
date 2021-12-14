@@ -24,8 +24,8 @@ main{
 .search-icon{
     background-color: #863AFF !important;
 }
-/************************* Footer *************************/
 
+/************************* Footer *************************/
 .bg-footer{
     background-color: #2D2D3C;
 }
@@ -118,7 +118,6 @@ footer {
     background-color: rgba(134, 58, 255, 0.7);
     border-color: black;
 }
-
 
 .se-pre-con {
 	position: fixed;

@@ -1,3 +1,4 @@
+/*************** Home Page Background ***************/
 main{
     background: url('/media/home-images/hero-image.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -15,7 +16,6 @@ main{
 }
 .card {
 	height: auto;
-	/* width: 100%; */
 	margin: 0 0.5em;
 	box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
 	border: 1px;
@@ -41,13 +41,7 @@ main{
   	margin-top: 10px;
 }
 
-@media (min-width: 992px) {
-	#homeCarousel .card img {
-		height: 200px;
-	}
-}
-
-
+/*************** Gift Advice / Print Info ***************/
 #newsTipsBlock{
 	border-radius: 15px !important;
 	background: linear-gradient(to bottom right, #2D2D3C 10%, #853aff7c 50%, #853aff 70%);
@@ -57,7 +51,6 @@ main{
 	margin: 10px;
 	background-color: #2D2D3C;
 }
-
 .text-over-images {
 	width: 70%;
 	color: snow;
@@ -68,8 +61,14 @@ main{
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
-
 .print-vid{
 	width: 700px;
 	height: 400px;
+}
+
+/*************** Media Queries ***************/
+@media (min-width: 992px) {
+	#homeCarousel .card img {
+		height: 200px;
+	}
 }

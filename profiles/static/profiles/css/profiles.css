@@ -1,9 +1,11 @@
+/*************** Profile Btns ***************/
 .btn-update-profile{
     background: #2D2D3C;
     color: white !important;
     border: 1px solid black;
 }
 
+/*************** Media Queries ***************/
 @media (max-width: 575px) {
     .profile-order-row ul{
         padding: 5px;

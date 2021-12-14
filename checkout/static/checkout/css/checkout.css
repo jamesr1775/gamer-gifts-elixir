@@ -1,3 +1,4 @@
+/************************* Checkout Buttons *************************/
 .checkout-image{
     height: 100px;
     width: 100px;
@@ -11,6 +12,7 @@
     font-weight: 700;
 }
 
+/************************* Stripe *************************/
 .StripeElement,
 .stripe-style-input {
   box-sizing: border-box;
@@ -23,13 +25,11 @@
   -webkit-transition: box-shadow 150ms ease;
   transition: box-shadow 150ms ease;
 }
-
 .StripeElement--focus,
 .stripe-style-input:focus,
 .stripe-style-input:active {
   box-shadow: 0 1px 3px 0 #cfd7df;
 }
-
 .StripeElement--webkit-autofill {
   background-color: #fefde5 !important;
 }
@@ -48,6 +48,7 @@
   border: 1px solid black;
 }
 
+/************************* Checkout Loading Overlay *************************/
 #loading-overlay {
 	display: none;
 	position: fixed;
@@ -66,7 +67,7 @@
   height: 100%;
 }
 
-
+/************************* Media Queries *************************/
 @media (max-width: 575px) {
   .checkout-text {
       padding: 0;

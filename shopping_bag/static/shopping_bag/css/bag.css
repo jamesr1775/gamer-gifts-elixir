@@ -1,20 +1,18 @@
+/*************** Shopping Bag Css ***************/
 .btn-return-products{
     background: #2D2D3C;
     color: white !important;
     border: 1px solid black;
 }
-
 .shopping-bag-image{
     height: 100px;
     width: 100px;
 }
-
 .table td, .table th {
     vertical-align:middle;
 }
 
-
-
+/*************** Media Queries ***************/
 @media (max-width: 575px) {
     .table td, .table th {
         padding: 0;
