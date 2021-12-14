@@ -24,6 +24,13 @@ main{
 .search-icon{
     background-color: #863AFF !important;
 }
+#site-nav-bar .dropdown-menu{
+    color: snow !important;
+    background-color: #2D2D3C;
+}
+#site-nav-bar .dropdown-menu .dropdown-item{
+    color: snow !important;
+}
 
 /************************* Footer *************************/
 .bg-footer{
