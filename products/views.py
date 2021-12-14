@@ -310,7 +310,6 @@ def get_latest_products(request):
     products = Product.objects.order_by("-id")
     latest_products = products[:20]
     latest_products_dict = {product.id: product for product in latest_products}
-    print(latest_products_dict)
     categories = None
     sort = None
     direction = None
