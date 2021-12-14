@@ -41,7 +41,7 @@ class Product(models.Model):
     has_sizes = models.BooleanField(default=False, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     product_rating = models.DecimalField(
-        max_digits=6, decimal_places=2, null=True, blank=True)
+        max_digits=6, decimal_places=2, null=True, default=0)
     product_type = models.CharField(max_length=254, null=True, blank=True)
     products_others_bought = models.CharField(
         max_length=254, default=get_default_products_others_bought,
